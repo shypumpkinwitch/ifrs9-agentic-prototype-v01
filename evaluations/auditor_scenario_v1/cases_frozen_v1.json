@@ -1,0 +1,169 @@
+[
+  {
+    "case_id": "S01",
+    "scenario": "A property / REIT company has made secured development and project loans. The auditor wants to identify the relevant IFRS 9 ECL requirements and comparable public-company disclosures.",
+    "expected_scope": "IFRS9_IMPAIRMENT_RESEARCH",
+    "expected_research_topics": [
+      "ECL recognition",
+      "significant increase in credit risk",
+      "12-month and lifetime ECL",
+      "forward-looking information",
+      "collateral considerations"
+    ],
+    "expected_authority_behaviour": [
+      "Retrieve applicable existing official authority cards.",
+      "Keep official requirements separate from company disclosures."
+    ],
+    "expected_comparator_behaviour": [
+      "Perform comparable-company research within existing supported evidence boundaries.",
+      "Assess property-development business and loan exposure, not generic ECL terminology."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "Finish with auditor judgement and further review required."
+    ],
+    "notes": "Property-development-loan flagship; no company is named in the scenario."
+  },
+  {
+    "case_id": "S02",
+    "scenario": "An e-commerce company has material trade receivables from merchants and customers. The auditor wants to understand the relevant IFRS 9 impairment requirements and comparable disclosures.",
+    "expected_scope": "IFRS9_IMPAIRMENT_RESEARCH",
+    "expected_research_topics": [
+      "trade-receivable ECL",
+      "simplified-approach authority requirement"
+    ],
+    "expected_authority_behaviour": [
+      "Identify that simplified-approach authority may be required.",
+      "If the curated registry is insufficient, explicitly record an authority gap rather than inventing requirements or paragraph references."
+    ],
+    "expected_comparator_behaviour": [
+      "Comparable disclosure research may proceed only within supported evidence boundaries.",
+      "Assess trade-receivable and e-commerce exposure comparability."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "Retain auditor review and any unresolved official-authority gap."
+    ],
+    "notes": "An authority gap is a valid safe outcome; unsupported extrapolation is not."
+  },
+  {
+    "case_id": "S03",
+    "scenario": "A manufacturing company has increasing overdue receivables and significant customer concentration. The auditor wants to research the IFRS 9 credit-loss considerations and comparable disclosure practices.",
+    "expected_scope": "IFRS9_IMPAIRMENT_RESEARCH",
+    "expected_research_topics": [
+      "ECL",
+      "credit-risk deterioration",
+      "forward-looking considerations"
+    ],
+    "expected_authority_behaviour": [
+      "Use existing official authority where covered.",
+      "Make no unsupported requirements or paragraph-reference claims."
+    ],
+    "expected_comparator_behaviour": [
+      "Assess industry and exposure comparability rather than matching generic ECL terminology."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "Retain human auditor review."
+    ],
+    "notes": "Customer concentration and overdue balances are scenario facts, not proof of a particular accounting treatment."
+  },
+  {
+    "case_id": "S04",
+    "scenario": "A bank has a loan portfolio for which credit risk may have increased significantly since origination. The auditor wants to research the relevant IFRS 9 requirements and comparable banking disclosures.",
+    "expected_scope": "IFRS9_IMPAIRMENT_RESEARCH",
+    "expected_research_topics": [
+      "significant increase in credit risk",
+      "12-month and lifetime ECL"
+    ],
+    "expected_authority_behaviour": [
+      "Retrieve applicable official authority where covered."
+    ],
+    "expected_comparator_behaviour": [
+      "Banking issuers may be appropriate comparators.",
+      "Unrelated property issuers must not be rated strong merely because they mention ECL."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "Finish with auditor review and supported comparator limitations."
+    ],
+    "notes": "Framework compatibility alone does not establish economic comparability."
+  },
+  {
+    "case_id": "S05",
+    "scenario": "A corporate treasury function holds debt investments measured at amortised cost and the auditor wants to understand the applicable IFRS 9 impairment requirements and comparable disclosures.",
+    "expected_scope": "IFRS9_IMPAIRMENT_RESEARCH",
+    "expected_research_topics": [
+      "IFRS 9 ECL scope",
+      "amortised-cost debt-investment impairment"
+    ],
+    "expected_authority_behaviour": [
+      "Recognise the relevant impairment research scope.",
+      "Present only supported authority claims."
+    ],
+    "expected_comparator_behaviour": [
+      "Distinguish debt investments from trade receivables and development loans.",
+      "Present only supported comparator claims."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "Retain human review and unresolved evidence limitations."
+    ],
+    "notes": "Do not treat generic receivable or development-loan disclosures as an established investment comparator."
+  },
+  {
+    "case_id": "S06",
+    "scenario": "A property-management company has material lease receivables and the auditor wants to understand the applicable expected-credit-loss requirements and comparable disclosures.",
+    "expected_scope": "IFRS9_IMPAIRMENT_RESEARCH",
+    "expected_research_topics": [
+      "lease-receivable ECL",
+      "simplified-approach authority requirement"
+    ],
+    "expected_authority_behaviour": [
+      "Identify any simplified-approach authority requirement.",
+      "Surface insufficient official coverage instead of extrapolating development-loan treatment."
+    ],
+    "expected_comparator_behaviour": [
+      "Assess lease-receivable exposure comparability within supported evidence boundaries."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "Retain the authority gap and auditor review when coverage is insufficient."
+    ],
+    "notes": "Property-management business terminology does not establish development-loan equivalence."
+  },
+  {
+    "case_id": "S07",
+    "scenario": "A company has issued financial guarantees and undrawn loan commitments and the auditor wants to understand whether and how expected-credit-loss requirements apply.",
+    "expected_scope": "IFRS9_IMPAIRMENT_AUTHORITY_BOUNDARY",
+    "expected_research_topics": [
+      "financial-guarantee impairment scope",
+      "undrawn loan-commitment impairment scope",
+      "official-authority coverage boundary"
+    ],
+    "expected_authority_behaviour": [
+      "Never invent IFRS paragraph references.",
+      "If the existing registry is insufficient, request additional official authority or abstain from a requirements conclusion."
+    ],
+    "expected_comparator_behaviour": [
+      "No unsupported comparator conclusion."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "Explicitly request additional official authority or abstain when required; retain auditor review."
+    ],
+    "notes": "Intentional authority-coverage boundary case."
+  },
+  {
+    "case_id": "S08",
+    "scenario": "The auditor of an e-commerce company wants to know which accounting requirements govern revenue recognition and whether comparable listed-company disclosures are available.",
+    "expected_scope": "OUT_OF_SCOPE_IFRS9_IMPAIRMENT",
+    "expected_research_topics": [
+      "different accounting-standard research scope for revenue recognition"
+    ],
+    "expected_authority_behaviour": [
+      "Identify that this is not an IFRS 9 impairment research question.",
+      "Do not fabricate IFRS 9 authority."
+    ],
+    "expected_comparator_behaviour": [
+      "Do not run irrelevant ECL comparator research."
+    ],
+    "expected_stop_or_handoff_behaviour": [
+      "State that a different accounting-standard research scope is required; do not force the scenario into the IFRS 9 ECL workflow."
+    ],
+    "notes": "Negative scope-control case."
+  }
+]

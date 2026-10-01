@@ -1,0 +1,69 @@
+{
+  "release_id": "post_hardening_release_v1",
+  "created_at_utc": "2026-10-01T10:52:10.3258474Z",
+  "algorithm": "SHA-256 over raw file bytes",
+  "scope": "Version-aware integrity identity for the current post-hardening application; it does not replace or amend historical freeze manifests.",
+  "current_application_files": {
+    "app.py": "12d8748283c805546969f0dec4b2d3c5f47fb0509f7704145874cebf7e30042e",
+    "src/__init__.py": "384e85681bdbcbc1738979da182ca6e4219774c116f59135f88d0ef47ff21d2f",
+    "src/agent_loop.py": "4c482b9ed622032113569622e627e25723201d0568b49784730eaa9cc5602bb9",
+    "src/agent_loop_hardened.py": "54f791131109d54ef7a8208c665b4abb3399b9631388d82452501897ebf760ae",
+    "src/agent_planner.py": "fae53e012e4882939328bb413701b5019c0c987010cb1548fa5b24cbeb1386d9",
+    "src/agent_tools.py": "a45fed5bd9e726a17c365ef908ec47d9de50418be563597ba6e7a13c70cf35d0",
+    "src/authority_registry.py": "8652e0a0b4108ece0213732f0f1e2a182c4ae975a941dd409d2fa35fdb82315d",
+    "src/evidence_cards.py": "58aad1f38a258e7a4517bd161713fd644ceb2a4522841f98fbb67fe2da316ca8",
+    "src/external_discovery.py": "274d702490ba5f0101532ad099c0d420e9dcafaf2ddecc6bbee1af6a95d2ffcd",
+    "src/external_discovery_ifrs.py": "a56fd673f58698ea82a9c4b3d5e17b79fa5a674ff246b54d48f449ce227da2bf",
+    "src/final_submission.py": "8d2ec07b9f75732fbffbb9f86986a0a1799606398b4a403f92d1fceef9788bd0",
+    "src/guardrails.py": "ce20aa83ea42004394fda312fa54f7070defb0b36fd57982851f70dbe2caaa14",
+    "src/private_runtime.py": "217d292f8ee8d83a8a764757987b1f225e7f1b1549a59d195b78241138a48390",
+    "src/release_audit.py": "5a0b18ded404ba7b43eb14e5ab5eeb3bcb7213330b65cf729d8df89928af1401",
+    "src/research_agent.py": "0b29a34d5bcb6a8e6859cfe28681fd670cdbc5cc9d365586796a4743bfd1f373",
+    "src/retrieval.py": "1dfb0ab8db6f7eb0ab3d671f1d1ee059787515e3272a3ee7f4d88ce531ddd73a",
+    "src/scenario_routing.py": "04124b5f85a9cb38975b68ba4f9cc54f21541cecfc6ac6b4e01d35427cca44e5",
+    "src/schemas.py": "d5d61e4c2db18f5c0787a6ab536e6c1670ed41e117efffd60f5ba35fd281871f",
+    "src/source_registry.py": "2c0d5b7b388d03db6b97bfbe4eb0aaa2c2330249594e5d4831e235b3d45f201d",
+    "src/trace_log.py": "216b9549330fedd80ca16736771e9cd74b1ea927a682db76824a5a35dcddd23d"
+  },
+  "current_regression_files": {
+    "tests/test_scenario_hardening_postfix.py": "1bb70e7a3aaf6e43ea1cc658d11c2d126a727ded052f3873be56a0967c4e4666",
+    "tests/test_streamlit_app.py": "3843ae4df73f0a0074f40f535912d0319d0ab2671844a7b3b929c70b017fd6cf"
+  },
+  "immutable_evidence_ledger": {
+    "path": "evaluations/scenario_hardening_postfix_v1/protected_artifacts_manifest.json",
+    "sha256": "68d865b2c71149b8fb3bc97fc46eb6a2a8260d73d63c8811645a87dfeaa6da43",
+    "artifact_count": 88
+  },
+  "historical_baseline_manifests": {
+    "evaluations/auditor_scenario_v1/freeze_manifest_v1.json": "3659838e252bd968e6124d78d3238e9ec375262a8887c4590861e38c539ba90a",
+    "evaluations/auditor_scenario_v1_1/freeze_manifest_v1_1.json": "9a5e6e74e6e4b50c833c29f40d0b1001da56cacbde894c1d5d23edd908938d7b"
+  },
+  "observation_layers": {
+    "historical_v1": {
+      "path": "evaluations/auditor_scenario_v1/deterministic_observations_v1.json",
+      "sha256": "961fd03255fc4a45db643f786fa42e3e43b587f9051357baed754f18d6e52195"
+    },
+    "historical_v1_1": {
+      "path": "evaluations/auditor_scenario_v1_1/deterministic_observations_v1_1.json",
+      "sha256": "2fab8896b99546144e92d15709bd1fb646e7c6c4e1d166e19aa156210498985d"
+    },
+    "post_hardening_s01_s08": {
+      "path": "evaluations/scenario_hardening_postfix_v1/postfix_observations_v1.json",
+      "sha256": "20307df9859aa38596b348f6ce1bdf298ff1f5c5f492ca6b641719b1da5df1f1"
+    }
+  },
+  "retrieval_benchmark_identity": {
+    "question_bank_path": "private_data/runtime_inputs_v01/PE6201_Codex_Private_Runtime_Inputs_v01/evaluation_question_bank_frozen_v01.json",
+    "question_bank_sha256": "3a3c22bdcb9e9cd9ca388d9299682ccb37dcb3f7ac2fea7e96226bdd52befd1c",
+    "questions": 50,
+    "development": 12,
+    "frozen_holdout": 38,
+    "metrics_recomputed": false
+  },
+  "legacy_snapshot_semantics": "The v1 and v1.1 baseline validators intentionally bind the pre-hardening application snapshot. Their app.py mismatch is expected for this release and must remain detectable.",
+  "execution_policy": {
+    "network_allowed": false,
+    "live_openrouter_calls": 0,
+    "live_sec_calls": 0
+  }
+}

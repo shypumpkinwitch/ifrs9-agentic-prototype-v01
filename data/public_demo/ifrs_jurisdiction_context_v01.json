@@ -1,0 +1,22 @@
+{
+  "classification": "contextual jurisdiction reference only; never issuer-specific framework evidence",
+  "source": {
+    "publisher": "IFRS Foundation",
+    "url": "https://www.ifrs.org/use-around-the-world/use-of-ifrs-standards-by-jurisdiction/",
+    "retrieved_date": "2026-09-30"
+  },
+  "limitations": [
+    "A jurisdiction profile cannot verify the accounting framework used by a particular issuer.",
+    "Issuer-specific filing, basis-of-preparation, or auditor-report evidence is required.",
+    "No IFRS Standard text is reproduced in this file."
+  ],
+  "profiles": {
+    "CA": {"jurisdiction": "Canada", "profile_available": true},
+    "GB": {"jurisdiction": "United Kingdom", "profile_available": true},
+    "HK": {"jurisdiction": "Hong Kong SAR", "profile_available": true},
+    "MX": {"jurisdiction": "Mexico", "profile_available": true},
+    "BR": {"jurisdiction": "Brazil", "profile_available": true},
+    "AU": {"jurisdiction": "Australia", "profile_available": true},
+    "US": {"jurisdiction": "United States", "profile_available": true}
+  }
+}

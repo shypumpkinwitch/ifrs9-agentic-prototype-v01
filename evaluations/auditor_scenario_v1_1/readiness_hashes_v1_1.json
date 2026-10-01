@@ -1,0 +1,41 @@
+{
+  "evaluation_id": "auditor_scenario_evaluation_v1_1",
+  "algorithm": "SHA-256 over raw file bytes",
+  "files": {
+    "evaluations/auditor_scenario_v1_1/cases.schema.json": "27a31e420d9faba51f9e918d9fa9de5f76b8a788206895ebd4bc17340b10207e",
+    "evaluations/auditor_scenario_v1_1/cases_frozen_v1_1.json": "a7abb8e51471e4e292fdde3e0a6edb8088bb7b8ec1b95119e82ec1b2ce28482f",
+    "evaluations/auditor_scenario_v1_1/deterministic_observations_v1_1.json": "2fab8896b99546144e92d15709bd1fb646e7c6c4e1d166e19aa156210498985d",
+    "evaluations/auditor_scenario_v1_1/freeze_manifest_v1_1.json": "9a5e6e74e6e4b50c833c29f40d0b1001da56cacbde894c1d5d23edd908938d7b",
+    "evaluations/auditor_scenario_v1_1/manual_review_template_v1_1.json": "f66eb877da987a6d50aba57ea1ca677f5509713d13b858e63b095d53ac94275a",
+    "evaluations/auditor_scenario_v1_1/protocol_v1_1.json": "7c105ca6d4d3b2b9ae4b896f8187b1dfb6efed21a8be957ef537bcfa1fd5d85e",
+    "evaluations/auditor_scenario_v1_1/README.md": "b6b335084f73e24d81e96e303bf9198503e0998fe427e8e59730b4a4d930c057",
+    "evaluations/auditor_scenario_v1_1/run_deterministic.py": "a2fd81dafa2c140971d34390cb3f30e4aef24086ae2da7d189dfc09327686c37",
+    "evaluations/auditor_scenario_v1_1/validation.py": "25924fa2cbf63066a7beb7ad41f87826a0ef31b760fc72e585841bb9fcff2731",
+    "tests/test_auditor_scenario_evaluation_v1_1.py": "9f0cd2d28dbdd1b565b02cd343e79164f6c13525b78b222bc82df24e2f0bb178"
+  },
+  "validation_tests": {
+    "passed": 16,
+    "failed": 0,
+    "v1_tests": 8,
+    "v1_1_tests": 8
+  },
+  "protected_existing_file_count": 82,
+  "protected_existing_files_unchanged": true,
+  "original_v1_unchanged": true,
+  "historical_artifacts_checked": 11,
+  "historical_hashes_match": true,
+  "private_canonical_hash_matches_manifest": true,
+  "frozen_file_mismatches": [],
+  "retrieval_benchmark": {
+    "questions": 50,
+    "development": 12,
+    "holdout": 38,
+    "metrics_recomputed": false
+  },
+  "live_model_runs": 0,
+  "live_sec_calls": 0,
+  "planner_input_tokens": 0,
+  "planner_output_tokens": 0,
+  "provider_cost_usd": 0,
+  "manual_review": "pending"
+}

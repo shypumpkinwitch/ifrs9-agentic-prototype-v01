@@ -1,0 +1,327 @@
+{
+  "classification": "Gate 4.6 live planner re-validation; separate from the frozen holdout, Gate 4 deterministic tests, and preserved Gate 4.5 failure evidence",
+  "recorded_at": "2026-09-30T17:13:31+08:00",
+  "planner_model": "openai/gpt-4o-mini",
+  "counted_live_cases": 3,
+  "all_cases_completed_intended_workflow": true,
+  "frozen_holdout_used_or_tuned": false,
+  "external_web_discovery_performed": false,
+  "api_key_saved": false,
+  "raw_annual_report_text_sent": false,
+  "aggregate_usage": {
+    "input_tokens": 11987,
+    "output_tokens": 1342,
+    "provider_reported_cost_usd": 0.00251685
+  },
+  "token_efficiency": {
+    "gate45_input_tokens": 18664,
+    "gate46_input_tokens": 11987,
+    "absolute_reduction": 6677,
+    "percentage_reduction": 35.77,
+    "changes": [
+      "Only state-valid tool contracts are sent on each step.",
+      "Planner state contains only observations needed for the current transition.",
+      "Static workflow sequencing moved from repeated prompt prose into the controller."
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+      "planner_model": "openai/gpt-4o-mini",
+      "planner_mode": "model-planned bounded agent",
+      "live_model_completed_without_fallback": true,
+      "state_transition_sequence": [
+        "START",
+        "SCENARIO_ANALYSED",
+        "EVIDENCE_SEARCHED",
+        "CANDIDATES_INSPECTED",
+        "COMPARABILITY_ASSESSED",
+        "AUTHORITY_CHECKED",
+        "READY_TO_STOP",
+        "STOPPED"
+      ],
+      "tool_call_sequence": [
+        "analyse_audit_scenario",
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "assess_comparability",
+        "check_authority",
+        "stop_and_summarise"
+      ],
+      "step_count": 6,
+      "step_limit": 6,
+      "stop_reason": "The research on IFRS 9 ECL for development loans in the Property / REIT industry has been completed, and a structured handoff is required for human review.",
+      "candidates": [
+        {
+          "company": "Allied_REIT",
+          "framework_status": "pending",
+          "evidence_status": "indexed and inspected"
+        },
+        {
+          "company": "Barrick",
+          "framework_status": "pending",
+          "evidence_status": "indexed and inspected"
+        }
+      ],
+      "comparability_results": [
+        {
+          "company": "Allied_REIT",
+          "rating": "strong",
+          "weighted_score": 0.96,
+          "dimension_scores": {
+            "business_model": 1.0,
+            "instrument": 1.0,
+            "borrower_counterparty": 1.0,
+            "collateral": 1.0,
+            "construction_leasing": 1.0,
+            "ecl_treatment": 1.0,
+            "reporting_framework_status": 0.5
+          },
+          "explanation": "Materially useful because the property-development business model, development-loan exposure, borrower condition, collateral, construction/leasing, and ECL features align.",
+          "caution": "Shared IFRS 9 or ECL terminology alone does not establish economic comparability."
+        },
+        {
+          "company": "Barrick",
+          "rating": "weak",
+          "weighted_score": 0.26,
+          "dimension_scores": {
+            "business_model": 0.0,
+            "instrument": 0.0,
+            "borrower_counterparty": 0.0,
+            "collateral": 1.0,
+            "construction_leasing": 1.0,
+            "ecl_treatment": 0.0,
+            "reporting_framework_status": 0.5
+          },
+          "explanation": "Use only with the stated dimensional limitations; shared ECL terminology alone is insufficient.",
+          "caution": "Shared IFRS 9 or ECL terminology alone does not establish economic comparability."
+        }
+      ],
+      "authority_result": {
+        "present_authority_classes": ["COMPANY_DISCLOSURE"],
+        "missing_authority_classes": [
+          "IFRS_FOUNDATION_OFFICIAL",
+          "PROFESSIONAL_COMMENTARY"
+        ],
+        "company_disclosure_can_establish_general_ifrs_requirements": false,
+        "official_guidance_text_indexed": false,
+        "required_message": "Official IFRS 9 guidance not available in this prototype"
+      },
+      "missing_evidence": [
+        "IFRS_FOUNDATION_OFFICIAL",
+        "PROFESSIONAL_COMMENTARY"
+      ],
+      "guardrails_triggered": [
+        "Controller bound candidate inspection to all serious search candidates.",
+        "Controller bound comparability assessment to all inspected candidates."
+      ],
+      "usage": {
+        "input_tokens": 4719,
+        "output_tokens": 478,
+        "provider_reported_cost_available_for_every_call": true,
+        "provider_reported_cost_usd": 0.00099465,
+        "approximate_latency_ms": 13844.114
+      },
+      "intended_workflow": {
+        "completed": true,
+        "assessment": "Allied_REIT was assessed strong using local dimensional evidence; authority limitations were then checked."
+      },
+      "planner_calls": [
+        {"call": 1, "available_tools": ["analyse_audit_scenario"], "action": "analyse_audit_scenario", "reason_summary": "Analyse the submitted scenario before retrieval.", "input_tokens": 400, "output_tokens": 102, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.0001212},
+        {"call": 2, "available_tools": ["search_private_corpus"], "action": "search_private_corpus", "reason_summary": "Search local evidence for the analysed property-development ECL needs.", "input_tokens": 571, "output_tokens": 100, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00014565},
+        {"call": 3, "available_tools": ["inspect_candidate_metadata"], "action": "inspect_candidate_metadata", "reason_summary": "Inspect metadata for all serious retrieved candidates.", "input_tokens": 1229, "output_tokens": 89, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00023775},
+        {"call": 4, "available_tools": ["assess_comparability"], "action": "assess_comparability", "reason_summary": "Assess every inspected candidate across the required dimensions.", "input_tokens": 1044, "output_tokens": 81, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.0002052},
+        {"call": 5, "available_tools": ["check_authority"], "action": "check_authority", "reason_summary": "Separate company disclosures from authoritative IFRS evidence.", "input_tokens": 706, "output_tokens": 47, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.0001341},
+        {"call": 6, "available_tools": ["stop_and_summarise"], "action": "stop_and_summarise", "reason_summary": "Stop with a bounded research handoff after mandatory checks.", "input_tokens": 769, "output_tokens": 59, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00015075}
+      ],
+      "privacy_assertions": {
+        "raw_annual_report_text_sent": false,
+        "api_key_or_authorization_saved": false,
+        "copyrighted_source_text_saved": false
+      }
+    },
+    {
+      "case_id": "G46-LIVE-GENERAL-BANKING-ECL",
+      "planner_model": "openai/gpt-4o-mini",
+      "planner_mode": "model-planned bounded agent",
+      "live_model_completed_without_fallback": true,
+      "state_transition_sequence": [
+        "START",
+        "SCENARIO_ANALYSED",
+        "EVIDENCE_SEARCHED",
+        "CANDIDATES_INSPECTED",
+        "COMPARABILITY_ASSESSED",
+        "AUTHORITY_CHECKED",
+        "READY_TO_STOP",
+        "STOPPED"
+      ],
+      "tool_call_sequence": [
+        "analyse_audit_scenario",
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "assess_comparability",
+        "check_authority",
+        "stop_and_summarise"
+      ],
+      "step_count": 6,
+      "step_limit": 6,
+      "stop_reason": "The research has assessed comparability and checked authority, but official IFRS 9 guidance is not available. A structured handoff is required for further review.",
+      "candidates": [
+        {
+          "company": "Royal Bank of Canada",
+          "framework_status": "pending",
+          "evidence_status": "indexed and inspected"
+        },
+        {
+          "company": "Allied_REIT",
+          "framework_status": "pending",
+          "evidence_status": "indexed and inspected"
+        }
+      ],
+      "comparability_results": [
+        {
+          "company": "Royal Bank of Canada",
+          "rating": "strong",
+          "weighted_score": 0.88,
+          "dimension_scores": {
+            "business_model": 1.0,
+            "instrument": 1.0,
+            "borrower_counterparty": 1.0,
+            "collateral": 1.0,
+            "construction_leasing": 0.0,
+            "ecl_treatment": 1.0,
+            "reporting_framework_status": 0.5
+          },
+          "explanation": "Relevant to a banking ECL portfolio because the banking business model, loan exposure, borrower risk, collateral, and ECL methodology align.",
+          "caution": "Shared IFRS 9 or ECL terminology alone does not establish economic comparability."
+        },
+        {
+          "company": "Allied_REIT",
+          "rating": "weak",
+          "weighted_score": 0.74,
+          "dimension_scores": {
+            "business_model": 0.0,
+            "instrument": 1.0,
+            "borrower_counterparty": 1.0,
+            "collateral": 1.0,
+            "construction_leasing": 1.0,
+            "ecl_treatment": 1.0,
+            "reporting_framework_status": 0.5
+          },
+          "explanation": "Use only with the stated dimensional limitations; shared ECL terminology alone is insufficient.",
+          "caution": "Shared IFRS 9 or ECL terminology alone does not establish economic comparability."
+        }
+      ],
+      "authority_result": {
+        "present_authority_classes": ["COMPANY_DISCLOSURE"],
+        "missing_authority_classes": [
+          "IFRS_FOUNDATION_OFFICIAL",
+          "PROFESSIONAL_COMMENTARY"
+        ],
+        "company_disclosure_can_establish_general_ifrs_requirements": false,
+        "official_guidance_text_indexed": false,
+        "required_message": "Official IFRS 9 guidance not available in this prototype"
+      },
+      "missing_evidence": [
+        "IFRS_FOUNDATION_OFFICIAL",
+        "PROFESSIONAL_COMMENTARY"
+      ],
+      "guardrails_triggered": [
+        "Controller bound candidate inspection to all serious search candidates.",
+        "Controller bound comparability assessment to all inspected candidates."
+      ],
+      "usage": {
+        "input_tokens": 4556,
+        "output_tokens": 468,
+        "provider_reported_cost_available_for_every_call": true,
+        "provider_reported_cost_usd": 0.0008778,
+        "approximate_latency_ms": 12941.48
+      },
+      "intended_workflow": {
+        "completed": true,
+        "assessment": "Royal Bank of Canada was assessed strong for the banking ECL scenario; authority limitations were then checked."
+      },
+      "planner_calls": [
+        {"call": 1, "available_tools": ["analyse_audit_scenario"], "action": "analyse_audit_scenario", "reason_summary": "Analyse the submitted banking scenario before retrieval.", "input_tokens": 367, "output_tokens": 87, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00010725},
+        {"call": 2, "available_tools": ["search_private_corpus"], "action": "search_private_corpus", "reason_summary": "Search local evidence for the analysed banking ECL needs.", "input_tokens": 517, "output_tokens": 109, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00014295},
+        {"call": 3, "available_tools": ["inspect_candidate_metadata"], "action": "inspect_candidate_metadata", "reason_summary": "Inspect metadata for all serious retrieved candidates.", "input_tokens": 1237, "output_tokens": 75, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00014415},
+        {"call": 4, "available_tools": ["assess_comparability"], "action": "assess_comparability", "reason_summary": "Assess every inspected candidate across the required dimensions.", "input_tokens": 1020, "output_tokens": 92, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.0002082},
+        {"call": 5, "available_tools": ["check_authority"], "action": "check_authority", "reason_summary": "Separate company disclosures from authoritative IFRS evidence.", "input_tokens": 677, "output_tokens": 49, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00013095},
+        {"call": 6, "available_tools": ["stop_and_summarise"], "action": "stop_and_summarise", "reason_summary": "Stop with a bounded research handoff after mandatory checks.", "input_tokens": 738, "output_tokens": 56, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.0001443}
+      ],
+      "privacy_assertions": {
+        "raw_annual_report_text_sent": false,
+        "api_key_or_authorization_saved": false,
+        "copyrighted_source_text_saved": false
+      }
+    },
+    {
+      "case_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+      "planner_model": "openai/gpt-4o-mini",
+      "planner_mode": "model-planned bounded agent",
+      "live_model_completed_without_fallback": true,
+      "state_transition_sequence": [
+        "START",
+        "SCENARIO_ANALYSED",
+        "EVIDENCE_SEARCHED",
+        "AUTHORITY_CHECKED",
+        "EVIDENCE_GAP_IDENTIFIED",
+        "READY_TO_STOP",
+        "STOPPED"
+      ],
+      "tool_call_sequence": [
+        "analyse_audit_scenario",
+        "search_private_corpus",
+        "check_authority",
+        "request_more_evidence",
+        "stop_and_summarise"
+      ],
+      "step_count": 5,
+      "step_limit": 6,
+      "stop_reason": "Official IFRS 9 guidance is not available in the current research corpus, and further human research is required to obtain the necessary authoritative evidence.",
+      "candidates": [],
+      "comparability_results": [],
+      "authority_result": {
+        "present_authority_classes": ["COMPANY_DISCLOSURE"],
+        "missing_authority_classes": [
+          "IFRS_FOUNDATION_OFFICIAL",
+          "PROFESSIONAL_COMMENTARY"
+        ],
+        "company_disclosure_can_establish_general_ifrs_requirements": false,
+        "official_guidance_text_indexed": false,
+        "required_message": "Official IFRS 9 guidance not available in this prototype"
+      },
+      "missing_evidence": [
+        "IFRS_FOUNDATION_OFFICIAL",
+        "PROFESSIONAL_COMMENTARY",
+        "official IFRS guidance",
+        "professional commentary",
+        "more transaction-specific comparable company evidence"
+      ],
+      "guardrails_triggered": [],
+      "usage": {
+        "input_tokens": 2712,
+        "output_tokens": 396,
+        "provider_reported_cost_available_for_every_call": true,
+        "provider_reported_cost_usd": 0.0006444,
+        "approximate_latency_ms": 10616.712
+      },
+      "intended_workflow": {
+        "completed": true,
+        "assessment": "The run checked authority, requested official evidence, abstained from a requirement, and stopped for human research."
+      },
+      "planner_calls": [
+        {"call": 1, "available_tools": ["analyse_audit_scenario"], "action": "analyse_audit_scenario", "reason_summary": "Analyse the authoritative-guidance request before retrieval.", "input_tokens": 392, "output_tokens": 102, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00012},
+        {"call": 2, "available_tools": ["search_private_corpus"], "action": "search_private_corpus", "reason_summary": "Check the current local corpus for the requested evidence class.", "input_tokens": 516, "output_tokens": 77, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.0001236},
+        {"call": 3, "available_tools": ["check_authority"], "action": "check_authority", "reason_summary": "Verify whether official IFRS authority is present.", "input_tokens": 458, "output_tokens": 46, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.0000963},
+        {"call": 4, "available_tools": ["request_more_evidence", "stop_and_summarise"], "action": "request_more_evidence", "reason_summary": "Record a one-time structured gap for missing official evidence.", "input_tokens": 707, "output_tokens": 118, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00017685},
+        {"call": 5, "available_tools": ["stop_and_summarise"], "action": "stop_and_summarise", "reason_summary": "Stop without fabricating an IFRS requirement.", "input_tokens": 639, "output_tokens": 53, "provider_reported_cost_available": true, "provider_reported_cost_usd": 0.00012765}
+      ],
+      "privacy_assertions": {
+        "raw_annual_report_text_sent": false,
+        "api_key_or_authorization_saved": false,
+        "copyrighted_source_text_saved": false
+      }
+    }
+  ]
+}

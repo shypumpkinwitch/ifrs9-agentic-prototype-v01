@@ -1,0 +1,17 @@
+{
+  "classification": "Gate 6 preservation ledger computed before final integration changes",
+  "algorithm": "SHA-256 over raw file bytes",
+  "artifacts": {
+    "docs/GATE4_ARCHITECTURE_v01.md": "4b0eb9c35b7638fcddb93315e97477fc91ad2a3e65425e15c57acd90d320bedf",
+    "docs/GATE4_FLAGSHIP_TRACE_v01.json": "e56f7c94c412d379ee84346ef1c221584359814e8208bff215e1227b2f81c919",
+    "docs/GATE45_LIVE_PLANNER_AUDIT_v01.json": "b598918f9bcf50ad091356d60ab6c91ab9fe82ce61c6e1a8c0bafddbcb8dad35",
+    "docs/GATE45_LIVE_PLANNER_RESULTS_v01.md": "ca3f57f3edaea6496e9adade4f129f28e146db2932147d988d6fa3eb51d12213",
+    "docs/GATE46_HARDENING_RESULTS_v01.md": "10ee086293e4a62f413ddb2cb869cd848ddab6433a8c190844cf71cf1cff65bb",
+    "docs/GATE46_LIVE_PLANNER_AUDIT_v01.json": "5e6a234defb98ca215240f84c6d3c04577fd7ca3cbed5f0bcf291be36effae3f",
+    "docs/GATE46_LIVE_REVALIDATION_ATTEMPT1_v01.json": "9c2c76b7ea3ed6d96501801f242068436aa181d4dfa81938b3d7fdeea1976e7a",
+    "docs/GATE5_LIVE_DISCOVERY_AUDIT_v01.json": "f376976186fbece43eb05c37e7057a28c50f74662e3feb224db3170f743bc356",
+    "docs/GATE5_RESULTS_v01.md": "d2b0b551e86b9e2f420dde7c41456dc2413a3b6c222b1de8556475d52cb0d883",
+    "docs/GATE51_LIVE_DISCOVERY_AUDIT_v01.json": "d71fa2ff7ec414797c39927e8dcb27846f081cc270d9d8b6f3a9b6ba340fd915",
+    "docs/GATE51_RESULTS_v01.md": "2fc62bf71c6bb5817223ea20ed2590fdc092007c55f15faf97081ccc303c7795"
+  }
+}

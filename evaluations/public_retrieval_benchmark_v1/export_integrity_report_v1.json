@@ -1,0 +1,68 @@
+{
+  "export_id": "pe6201_public_safe_retrieval_benchmark_v1",
+  "source_manifest_sha256": "5992123739d3008c2d6b2f44bb16495657be6519714081a830617b851f8f24e8",
+  "source_files_match_original_freeze_manifest": true,
+  "source_hashes_unchanged_before_and_after_export": true,
+  "question_bank_matches_development_and_holdout_subsets": true,
+  "question_count": 50,
+  "question_ids_unique": true,
+  "split_counts": {
+    "development": 12,
+    "holdout_test": 38
+  },
+  "label_audit_rows": 3800,
+  "label_audit_accept_count": 58,
+  "label_audit_exclude_count": 3742,
+  "accepted_mapping_count": 58,
+  "accepted_mappings_exactly_match_label_audit": true,
+  "all_verified_anchors_preserved": true,
+  "all_mapping_metadata_read_from_frozen_corpus": true,
+  "questions_with_multiple_accepted_mappings": [
+    "RBC003",
+    "GLEN003",
+    "BAR002",
+    "ALL001",
+    "T002",
+    "T010",
+    "T025"
+  ],
+  "raw_source_body_fields_in_export": [],
+  "sensitive_pattern_question_ids": [],
+  "wording_overlap_review": {
+    "method": "Longest contiguous normalized-token overlap against all 76 source chunks; flag at 8 tokens or 60% of question tokens, followed by manual wording review.",
+    "flagged_records": [
+      {
+        "question_id": "RBC003",
+        "maximum_contiguous_overlap_tokens": 8,
+        "question_token_count": 20,
+        "overlap_ratio": 0.4,
+        "manual_assessment": "Technical accounting terminology in a short interrogative question; no annual-report passage or narrative source-body text reproduced.",
+        "publication_decision": "public_safe"
+      },
+      {
+        "question_id": "GLEN003",
+        "maximum_contiguous_overlap_tokens": 10,
+        "question_token_count": 19,
+        "overlap_ratio": 0.5263,
+        "manual_assessment": "Technical accounting terminology in a short interrogative question; no annual-report passage or narrative source-body text reproduced.",
+        "publication_decision": "public_safe"
+      }
+    ],
+    "restricted_question_ids": [],
+    "assessment": "All 50 frozen questions are short research questions. The two flags use technical accounting terminology rather than copied narrative passages."
+  },
+  "restricted_submission_required_for_question_content": false,
+  "remaining_restricted_material": [
+    "The 76-chunk annual-report corpus and all raw source-body text.",
+    "The full 3,800-row label-audit reasons and private QA/source bundle remain under the private runtime boundary.",
+    "Exact metric reproduction requires the original private corpus; this export supports transparent inspection of questions and accepted mappings only."
+  ],
+  "network_calls": {
+    "openrouter": 0,
+    "sec": 0
+  },
+  "export_files": {
+    "questions_and_accepted_mappings_v1.json": "691c351563dd3fee1fdd5615c27930e34ec1a0c25a07995c69a465372d67996a",
+    "accepted_evidence_mappings_v1.csv": "c29411d60ac768aa2d5f9d6a128a8da70b7c09e10d76274468a2f29ca68f1c0c"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PE6201 public-safe retrieval benchmark export",
+  "type": "object",
+  "required": [
+    "export_id",
+    "classification",
+    "question_count",
+    "split_counts",
+    "accepted_mapping_count",
+    "scoring_rule",
+    "raw_annual_report_text_included",
+    "local_filesystem_paths_included",
+    "questions"
+  ],
+  "properties": {
+    "export_id": {"const": "pe6201_public_safe_retrieval_benchmark_v1"},
+    "question_count": {"const": 50},
+    "accepted_mapping_count": {"const": 58},
+    "raw_annual_report_text_included": {"const": false},
+    "local_filesystem_paths_included": {"const": false},
+    "questions": {
+      "type": "array",
+      "minItems": 50,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "question_id",
+          "split",
+          "question",
+          "company",
+          "report_year",
+          "anchor_pdf_page",
+          "verified_anchor_chunk_id",
+          "source_type",
+          "authority_level",
+          "label_provenance",
+          "accepted_evidence_mappings"
+        ],
+        "properties": {
+          "question_id": {"type": "string"},
+          "split": {"enum": ["development", "holdout_test"]},
+          "question": {"type": "string", "minLength": 1},
+          "company": {"type": "string"},
+          "report_year": {"type": "integer"},
+          "anchor_pdf_page": {"type": ["integer", "string"]},
+          "verified_anchor_chunk_id": {"type": "string"},
+          "source_type": {"const": "Company Annual Report"},
+          "authority_level": {"const": "Company disclosure"},
+          "label_provenance": {"type": "string"},
+          "accepted_evidence_mappings": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["chunk_id", "company", "report_year", "pdf_page", "source_type", "authority_level"],
+              "properties": {
+                "chunk_id": {"type": "string"},
+                "company": {"type": "string"},
+                "report_year": {"type": "integer"},
+                "pdf_page": {"type": ["integer", "string"]},
+                "source_type": {"const": "Company Annual Report"},
+                "authority_level": {"const": "Company disclosure"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

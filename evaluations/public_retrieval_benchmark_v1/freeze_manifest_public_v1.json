@@ -1,0 +1,15 @@
+{
+  "export_id": "pe6201_public_safe_retrieval_benchmark_v1",
+  "algorithm": "SHA-256 over raw file bytes",
+  "purpose": "Freeze the public-safe derivative without changing the original private freeze.",
+  "source_manifest_sha256": "5992123739d3008c2d6b2f44bb16495657be6519714081a830617b851f8f24e8",
+  "files": {
+    "questions_and_accepted_mappings_v1.json": "691c351563dd3fee1fdd5615c27930e34ec1a0c25a07995c69a465372d67996a",
+    "accepted_evidence_mappings_v1.csv": "c29411d60ac768aa2d5f9d6a128a8da70b7c09e10d76274468a2f29ca68f1c0c",
+    "export_integrity_report_v1.json": "0d7f9097aeebe76d11f596f4cc28d24cc4137bc63a63b329bdcee8d464710da8",
+    "questions_and_accepted_mappings.schema.json": "bc1ddd514884787a7fc1cadf63e2c1b13fb4e5fc4f70d22e0237b371862ea80f"
+  },
+  "question_count": 50,
+  "accepted_mapping_count": 58,
+  "original_sources_modified": false
+}

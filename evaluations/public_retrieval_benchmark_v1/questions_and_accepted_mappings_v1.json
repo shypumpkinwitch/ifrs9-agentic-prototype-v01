@@ -1,0 +1,1179 @@
+{
+  "export_id": "pe6201_public_safe_retrieval_benchmark_v1",
+  "classification": "Public-safe metadata export derived exactly from frozen records",
+  "question_count": 50,
+  "split_counts": {
+    "development": 12,
+    "holdout_test": 38
+  },
+  "accepted_mapping_count": 58,
+  "scoring_rule": "Any one listed relevant chunk independently sufficient; no conjunctive multi-chunk labels.",
+  "raw_annual_report_text_included": false,
+  "local_filesystem_paths_included": false,
+  "questions": [
+    {
+      "question_id": "RBC001",
+      "split": "development",
+      "question": "How does RBC distinguish its Held-to-Collect and Held-to-Collect-and-Sell business models?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 152,
+      "verified_anchor_chunk_id": "RBC2025_CLASS_P152_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C03",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "RBC002",
+      "split": "development",
+      "question": "How does RBC use the 30-days-past-due indicator when assessing significant increases in credit risk, and when can an asset return to Stage 1?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C04",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "RBC003",
+      "split": "development",
+      "question": "Which credit risk measure does RBC use to assess whether an instrument has experienced a significant increase in credit risk?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C02",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "RBC2025_ECL_P156_C03",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "RBC2025_ECL_P156_C07",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "GLEN001",
+      "split": "development",
+      "question": "How does Glencore account for commodity purchase and sale contracts that qualify for the own-use exemption?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 160,
+      "verified_anchor_chunk_id": "GLENCORE2025_P160_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P160_C03",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "GLEN002",
+      "split": "development",
+      "question": "Under which named heading does Glencore recognise loss allowances on trade receivables measured at amortised cost?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 161,
+      "verified_anchor_chunk_id": "GLENCORE2025_P161_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P161_C03",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 161,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "GLEN003",
+      "split": "development",
+      "question": "How does Glencore account for inseparable prepaid commodity forward contracts that do not qualify for the own-use exemption?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 186,
+      "verified_anchor_chunk_id": "GLENCORE2025_P186_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P186_C01",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 186,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "GLENCORE2025_P160_C02",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "BAR001",
+      "split": "development",
+      "question": "How does Barrick account for its quoted equity investments under the FVOCI election, compared with warrant investments?",
+      "company": "Barrick",
+      "report_year": 2025,
+      "anchor_pdf_page": 94,
+      "verified_anchor_chunk_id": "BARRICK2025_P94_C06",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "BARRICK2025_P94_C06",
+          "company": "Barrick",
+          "report_year": 2025,
+          "pdf_page": 94,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "BAR002",
+      "split": "development",
+      "question": "What types of exposures or transactions does Barrick identify as fair value hedges and cash flow hedges?",
+      "company": "Barrick",
+      "report_year": 2025,
+      "anchor_pdf_page": 97,
+      "verified_anchor_chunk_id": "BARRICK2025_P97_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "BARRICK2025_P97_C01",
+          "company": "Barrick",
+          "report_year": 2025,
+          "pdf_page": 97,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "BARRICK2025_P119_C04",
+          "company": "Barrick",
+          "report_year": 2025,
+          "pdf_page": 119,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "BAR003",
+      "split": "development",
+      "question": "Where does Barrick recognise the effective and ineffective portions of its 2025 gold collar cash flow hedges, respectively?",
+      "company": "Barrick",
+      "report_year": 2025,
+      "anchor_pdf_page": 119,
+      "verified_anchor_chunk_id": "BARRICK2025_P119_C05",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "BARRICK2025_P119_C05",
+          "company": "Barrick",
+          "report_year": 2025,
+          "pdf_page": 119,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "ALL001",
+      "split": "development",
+      "question": "What borrower-related factors did Allied consider when assessing expected credit losses on its loans receivable?",
+      "company": "Allied_REIT",
+      "report_year": 2025,
+      "anchor_pdf_page": 41,
+      "verified_anchor_chunk_id": "ALLIED_REIT2025_P41_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "ALLIED_REIT2025_P41_C01",
+          "company": "Allied_REIT",
+          "report_year": 2025,
+          "pdf_page": 41,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "ALLIED_REIT2025_P150_C03",
+          "company": "Allied_REIT",
+          "report_year": 2025,
+          "pdf_page": 150,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "ALL002",
+      "split": "development",
+      "question": "How does Allied distinguish between 12-month and lifetime expected credit losses for loans and notes receivable?",
+      "company": "Allied_REIT",
+      "report_year": 2025,
+      "anchor_pdf_page": 132,
+      "verified_anchor_chunk_id": "ALLIED_REIT2025_P132_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "ALLIED_REIT2025_P132_C02",
+          "company": "Allied_REIT",
+          "report_year": 2025,
+          "pdf_page": 132,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "ALL003",
+      "split": "development",
+      "question": "How does Allied apply a provision matrix when estimating expected credit losses on its trade receivables?",
+      "company": "Allied_REIT",
+      "report_year": 2025,
+      "anchor_pdf_page": 132,
+      "verified_anchor_chunk_id": "ALLIED_REIT2025_P132_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Original anchor user-confirmed; alternative labels assistant source-text reviewed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "ALLIED_REIT2025_P132_C01",
+          "company": "Allied_REIT",
+          "report_year": 2025,
+          "pdf_page": 132,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T001",
+      "split": "holdout_test",
+      "question": "Which two conditions does RBC require for a debt instrument to be measured at amortized cost?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 152,
+      "verified_anchor_chunk_id": "RBC2025_CLASS_P152_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C01",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T002",
+      "split": "holdout_test",
+      "question": "What are RBC's conditions for measuring a debt instrument at FVOCI?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 152,
+      "verified_anchor_chunk_id": "RBC2025_CLASS_P152_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C01",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C02",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T003",
+      "split": "holdout_test",
+      "question": "When can RBC elect FVOCI for an equity instrument and at what level is that election made?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 152,
+      "verified_anchor_chunk_id": "RBC2025_CLASS_P152_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C02",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T004",
+      "split": "holdout_test",
+      "question": "Which business-model evidence concerning portfolio sales and managers’ compensation does RBC consider?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 152,
+      "verified_anchor_chunk_id": "RBC2025_CLASS_P152_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C03",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T005",
+      "split": "holdout_test",
+      "question": "What cash-flow components does RBC regard as consistent with a basic lending arrangement in its SPPI assessment?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 152,
+      "verified_anchor_chunk_id": "RBC2025_CLASS_P152_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C04",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T006",
+      "split": "holdout_test",
+      "question": "How does RBC classify an asset whose cash flows have variability inconsistent with basic lending?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 152,
+      "verified_anchor_chunk_id": "RBC2025_CLASS_P152_C05",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_CLASS_P152_C05",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 152,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T007",
+      "split": "holdout_test",
+      "question": "Which exposures does RBC include in its allowance for credit losses and which are excluded?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 155,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P155_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P155_C01",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 155,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T008",
+      "split": "holdout_test",
+      "question": "What distinguishes RBC's Stage 1, Stage 2 and Stage 3 loss allowance horizons?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 155,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P155_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P155_C02",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 155,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T009",
+      "split": "holdout_test",
+      "question": "How does RBC estimate credit losses on loan commitments and financial guarantees?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 155,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P155_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P155_C03",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 155,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T010",
+      "split": "holdout_test",
+      "question": "What three model inputs primarily determine RBC's expected credit losses?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 155,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P155_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P155_C04",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 155,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "RBC2025_ECL_P155_C05",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 155,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T011",
+      "split": "holdout_test",
+      "question": "When does RBC use simplified ECL measurement approaches for some portfolios?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 155,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P155_C05",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P155_C05",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 155,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T012",
+      "split": "holdout_test",
+      "question": "Which products does RBC identify as within the exemption that can make expected life exceed remaining contractual life?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C02",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T013",
+      "split": "holdout_test",
+      "question": "For RBC’s wholesale portfolio, what additional borrower-rating condition accompanies its lifetime-PD thresholds for significant credit-risk increases?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C03",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T014",
+      "split": "holdout_test",
+      "question": "How does RBC define low credit risk when applying its presumption that credit risk has not significantly increased?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C04",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T015",
+      "split": "holdout_test",
+      "question": "Which macroeconomic variables does RBC identify for its ECL models?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C06",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C06",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T016",
+      "split": "holdout_test",
+      "question": "How many scenarios does RBC use at minimum for Stage 1 and Stage 2 ECL and how are its cases formed?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C06",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C06",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T017",
+      "split": "holdout_test",
+      "question": "How frequently does RBC update scenario weights and what factors inform them?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 156,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P156_C07",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P156_C07",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 156,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T018",
+      "split": "holdout_test",
+      "question": "What evidence does RBC list as signs of a credit-impaired asset?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 157,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P157_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P157_C01",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 157,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T019",
+      "split": "holdout_test",
+      "question": "How does RBC measure ECL for an individually credit-impaired asset?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 157,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P157_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P157_C02",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 157,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T020",
+      "split": "holdout_test",
+      "question": "When does RBC write off credit cards and personal loans respectively?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 157,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P157_C07",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P157_C07",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 157,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T021",
+      "split": "holdout_test",
+      "question": "How does RBC generally treat modifications made for credit reasons compared with other reasons?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 157,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P157_C08",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P157_C08",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 157,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T022",
+      "split": "holdout_test",
+      "question": "How does RBC recalculate carrying amount when modification does not cause derecognition?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 158,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P158_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P158_C01",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 158,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T023",
+      "split": "holdout_test",
+      "question": "What stage does RBC generally assign a new asset following derecognition and renegotiation?",
+      "company": "Royal Bank of Canada",
+      "report_year": 2025,
+      "anchor_pdf_page": 158,
+      "verified_anchor_chunk_id": "RBC2025_ECL_P158_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "RBC2025_ECL_P158_C02",
+          "company": "Royal Bank of Canada",
+          "report_year": 2025,
+          "pdf_page": 158,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T024",
+      "split": "holdout_test",
+      "question": "How does Glencore classify separable cash-settled physical advances and prepayments?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 160,
+      "verified_anchor_chunk_id": "GLENCORE2025_P160_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P160_C02",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T025",
+      "split": "holdout_test",
+      "question": "What indicators does Glencore use to determine a commodity contract fails the own-use exemption?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 160,
+      "verified_anchor_chunk_id": "GLENCORE2025_P160_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P160_C03",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        },
+        {
+          "chunk_id": "GLENCORE2025_P160_C04",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T026",
+      "split": "holdout_test",
+      "question": "How does Glencore classify financial assets with non-SPPI cash-flow features?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 160,
+      "verified_anchor_chunk_id": "GLENCORE2025_P160_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P160_C04",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T027",
+      "split": "holdout_test",
+      "question": "How does Glencore subsequently measure financial liabilities with derivative features versus other liabilities?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 160,
+      "verified_anchor_chunk_id": "GLENCORE2025_P160_C05",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P160_C05",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T028",
+      "split": "holdout_test",
+      "question": "What ECL approach and information does Glencore use for trade receivables at amortised cost?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 160,
+      "verified_anchor_chunk_id": "GLENCORE2025_P160_C06",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P160_C06",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 160,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T029",
+      "split": "holdout_test",
+      "question": "What factors and overdue presumption does Glencore use to assess significant credit-risk increases for other amortised-cost assets?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 161,
+      "verified_anchor_chunk_id": "GLENCORE2025_P161_C01",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P161_C01",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 161,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T030",
+      "split": "holdout_test",
+      "question": "When does Glencore treat a financial asset as in default and when may it rebut the overdue criterion?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 161,
+      "verified_anchor_chunk_id": "GLENCORE2025_P161_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P161_C02",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 161,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T031",
+      "split": "holdout_test",
+      "question": "When does Glencore write off a financial asset?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 161,
+      "verified_anchor_chunk_id": "GLENCORE2025_P161_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P161_C02",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 161,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T032",
+      "split": "holdout_test",
+      "question": "Where does Glencore present ECL on financial advances and loans not settled by physical delivery?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 161,
+      "verified_anchor_chunk_id": "GLENCORE2025_P161_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P161_C02",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 161,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T033",
+      "split": "holdout_test",
+      "question": "What does Glencore recognize when it retains substantially all risks and rewards after transferring an asset?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 161,
+      "verified_anchor_chunk_id": "GLENCORE2025_P161_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P161_C04",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 161,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T034",
+      "split": "holdout_test",
+      "question": "How does Glencore account for cumulative OCI when an FVTOCI equity investment is derecognised?",
+      "company": "Glencore",
+      "report_year": 2025,
+      "anchor_pdf_page": 161,
+      "verified_anchor_chunk_id": "GLENCORE2025_P161_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "GLENCORE2025_P161_C04",
+          "company": "Glencore",
+          "report_year": 2025,
+          "pdf_page": 161,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T035",
+      "split": "holdout_test",
+      "question": "How does Barrick treat cash flow hedge gains when a forecast transaction creates a non-financial asset or liability?",
+      "company": "Barrick",
+      "report_year": 2025,
+      "anchor_pdf_page": 97,
+      "verified_anchor_chunk_id": "BARRICK2025_P97_C02",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "BARRICK2025_P97_C02",
+          "company": "Barrick",
+          "report_year": 2025,
+          "pdf_page": 97,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T036",
+      "split": "holdout_test",
+      "question": "What happens to Barrick's deferred hedge gain when the forecast transaction is no longer expected?",
+      "company": "Barrick",
+      "report_year": 2025,
+      "anchor_pdf_page": 97,
+      "verified_anchor_chunk_id": "BARRICK2025_P97_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "BARRICK2025_P97_C03",
+          "company": "Barrick",
+          "report_year": 2025,
+          "pdf_page": 97,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T037",
+      "split": "holdout_test",
+      "question": "How does Barrick account for derivatives that do not qualify as fair value or cash flow hedges?",
+      "company": "Barrick",
+      "report_year": 2025,
+      "anchor_pdf_page": 97,
+      "verified_anchor_chunk_id": "BARRICK2025_P97_C03",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "BARRICK2025_P97_C03",
+          "company": "Barrick",
+          "report_year": 2025,
+          "pdf_page": 97,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    },
+    {
+      "question_id": "T038",
+      "split": "holdout_test",
+      "question": "When does Allied write off user trade receivables, loans and notes receivable?",
+      "company": "Allied_REIT",
+      "report_year": 2025,
+      "anchor_pdf_page": 132,
+      "verified_anchor_chunk_id": "ALLIED_REIT2025_P132_C04",
+      "source_type": "Company Annual Report",
+      "authority_level": "Company disclosure",
+      "label_provenance": "Assistant source-text reviewed; not user-confirmed",
+      "accepted_evidence_mappings": [
+        {
+          "chunk_id": "ALLIED_REIT2025_P132_C04",
+          "company": "Allied_REIT",
+          "report_year": 2025,
+          "pdf_page": 132,
+          "source_type": "Company Annual Report",
+          "authority_level": "Company disclosure"
+        }
+      ]
+    }
+  ]
+}

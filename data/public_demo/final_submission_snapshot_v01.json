@@ -1,0 +1,128 @@
+{
+  "classification": "Public-safe synthesis of previously recorded project evidence; no live call is made from this snapshot",
+  "flagship_scenario": "A property company has made secured development and project loans, and the auditor wants relevant ECL topics and comparable public disclosure examples.",
+  "research_needs": [
+    "Property-development business model and development-partner financing",
+    "Loan or note receivable terms, collateral, and counterparty condition",
+    "Construction or leasing status relevant to credit risk",
+    "ECL or significant-increase-in-credit-risk disclosure",
+    "Issuer-specific reporting-framework evidence",
+    "Authoritative IFRS 9 guidance and professional interpretation"
+  ],
+  "recorded_candidates": [
+    {
+      "company": "Allied_REIT",
+      "lane": "local private corpus",
+      "source_gate": "Gate 4.6 with separate Gate 5.1 framework check",
+      "framework_status": "PENDING_INSUFFICIENT_EVIDENCE",
+      "framework_basis": "Available frozen extracts contain generic IFRS references but no exact issuer basis-of-preparation or auditor-report evidence establishing IFRS as issued by the IASB.",
+      "comparability_rating": "strong",
+      "weighted_score": 0.96,
+      "decision": "retain for auditor review",
+      "rationale": "Property-development business, development-loan exposure, borrower condition, collateral, construction/leasing, and ECL features aligned in the recorded local run.",
+      "evidence_locators": [
+        {"chunk_id": "ALLIED_REIT2025_P150_C01", "pdf_page": 150},
+        {"chunk_id": "ALLIED_REIT2025_P41_C02", "pdf_page": 41},
+        {"chunk_id": "ALLIED_REIT2025_P132_C01", "pdf_page": 132}
+      ],
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "company": "Logistic Properties of the Americas",
+      "lane": "recorded external SEC discovery",
+      "source_gate": "Gate 5.1 single live run plus offline integrity review",
+      "framework_status": "IFRS_AS_ISSUED_BY_IASB_VERIFIED",
+      "framework_basis": "Issuer-specific Form 20-F basis/auditor phrase pattern; the form itself was not treated as framework evidence.",
+      "comparability_rating": "partial",
+      "weighted_score": 0.89,
+      "decision": "retain for auditor review",
+      "rationale": "Verified IASB-IFRS property issuer with ECL, receivable, collateral, counterparty, and construction/leasing features; development-partner financing was not established.",
+      "cik": "0001997711",
+      "form": "20-F",
+      "accession_number": "0001997711-26-000045",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1997711/000199771126000045/lpa-20251231.htm",
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "company": "SHINHAN FINANCIAL GROUP CO LTD",
+      "lane": "recorded external SEC discovery",
+      "source_gate": "Gate 5.1 offline post-live integrity review",
+      "framework_status": "IFRS_AS_ISSUED_BY_IASB_VERIFIED",
+      "framework_basis": "Issuer-specific filing evidence.",
+      "comparability_rating": "insufficient",
+      "weighted_score": null,
+      "decision": "rejected_business_before_deep_analysis",
+      "rationale": "SEC SIC 6021 identifies a financial institution. Scattered property-development phrases in a bank filing do not establish business-model comparability.",
+      "cik": "0001263043",
+      "form": "20-F",
+      "accession_number": "0001193125-26-168235",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1263043/000119312526168235/d75079d20f.htm",
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "company": "Inter & Co, Inc.",
+      "lane": "recorded external SEC discovery",
+      "source_gate": "Gate 5.1 single live run",
+      "framework_status": "IFRS_AS_ISSUED_BY_IASB_VERIFIED",
+      "framework_basis": "Issuer-specific filing evidence.",
+      "comparability_rating": "insufficient",
+      "weighted_score": null,
+      "decision": "rejected_business_before_deep_analysis",
+      "rationale": "SEC SIC 6029 identifies a financial institution rather than a property-development issuer.",
+      "cik": "0001864163",
+      "form": "20-F",
+      "accession_number": "0002070979-26-000185",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1864163/000207097926000185/intr-20251231.htm",
+      "authority_class": "COMPANY_DISCLOSURE"
+    }
+  ],
+  "authority_status": [
+    {
+      "authority_class": "IFRS_FOUNDATION_OFFICIAL",
+      "status": "missing_from_indexed_research_corpus",
+      "use": "Cannot support a requirements conclusion in this prototype"
+    },
+    {
+      "authority_class": "PROFESSIONAL_COMMENTARY",
+      "status": "missing_from_indexed_research_corpus",
+      "use": "No professional interpretation is claimed"
+    },
+    {
+      "authority_class": "COMPANY_DISCLOSURE",
+      "status": "available",
+      "use": "Comparable disclosure research only; not authoritative IFRS guidance"
+    }
+  ],
+  "gate51_integrity_caveat": {
+    "live_issue": "The single live output initially over-rated Shinhan because phrase aggregation across a large bank filing confused scattered terms with the issuer business model.",
+    "correction": "SIC-based business filtering and a partial-rating cap for generic-loan-only property evidence were added and regression-tested offline.",
+    "second_live_run_performed": false,
+    "live_checkpoint_overwritten": false
+  },
+  "historical_retrieval": {
+    "holdout_n": 38,
+    "bm25_hit_at_1": 0.711,
+    "bm25_hit_at_5": 0.974,
+    "semantic_hit_at_1": 0.342,
+    "semantic_hit_at_5": 0.737,
+    "classification": "Historical frozen-corpus retrieval evaluation; separate from agent-workflow evaluations"
+  },
+  "model_cost_summary": [
+    {"stage": "Generation pilot", "model": "openai/gpt-4o-mini", "input_tokens": 311, "output_tokens": 149, "provider_reported_api_cost_usd": 0.00013605, "status": "historical reported result; source prompts and outputs unavailable for reproduction"},
+    {"stage": "Gate 4.5 live planner", "model": "openai/gpt-4o-mini", "input_tokens": 18664, "output_tokens": 1079, "provider_reported_api_cost_usd": 0.003447, "status": "partial failure preserved"},
+    {"stage": "Gate 4.6 live planner", "model": "openai/gpt-4o-mini", "input_tokens": 11987, "output_tokens": 1342, "provider_reported_api_cost_usd": 0.00251685, "status": "three controller-governed cases passed"},
+    {"stage": "Gate 5 live discovery", "model": "openai/gpt-4o-mini", "input_tokens": 39538, "output_tokens": 1284, "provider_reported_api_cost_usd": 0.0067011, "status": "single bounded live SEC run"},
+    {"stage": "Gate 5.1 live discovery", "model": "openai/gpt-4o-mini", "input_tokens": 13345, "output_tokens": 491, "provider_reported_api_cost_usd": 0.00229635, "status": "single bounded live SEC run; post-live hardening was offline only"}
+  ],
+  "gate5_to_gate51_input_token_reduction": {
+    "tokens": 26193,
+    "percent": 66.25
+  },
+  "final_handoff": {
+    "status": "research_handoff_only",
+    "authoritative_ifrs_guidance_missing": true,
+    "professional_interpretation_missing": true,
+    "human_auditor_review_required": true,
+    "final_accounting_or_audit_judgment_provided": false
+  }
+}

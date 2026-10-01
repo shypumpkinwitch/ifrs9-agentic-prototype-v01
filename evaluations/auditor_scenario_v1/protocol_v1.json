@@ -1,0 +1,39 @@
+{
+  "evaluation_id": "auditor_scenario_evaluation_v1",
+  "classification": "Separate authority-first auditor workflow evaluation; never pool with retrieval metrics",
+  "case_count": 8,
+  "dimensions": [
+    "scope_topic_routing",
+    "official_authority",
+    "authority_separation",
+    "comparator_behaviour",
+    "framework_and_comparability",
+    "safe_handoff"
+  ],
+  "manual_statuses": [
+    "PASS",
+    "FAIL",
+    "N/A"
+  ],
+  "pending_manual_review": "Use null before manual review; null is not N/A and must not enter pass-rate denominators.",
+  "scenario_pass_rule": "Every applicable dimension must be PASS. At least one dimension must be applicable. N/A requires a written reason.",
+  "dimension_pass_rate": "PASS / (PASS + FAIL); exclude N/A. Report counts and use null if the denominator is zero or review is incomplete.",
+  "aggregation": "No weighted aggregate score. Report per-case dimensions, per-dimension rates, and scenario passes out of eight after all reviews are complete.",
+  "safe_abstention": "A supported coverage gap or scope abstention may pass the relevant dimension; unsupported requirements or comparator claims fail it.",
+  "execution_stage": "Frozen set, schema/manifest validation, deterministic/mock validation only. No live OpenRouter or SEC calls authorised.",
+  "evidence_boundary": "Raw annual-report, filing and IFRS source text stays local. Store identifiers, structured authority cards, sanitized traces and non-verbatim metadata only.",
+  "retrieval_benchmark": {
+    "questions": 50,
+    "development": 12,
+    "frozen_holdout": 38,
+    "metrics_recomputed": false
+  },
+  "review_instructions": {
+    "scope_topic_routing": "Compare observed scope, exposure and topics with the frozen case; check scope rejection for S08.",
+    "official_authority": "Review applicable official cards and explicit coverage gaps; reject invented paragraphs and unsupported treatment conclusions.",
+    "authority_separation": "Check that official authority, supporting materials and company practice remain distinguishable.",
+    "comparator_behaviour": "Review scenario-specific evidence and any supported abstention; shared ECL wording alone is insufficient.",
+    "framework_and_comparability": "Review issuer-specific framework evidence, pending status and business/instrument dimensions. Framework compatibility alone is insufficient.",
+    "safe_handoff": "Review explicit unresolved gaps, stop/scope explanation, privacy and auditor review; no final audit judgement."
+  }
+}

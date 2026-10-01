@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Auditor Scenario Evaluation v1.1 frozen case set",
+  "type": "array",
+  "minItems": 8,
+  "maxItems": 8,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "case_id",
+      "scenario",
+      "expected_scope",
+      "expected_research_topics",
+      "expected_authority_behaviour",
+      "expected_comparator_behaviour",
+      "expected_stop_or_handoff_behaviour",
+      "notes"
+    ],
+    "properties": {
+      "case_id": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^S0[1-8]$"
+      },
+      "scenario": {
+        "type": "string",
+        "minLength": 1
+      },
+      "expected_scope": {
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "IFRS9_IMPAIRMENT_RESEARCH",
+          "IFRS9_IMPAIRMENT_AUTHORITY_BOUNDARY",
+          "OUT_OF_SCOPE_IFRS9_IMPAIRMENT"
+        ]
+      },
+      "expected_research_topics": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "expected_authority_behaviour": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "expected_comparator_behaviour": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "expected_stop_or_handoff_behaviour": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "notes": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

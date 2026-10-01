@@ -1,0 +1,28 @@
+[
+  {
+    "chunk_id": "PUBLIC-DEMO-NOTE-001",
+    "source_id": "PROJECT-DEMO-NOTE-001",
+    "source_type": "self_authored_test_fixture",
+    "authority_level": "PROJECT_EDUCATIONAL_NOTE",
+    "company": "N/A — synthetic test fixture, not an issuer",
+    "year": 2026,
+    "pdf_page": null,
+    "topic": "expected credit losses",
+    "text": "This self-authored fixture tests retrieval for a property-company scenario involving secured development or project loans and expected credit losses. A bank portfolio policy should not be treated as economically comparable merely because it mentions expected credit losses. This is workflow test material, not evidence about any issuer and not IFRS guidance.",
+    "source_url": "data/public_demo/disclosures_v01.json",
+    "redistributable": true
+  },
+  {
+    "chunk_id": "PUBLIC-DEMO-NOTE-002",
+    "source_id": "PROJECT-DEMO-NOTE-002",
+    "source_type": "self_authored_test_fixture",
+    "authority_level": "PROJECT_EDUCATIONAL_NOTE",
+    "company": "N/A — synthetic test fixture, not an issuer",
+    "year": 2026,
+    "pdf_page": null,
+    "topic": "authority handling",
+    "text": "This self-authored fixture tests the authority boundary. Company disclosures can describe what an issuer reported, but they cannot by themselves establish a general IFRS requirement. Official guidance must remain visibly separate and unavailable text must not be invented.",
+    "source_url": "data/public_demo/disclosures_v01.json",
+    "redistributable": true
+  }
+]

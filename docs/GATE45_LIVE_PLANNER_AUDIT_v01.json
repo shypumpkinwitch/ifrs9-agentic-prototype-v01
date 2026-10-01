@@ -1,0 +1,388 @@
+{
+  "classification": "Gate 4.5 live planner development validation; separate from the frozen holdout and deterministic Gate 4 tests",
+  "recorded_at": "2026-09-30T14:28:36+08:00",
+  "planner_model": "openai/gpt-4o-mini",
+  "counted_live_cases": 3,
+  "overall_acceptance": "partial_failure",
+  "frozen_holdout_used_or_tuned": false,
+  "external_web_discovery_performed": false,
+  "api_key_saved": false,
+  "authorization_header_saved": false,
+  "raw_annual_report_text_sent": false,
+  "copyrighted_source_text_saved": false,
+  "outbound_request_categories": [
+    "audit scenario",
+    "tool contracts",
+    "structured metadata",
+    "retrieval ranks and scores",
+    "authority labels",
+    "locally derived non-verbatim features",
+    "current loop state"
+  ],
+  "preflight_note": "One sandboxed network attempt was rejected before any live case was counted. The same three-case validation then ran with approved network access.",
+  "aggregate_usage": {
+    "input_tokens": 18664,
+    "output_tokens": 1079,
+    "provider_reported_cost_available_for_every_call": true,
+    "provider_reported_cost_usd": 0.003447
+  },
+  "cases": [
+    {
+      "case_id": "G45-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+      "acceptance": "failed_expected_research_direction",
+      "planner_mode": "model-planned bounded agent",
+      "live_model_completed_without_fallback": true,
+      "step_count": 5,
+      "step_limit": 6,
+      "executed_tool_sequence": [
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "request_more_evidence",
+        "check_authority",
+        "stop_and_summarise"
+      ],
+      "planner_response_sequence": [
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "request_more_evidence",
+        "check_authority",
+        "request_more_evidence"
+      ],
+      "stop_reason": "Controller policy blocked the planner action.",
+      "candidate_companies": [
+        {
+          "company": "Allied_REIT",
+          "framework_status": "pending",
+          "evidence_status": "indexed_and_inspected"
+        },
+        {
+          "company": "Barrick",
+          "framework_status": "pending",
+          "evidence_status": "indexed_and_inspected"
+        }
+      ],
+      "comparability_assessment": [],
+      "acceptance_observation": "Allied_REIT was retrieved and inspected, while RBC was not in the five returned hits. The model did not call assess_comparability, so it did not establish the required Allied-over-RBC preference.",
+      "authority_warnings": {
+        "present_authority_classes": [
+          "COMPANY_DISCLOSURE"
+        ],
+        "missing_authority_classes": [
+          "IFRS_FOUNDATION_OFFICIAL",
+          "PROFESSIONAL_COMMENTARY"
+        ],
+        "company_disclosure_can_establish_general_ifrs_requirements": false,
+        "required_message": "Official IFRS 9 guidance not available in this prototype"
+      },
+      "guardrails_triggered": [
+        "Duplicate tool call with identical arguments blocked."
+      ],
+      "usage": {
+        "input_tokens": 7591,
+        "output_tokens": 404,
+        "provider_reported_cost_usd": 0.00138105
+      },
+      "materially_differs_from_deterministic_fallback": true,
+      "deterministic_fallback_outcome": "Allied_REIT strong and selected; RBC partial; Barrick weak.",
+      "sanitized_planner_exchanges": [
+        {
+          "request_number": 1,
+          "remaining_steps": 6,
+          "completed_tools": [],
+          "response_action": "search_private_corpus",
+          "reason_summary": "Gather relevant disclosures for ECL and development loans in the property/REIT scenario.",
+          "input_tokens": 605,
+          "output_tokens": 79,
+          "provider_reported_cost_usd": 0.00013815
+        },
+        {
+          "request_number": 2,
+          "remaining_steps": 5,
+          "completed_tools": [
+            "search_private_corpus"
+          ],
+          "response_action": "inspect_candidate_metadata",
+          "response_companies": [
+            "Allied_REIT",
+            "Barrick"
+          ],
+          "reason_summary": "Inspect metadata for the retrieved ECL and development-loan candidates.",
+          "input_tokens": 1351,
+          "output_tokens": 69,
+          "provider_reported_cost_usd": 0.00024405
+        },
+        {
+          "request_number": 3,
+          "remaining_steps": 4,
+          "completed_tools": [
+            "search_private_corpus",
+            "inspect_candidate_metadata"
+          ],
+          "response_action": "request_more_evidence",
+          "response_evidence_types": [
+            "authoritative IFRS guidance",
+            "IFRS 9 ECL disclosures"
+          ],
+          "reason_summary": "Request authoritative guidance because company disclosures are insufficient authority.",
+          "input_tokens": 1802,
+          "output_tokens": 102,
+          "provider_reported_cost_usd": 0.0003315
+        },
+        {
+          "request_number": 4,
+          "remaining_steps": 3,
+          "completed_tools": [
+            "search_private_corpus",
+            "inspect_candidate_metadata",
+            "request_more_evidence"
+          ],
+          "response_action": "check_authority",
+          "reason_summary": "Verify whether authoritative IFRS guidance is present.",
+          "input_tokens": 1873,
+          "output_tokens": 47,
+          "provider_reported_cost_usd": 0.00030915
+        },
+        {
+          "request_number": 5,
+          "remaining_steps": 2,
+          "completed_tools": [
+            "search_private_corpus",
+            "inspect_candidate_metadata",
+            "request_more_evidence",
+            "check_authority"
+          ],
+          "response_action": "request_more_evidence",
+          "response_evidence_types": [
+            "authoritative IFRS guidance",
+            "IFRS 9 ECL disclosures"
+          ],
+          "reason_summary": "Repeated the prior evidence request; the controller blocked it.",
+          "input_tokens": 1960,
+          "output_tokens": 107,
+          "provider_reported_cost_usd": 0.0003582
+        }
+      ]
+    },
+    {
+      "case_id": "G45-LIVE-GENERAL-BANKING-ECL",
+      "acceptance": "failed_expected_research_direction",
+      "planner_mode": "model-planned bounded agent",
+      "live_model_completed_without_fallback": true,
+      "step_count": 5,
+      "step_limit": 6,
+      "executed_tool_sequence": [
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "request_more_evidence",
+        "check_authority",
+        "stop_and_summarise"
+      ],
+      "planner_response_sequence": [
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "request_more_evidence",
+        "check_authority",
+        "request_more_evidence"
+      ],
+      "stop_reason": "Controller policy blocked the planner action.",
+      "candidate_companies": [
+        {
+          "company": "Royal Bank of Canada",
+          "framework_status": "pending",
+          "evidence_status": "indexed_and_inspected"
+        },
+        {
+          "company": "Allied_REIT",
+          "framework_status": "pending",
+          "evidence_status": "indexed_and_inspected"
+        }
+      ],
+      "comparability_assessment": [],
+      "acceptance_observation": "RBC was the first retrieved and inspected company, but the model did not call assess_comparability and therefore did not complete the required material-relevance assessment.",
+      "authority_warnings": {
+        "present_authority_classes": [
+          "COMPANY_DISCLOSURE"
+        ],
+        "missing_authority_classes": [
+          "IFRS_FOUNDATION_OFFICIAL",
+          "PROFESSIONAL_COMMENTARY"
+        ],
+        "company_disclosure_can_establish_general_ifrs_requirements": false,
+        "required_message": "Official IFRS 9 guidance not available in this prototype"
+      },
+      "guardrails_triggered": [
+        "Duplicate tool call with identical arguments blocked."
+      ],
+      "usage": {
+        "input_tokens": 7866,
+        "output_tokens": 433,
+        "provider_reported_cost_usd": 0.0014397
+      },
+      "materially_differs_from_deterministic_fallback": true,
+      "deterministic_fallback_outcome": "Royal Bank of Canada strong and selected; Allied_REIT weak.",
+      "sanitized_planner_exchanges": [
+        {
+          "request_number": 1,
+          "remaining_steps": 6,
+          "completed_tools": [],
+          "response_action": "search_private_corpus",
+          "reason_summary": "Find banking ECL portfolio disclosures for the specified period.",
+          "input_tokens": 572,
+          "output_tokens": 114,
+          "provider_reported_cost_usd": 0.0001542
+        },
+        {
+          "request_number": 2,
+          "remaining_steps": 5,
+          "completed_tools": [
+            "search_private_corpus"
+          ],
+          "response_action": "inspect_candidate_metadata",
+          "response_companies": [
+            "Royal Bank of Canada",
+            "Allied_REIT"
+          ],
+          "reason_summary": "Inspect retrieved company metadata for ECL and loan-portfolio methodology.",
+          "input_tokens": 1406,
+          "output_tokens": 79,
+          "provider_reported_cost_usd": 0.0002583
+        },
+        {
+          "request_number": 3,
+          "remaining_steps": 4,
+          "completed_tools": [
+            "search_private_corpus",
+            "inspect_candidate_metadata"
+          ],
+          "response_action": "request_more_evidence",
+          "response_evidence_types": [
+            "authoritative IFRS guidance"
+          ],
+          "reason_summary": "Request official evidence because company disclosures are not authoritative guidance.",
+          "input_tokens": 1885,
+          "output_tokens": 74,
+          "provider_reported_cost_usd": 0.00032715
+        },
+        {
+          "request_number": 4,
+          "remaining_steps": 3,
+          "completed_tools": [
+            "search_private_corpus",
+            "inspect_candidate_metadata",
+            "request_more_evidence"
+          ],
+          "response_action": "check_authority",
+          "reason_summary": "Verify the authority level of the available evidence.",
+          "input_tokens": 1958,
+          "output_tokens": 58,
+          "provider_reported_cost_usd": 0.0003285
+        },
+        {
+          "request_number": 5,
+          "remaining_steps": 2,
+          "completed_tools": [
+            "search_private_corpus",
+            "inspect_candidate_metadata",
+            "request_more_evidence",
+            "check_authority"
+          ],
+          "response_action": "request_more_evidence",
+          "response_evidence_types": [
+            "authoritative IFRS guidance"
+          ],
+          "reason_summary": "Repeated the prior evidence request; the controller blocked it.",
+          "input_tokens": 2045,
+          "output_tokens": 108,
+          "provider_reported_cost_usd": 0.00037155
+        }
+      ]
+    },
+    {
+      "case_id": "G45-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+      "acceptance": "passed_core_authority_behavior_with_guardrail_intervention",
+      "planner_mode": "model-planned bounded agent",
+      "live_model_completed_without_fallback": true,
+      "step_count": 3,
+      "step_limit": 6,
+      "executed_tool_sequence": [
+        "search_private_corpus",
+        "request_more_evidence",
+        "stop_and_summarise"
+      ],
+      "planner_response_sequence": [
+        "search_private_corpus",
+        "request_more_evidence",
+        "request_more_evidence"
+      ],
+      "stop_reason": "Controller policy blocked the planner action.",
+      "candidate_companies": [],
+      "comparability_assessment": [],
+      "acceptance_observation": "The model explicitly recognised that company disclosures were not authoritative, requested official IFRS guidance and IASB publications, and did not fabricate a requirement. It then repeated the evidence request, which the controller blocked.",
+      "authority_warnings": {
+        "check_authority_executed": false,
+        "handoff_authority_boundary": "No local company disclosure was selected; authoritative IFRS guidance is also unavailable.",
+        "missing_evidence": [
+          "IFRS_FOUNDATION_OFFICIAL",
+          "PROFESSIONAL_COMMENTARY",
+          "official IFRS guidance",
+          "IASB publications"
+        ]
+      },
+      "guardrails_triggered": [
+        "Duplicate tool call with identical arguments blocked."
+      ],
+      "usage": {
+        "input_tokens": 3207,
+        "output_tokens": 242,
+        "provider_reported_cost_usd": 0.00062625
+      },
+      "materially_differs_from_deterministic_fallback": true,
+      "deterministic_fallback_outcome": "Selected company-disclosure comparators instead of explicitly requesting official evidence.",
+      "sanitized_planner_exchanges": [
+        {
+          "request_number": 1,
+          "remaining_steps": 6,
+          "completed_tools": [],
+          "response_action": "search_private_corpus",
+          "reason_summary": "Search for authoritative IFRS 9 ECL material without treating company disclosure as authority.",
+          "input_tokens": 596,
+          "output_tokens": 82,
+          "provider_reported_cost_usd": 0.0001386
+        },
+        {
+          "request_number": 2,
+          "remaining_steps": 5,
+          "completed_tools": [
+            "search_private_corpus"
+          ],
+          "response_action": "request_more_evidence",
+          "response_evidence_types": [
+            "official IFRS guidance",
+            "IASB publications"
+          ],
+          "reason_summary": "The corpus contains company disclosures, which are not authoritative IFRS guidance.",
+          "input_tokens": 1274,
+          "output_tokens": 64,
+          "provider_reported_cost_usd": 0.0002295
+        },
+        {
+          "request_number": 3,
+          "remaining_steps": 4,
+          "completed_tools": [
+            "search_private_corpus",
+            "request_more_evidence"
+          ],
+          "response_action": "request_more_evidence",
+          "response_evidence_types": [
+            "official IFRS guidance",
+            "IASB publications"
+          ],
+          "reason_summary": "Repeated the prior evidence request; the controller blocked it.",
+          "input_tokens": 1337,
+          "output_tokens": 96,
+          "provider_reported_cost_usd": 0.00025815
+        }
+      ]
+    }
+  ]
+}

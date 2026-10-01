@@ -1,0 +1,182 @@
+{
+  "classification": "Gate 5.1 IFRS-targeted comparable-company discovery; separate from Gate 5, every Gate 4 evaluation, and the frozen retrieval holdout",
+  "recorded_at": "2026-09-30T21:28:11+08:00",
+  "planner_model": "openai/gpt-4o-mini",
+  "planner_mode": "model-planned bounded agent",
+  "live_model_completed_without_fallback": true,
+  "single_live_run": true,
+  "required_reporting_framework": "IFRS",
+  "scenario_named_candidate": false,
+  "limits": {
+    "candidate_limit": 3,
+    "candidates_discovered": 3,
+    "agent_tool_step_limit": 10,
+    "agent_tool_steps_used": 10,
+    "filings_downloaded_per_candidate": 1,
+    "maximum_filings_per_accepted_candidate": 2,
+    "external_request_count": 8,
+    "duplicate_requests": 0,
+    "broad_crawling_performed": false
+  },
+  "candidate_results": [
+    {
+      "company": "SHINHAN FINANCIAL GROUP CO LTD",
+      "cik": "0001263043",
+      "sic": "6021",
+      "discovery_reason": "SEC 20-F full-text result for property-development, lending, and ECL terms; 20-F was only a search constraint.",
+      "filing_form": "20-F",
+      "accession_number": "0001193125-26-168235",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1263043/000119312526168235/d75079d20f.htm",
+      "framework_status": "IFRS_AS_ISSUED_BY_IASB_VERIFIED",
+      "framework_verification_evidence_type": "issuer-specific filing basis/auditor phrase pattern",
+      "framework_pattern_id": "iasb_ifrs_exact",
+      "framework_evidence_window_sha256": "a30736cd4a67780c26479fa1d0732161d26165d2f0a6952e42f86ef19812aab1",
+      "live_run_comparability": {
+        "rating": "strong",
+        "weighted_score": 1.0,
+        "decision": "accepted",
+        "status": "preserved live result; superseded by the post-live controller integrity review"
+      },
+      "final_gate51_decision": "rejected_business_before_deep_analysis",
+      "final_gate51_rating": "insufficient",
+      "rejection_reason": "SEC SIC 6021 identifies a financial institution rather than a property-development issuer. Scattered property-development phrases in a bank filing do not establish business-model comparability."
+    },
+    {
+      "company": "Inter & Co, Inc.",
+      "cik": "0001864163",
+      "sic": "6029",
+      "discovery_reason": "SEC 20-F full-text result for property-development, lending, and ECL terms; 20-F was only a search constraint.",
+      "filing_form": "20-F",
+      "accession_number": "0002070979-26-000185",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1864163/000207097926000185/intr-20251231.htm",
+      "framework_status": "IFRS_AS_ISSUED_BY_IASB_VERIFIED",
+      "framework_verification_evidence_type": "issuer-specific filing basis/auditor phrase pattern",
+      "framework_pattern_id": "iasb_ifrs_exact",
+      "framework_evidence_window_sha256": "a30736cd4a67780c26479fa1d0732161d26165d2f0a6952e42f86ef19812aab1",
+      "live_run_comparability": {
+        "rating": "weak",
+        "weighted_score": 0.67,
+        "decision": "rejected"
+      },
+      "final_gate51_decision": "rejected_business_before_deep_analysis",
+      "final_gate51_rating": "insufficient",
+      "rejection_reason": "SEC SIC 6029 identifies a financial institution rather than a property-development issuer."
+    },
+    {
+      "company": "Logistic Properties of the Americas",
+      "cik": "0001997711",
+      "sic": "6500",
+      "discovery_reason": "SEC 20-F full-text result for property-development, lending, and ECL terms; 20-F was only a search constraint.",
+      "filing_form": "20-F",
+      "accession_number": "0001997711-26-000045",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1997711/000199771126000045/lpa-20251231.htm",
+      "framework_status": "IFRS_AS_ISSUED_BY_IASB_VERIFIED",
+      "framework_verification_evidence_type": "issuer-specific filing basis/auditor phrase pattern",
+      "framework_pattern_id": "iasb_ifrs_exact",
+      "framework_evidence_window_sha256": "bcc0279a634b49e6b6f2f365db1c0b170aa95305e7a486ae0a9caf3cb5216abb",
+      "locally_derived_feature_counts": {
+        "property_development_business": 2,
+        "development_partner_financing": 0,
+        "loan_or_note_receivable": 64,
+        "collateral_or_security": 22,
+        "borrower_or_counterparty_condition": 28,
+        "construction_or_leasing_status": 119,
+        "ecl_or_sicr": 19
+      },
+      "weighted_score": 0.89,
+      "final_gate51_decision": "accepted",
+      "final_gate51_rating": "partial",
+      "comparability_rationale": "The issuer is a property/real-estate business under verified IASB IFRS and provides relevant ECL, receivable, collateral, counterparty, and construction/leasing evidence. Only generic loan/receivable evidence was detected; development-partner financing was not established, so the rating is capped at partial."
+    }
+  ],
+  "live_integrity_review": {
+    "material_issue_detected": true,
+    "issue": "Phrase-only aggregation across the large Shinhan filing incorrectly treated property-development references as the bank's business model and produced a false strong comparator.",
+    "live_output_overwritten": false,
+    "additional_network_or_model_run_performed": false,
+    "controller_hardening": [
+      "SEC SIC business classification is now checked after issuer-specific framework verification and before deep property comparability.",
+      "Financial-institution SIC candidates are rejected for the property-development scenario before deep comparison.",
+      "A verified-IFRS property issuer with only generic loan/receivable evidence is capped at partial rather than strong."
+    ],
+    "offline_reassessment_runtime_artifact": "external_runtime/gate51_live_v01/source_registry/post_live_comparability_reassessment_v01.json"
+  },
+  "allied_reit_framework_verification": {
+    "storage": "external_runtime/gate51_live_v01/source_registry/allied_framework_verification_v01.json",
+    "separate_from_frozen_corpus": true,
+    "status": "PENDING_INSUFFICIENT_EVIDENCE",
+    "verified": false,
+    "evidence_type": "available frozen annual-report extracts",
+    "verified_basis": "Generic IFRS terminology is present, but the 11 Allied_REIT chunks contain no exact issuer basis-of-preparation or auditor-report evidence establishing IFRS as issued by the IASB.",
+    "supporting_metadata": [
+      {"chunk_id": "ALLIED_REIT2025_P41_C02", "pdf_page": 41, "generic_ifrs_reference_count": 1},
+      {"chunk_id": "ALLIED_REIT2025_P132_C01", "pdf_page": 132, "generic_ifrs_reference_count": 4},
+      {"chunk_id": "ALLIED_REIT2025_P132_C02", "pdf_page": 132, "generic_ifrs_reference_count": 1}
+    ],
+    "frozen_corpus_modified": false
+  },
+  "evaluation_outcome": {
+    "externally_discovered_candidate_verified_under_ifrs": true,
+    "useful_ifrs_9_ecl_comparable_disclosure_found": true,
+    "useful_candidate": "Logistic Properties of the Americas",
+    "useful_candidate_rating": "partial",
+    "threshold_lowered_to_force_success": false,
+    "auditor_review_required": true,
+    "final_audit_judgment_provided": false
+  },
+  "authority_boundary": {
+    "present": ["COMPANY_DISCLOSURE"],
+    "missing": ["IFRS_FOUNDATION_OFFICIAL", "PROFESSIONAL_COMMENTARY"],
+    "company_disclosure_can_establish_general_ifrs_requirements": false,
+    "message": "Official IFRS 9 guidance not available in this prototype"
+  },
+  "state_trace": [
+    {"step": 1, "state": "START", "tool": "analyse_audit_scenario", "next_state": "SCENARIO_ANALYSED"},
+    {"step": 2, "state": "SCENARIO_ANALYSED", "tool": "discover_ifrs_candidates", "next_state": "IFRS_CANDIDATES_DISCOVERED"},
+    {"step": 3, "state": "IFRS_CANDIDATES_DISCOVERED", "tool": "locate_public_filing", "next_state": "FILINGS_LOCATED"},
+    {"step": 4, "state": "FILINGS_LOCATED", "tool": "download_framework_filings", "next_state": "FRAMEWORK_FILINGS_DOWNLOADED"},
+    {"step": 5, "state": "FRAMEWORK_FILINGS_DOWNLOADED", "tool": "verify_candidate_frameworks", "next_state": "FRAMEWORKS_VERIFIED_AND_FILTERED"},
+    {"step": 6, "state": "FRAMEWORKS_VERIFIED_AND_FILTERED", "tool": "search_verified_ifrs_filings", "next_state": "VERIFIED_IFRS_EVIDENCE_SEARCHED"},
+    {"step": 7, "state": "VERIFIED_IFRS_EVIDENCE_SEARCHED", "tool": "assess_ifrs_comparability", "next_state": "IFRS_COMPARABILITY_ASSESSED"},
+    {"step": 8, "state": "IFRS_COMPARABILITY_ASSESSED", "tool": "verify_allied_framework_separately", "next_state": "ALLIED_FRAMEWORK_CHECKED"},
+    {"step": 9, "state": "ALLIED_FRAMEWORK_CHECKED", "tool": "check_authority", "next_state": "AUTHORITY_CHECKED"},
+    {"step": 10, "state": "AUTHORITY_CHECKED", "tool": "stop_and_summarise", "next_state": "STOPPED"}
+  ],
+  "external_requests": [
+    {"request_number": 1, "purpose": "IFRS-targeted discovery: ECL/property development", "host": "efts.sec.gov", "status": "success", "sha256": "01c6648e444f7f44782f599f04a6fcb748d76c1effde61b0e6da2e71671a4dc0"},
+    {"request_number": 2, "purpose": "IFRS-targeted discovery: development loans/IFRS 9", "host": "efts.sec.gov", "status": "success", "sha256": "b26c8978b237be4ec4e3a5b92aed71fb8d19bdb930a9f505a6f1519066b32ddb"},
+    {"request_number": 3, "purpose": "Shinhan submissions metadata", "url": "https://data.sec.gov/submissions/CIK0001263043.json", "status": "success", "sha256": "5f6c5c8c5e2833e2aba8dbbd606b475071c4099afece79dc11370393b9590f9d"},
+    {"request_number": 4, "purpose": "Inter submissions metadata", "url": "https://data.sec.gov/submissions/CIK0001864163.json", "status": "success", "sha256": "b579b5580d8473994808eeaf22c4b91998a432d7868cc7d52353adc88206bf8d"},
+    {"request_number": 5, "purpose": "LPA submissions metadata", "url": "https://data.sec.gov/submissions/CIK0001997711.json", "status": "success", "sha256": "f39a0755a179c51cb50e6a5bf132bc62636ed9836c85dead0ca6b59432c3c647"},
+    {"request_number": 6, "purpose": "Shinhan 20-F download", "url": "https://www.sec.gov/Archives/edgar/data/1263043/000119312526168235/d75079d20f.htm", "status": "success", "byte_count": 27661462, "sha256": "34c3767e932fffc13c61a93692a533778272e469e31e08104f06932c7c2d0161"},
+    {"request_number": 7, "purpose": "Inter 20-F download", "url": "https://www.sec.gov/Archives/edgar/data/1864163/000207097926000185/intr-20251231.htm", "status": "success", "byte_count": 7671999, "sha256": "fe69c54917597abdd9be2fe30f0998a0cc332aeec6ccd519cc9d042c60f1a6cf"},
+    {"request_number": 8, "purpose": "LPA 20-F download", "url": "https://www.sec.gov/Archives/edgar/data/1997711/000199771126000045/lpa-20251231.htm", "status": "success", "byte_count": 4966059, "sha256": "4d759fd6e1ee71e35cfc98136823b9b0bf1b78c7858712a51c465c8099e20f2a"}
+  ],
+  "network_or_tool_failures": [],
+  "planner_usage": {
+    "gate5_input_tokens": 39538,
+    "gate51_input_tokens": 13345,
+    "input_token_reduction": 26193,
+    "input_token_reduction_percent": 66.25,
+    "gate5_output_tokens": 1284,
+    "gate51_output_tokens": 491,
+    "gate5_provider_cost_usd": 0.0067011,
+    "gate51_provider_cost_usd": 0.00229635,
+    "cost_reduction_usd": 0.00440475
+  },
+  "privacy_assertions": {
+    "raw_private_corpus_text_sent_to_planner": false,
+    "raw_external_filing_text_sent_to_planner": false,
+    "api_key_or_authorization_saved": false,
+    "sec_user_agent_value_saved": false,
+    "full_filing_text_saved_in_audit": false
+  },
+  "evaluation_boundaries": {
+    "frozen_holdout_used_or_tuned": false,
+    "frozen_metrics_recomputed": false,
+    "frozen_corpus_modified": false,
+    "external_documents_added_to_frozen_corpus": false,
+    "gate5_artifacts_changed": false,
+    "gate6_started": false
+  }
+}

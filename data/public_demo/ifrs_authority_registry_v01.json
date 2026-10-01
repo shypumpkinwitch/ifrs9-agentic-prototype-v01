@@ -1,0 +1,79 @@
+[
+  {
+    "authority_id": "IFRS9-AUTH-OVERVIEW-001",
+    "standard": "IFRS 9 Financial Instruments",
+    "topic": "official standard overview and implementation support",
+    "paragraph_reference": "pending",
+    "source_type": "IFRS_STANDARD_OFFICIAL_PAGE",
+    "non_verbatim_verified_summary": "The IFRS Foundation identifies IFRS 9 as the financial-instruments Standard and provides a dedicated official implementation-support collection. This card establishes the official source path, not a paragraph-level accounting conclusion.",
+    "official_url": "https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/",
+    "authority_level": "IFRS_STANDARD_OFFICIAL_AUTHORITY",
+    "review_status": "official_source_verified_2026-10-01_paragraph_pending"
+  },
+  {
+    "authority_id": "IFRS9-AUTH-ECL-SCOPE-002",
+    "standard": "IFRS 9 Financial Instruments",
+    "topic": "expected credit loss recognition scope",
+    "paragraph_reference": "5.5.1",
+    "source_type": "IFRS_STANDARD_PARAGRAPH_REFERENCE",
+    "non_verbatim_verified_summary": "IFRS 9 applies a loss-allowance requirement for expected credit losses to specified financial assets and certain other credit exposures within its impairment scope.",
+    "official_url": "https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2022/issued/part-a/ifrs-9-financial-instruments.pdf?bypass=on",
+    "authority_level": "IFRS_STANDARD_OFFICIAL_AUTHORITY",
+    "review_status": "official_source_and_paragraph_verified_2026-10-01"
+  },
+  {
+    "authority_id": "IFRS9-AUTH-STAGING-003",
+    "standard": "IFRS 9 Financial Instruments",
+    "topic": "12-month and lifetime expected credit losses",
+    "paragraph_reference": "5.5.3 and 5.5.5",
+    "source_type": "IFRS_STANDARD_PARAGRAPH_REFERENCE",
+    "non_verbatim_verified_summary": "The general impairment approach distinguishes lifetime expected credit losses when credit risk has increased significantly since initial recognition from 12-month expected credit losses when that threshold has not been met, subject to the stated scope exceptions.",
+    "official_url": "https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2022/issued/part-a/ifrs-9-financial-instruments.pdf?bypass=on",
+    "authority_level": "IFRS_STANDARD_OFFICIAL_AUTHORITY",
+    "review_status": "official_source_and_paragraph_verified_2026-10-01"
+  },
+  {
+    "authority_id": "IFRS9-AUTH-SICR-004",
+    "standard": "IFRS 9 Financial Instruments",
+    "topic": "significant increase in credit risk",
+    "paragraph_reference": "5.5.9",
+    "source_type": "IFRS_STANDARD_PARAGRAPH_REFERENCE",
+    "non_verbatim_verified_summary": "The significant-increase assessment compares default risk at the reporting date with default risk at initial recognition over the instrument's expected life and considers relevant reasonable and supportable information available without undue cost or effort.",
+    "official_url": "https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2022/issued/part-a/ifrs-9-financial-instruments.pdf?bypass=on",
+    "authority_level": "IFRS_STANDARD_OFFICIAL_AUTHORITY",
+    "review_status": "official_source_and_paragraph_verified_2026-10-01"
+  },
+  {
+    "authority_id": "IFRS9-AUTH-MEASUREMENT-005",
+    "standard": "IFRS 9 Financial Instruments",
+    "topic": "ECL measurement and forward-looking information",
+    "paragraph_reference": "5.5.17",
+    "source_type": "IFRS_STANDARD_PARAGRAPH_REFERENCE",
+    "non_verbatim_verified_summary": "Expected credit loss measurement incorporates probability-weighted outcomes, the time value of money, and reasonable and supportable information about past events, current conditions, and forecasts that is available without undue cost or effort.",
+    "official_url": "https://www.ifrs.org/content/dam/ifrs/publications/pdf-standards/english/2022/issued/part-a/ifrs-9-financial-instruments.pdf?bypass=on",
+    "authority_level": "IFRS_STANDARD_OFFICIAL_AUTHORITY",
+    "review_status": "official_source_and_paragraph_verified_2026-10-01"
+  },
+  {
+    "authority_id": "IFRS9-AUTH-FORWARD-006",
+    "standard": "IFRS 9 Financial Instruments",
+    "topic": "reasonable and supportable forward-looking information",
+    "paragraph_reference": "pending",
+    "source_type": "IFRS_FOUNDATION_EDUCATIONAL_MATERIAL",
+    "non_verbatim_verified_summary": "The IASB educational material stresses using available reasonable and supportable historical, current, and forward-looking information and cautions against treating a single mechanistic indicator as determinative. It explains application and does not amend IFRS 9.",
+    "official_url": "https://www.ifrs.org/news-and-events/news/2020/03/application-of-ifrs-9-in-the-light-of-the-coronavirus-uncertainty/",
+    "authority_level": "IFRS_FOUNDATION_SUPPORTING_OR_EDUCATIONAL",
+    "review_status": "official_educational_source_verified_2026-10-01_paragraph_pending"
+  },
+  {
+    "authority_id": "IFRS9-AUTH-COLLATERAL-007",
+    "standard": "IFRS 9 Financial Instruments",
+    "topic": "collateral and credit enhancements in ECL measurement",
+    "paragraph_reference": "B5.5.55",
+    "source_type": "IFRIC_AGENDA_DECISION",
+    "non_verbatim_verified_summary": "IFRS 9 paragraph B5.5.55 addresses collateral and other credit enhancements in measuring expected cash shortfalls. The IFRS Interpretations Committee observed that expected cash flows from a credit enhancement are included when it is part of the contractual terms and is not recognised separately. Separate-recognition requirements under applicable IFRS Standards still apply.",
+    "official_url": "https://www.ifrs.org/projects/completed-projects/2019/credit-enhancement-in-the-measurement-of-expected-credit-losses-ifrs-9/",
+    "authority_level": "IFRS_FOUNDATION_SUPPORTING_OR_EDUCATIONAL",
+    "review_status": "official_ifric_source_and_paragraph_verified_2026-10-01"
+  }
+]

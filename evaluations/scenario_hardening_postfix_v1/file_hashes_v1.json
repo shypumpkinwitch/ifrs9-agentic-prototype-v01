@@ -1,0 +1,53 @@
+{
+  "classification": "Post-fix authorised source and regression-evidence byte hashes; not amendments to historical manifests",
+  "modified": {
+    "app.py": "12d8748283c805546969f0dec4b2d3c5f47fb0509f7704145874cebf7e30042e",
+    "src/schemas.py": "d5d61e4c2db18f5c0787a6ab536e6c1670ed41e117efffd60f5ba35fd281871f",
+    "src/agent_tools.py": "a45fed5bd9e726a17c365ef908ec47d9de50418be563597ba6e7a13c70cf35d0",
+    "src/agent_loop_hardened.py": "54f791131109d54ef7a8208c665b4abb3399b9631388d82452501897ebf760ae",
+    "src/authority_registry.py": "8652e0a0b4108ece0213732f0f1e2a182c4ae975a941dd409d2fa35fdb82315d",
+    "tests/test_streamlit_app.py": "3843ae4df73f0a0074f40f535912d0319d0ab2671844a7b3b929c70b017fd6cf"
+  },
+  "added": {
+    "evaluations/scenario_hardening_postfix_v1/RESULTS.md": "2b0aeec9278d77eac048f967941343ebe909441b4be5bb8ceb00e537fa5eae48",
+    "evaluations/scenario_hardening_postfix_v1/full_suite_results_v1.json": "655a0278010357ba445a563d27357c7bd9b9e37108e441cef2569c152e1f9adc",
+    "evaluations/scenario_hardening_postfix_v1/postfix_observations_v1.json": "20307df9859aa38596b348f6ce1bdf298ff1f5c5f492ca6b641719b1da5df1f1",
+    "evaluations/scenario_hardening_postfix_v1/protected_artifacts_manifest.json": "68d865b2c71149b8fb3bc97fc46eb6a2a8260d73d63c8811645a87dfeaa6da43",
+    "evaluations/scenario_hardening_postfix_v1/run_all_tests_offline.py": "7de526c610efff2354c19c026bdfa7171c1d0f997d3ee1fe6712f43cf627aa5a",
+    "evaluations/scenario_hardening_postfix_v1/run_postfix_offline.py": "8641df264cd456b56eaa2323aeed3f374d3945c7447315eb56c20931d019e901",
+    "src/scenario_routing.py": "04124b5f85a9cb38975b68ba4f9cc54f21541cecfc6ac6b4e01d35427cca44e5",
+    "tests/test_scenario_hardening_postfix.py": "1bb70e7a3aaf6e43ea1cc658d11c2d126a727ded052f3873be56a0967c4e4666"
+  },
+  "authorised_source_hash_changes": {
+    "app.py": {
+      "before": "d6f8c2cc6d7d0336849c6a9c5dc3ba670a09eafdd9c771d1c26bbd08ccbc361e",
+      "after": "12d8748283c805546969f0dec4b2d3c5f47fb0509f7704145874cebf7e30042e",
+      "changed": true
+    },
+    "src/agent_loop_hardened.py": {
+      "before": "8ae9c5a2fd32983b4fd0886a80a7516754f4230c966017abc33fbd167051f92e",
+      "after": "54f791131109d54ef7a8208c665b4abb3399b9631388d82452501897ebf760ae",
+      "changed": true
+    },
+    "src/agent_tools.py": {
+      "before": "dbcfd95eed606d0bb62a847fe9567d6c151ba21bb36b82283d4ae4faeb71b613",
+      "after": "a45fed5bd9e726a17c365ef908ec47d9de50418be563597ba6e7a13c70cf35d0",
+      "changed": true
+    },
+    "src/authority_registry.py": {
+      "before": "e3a2917f49104abbb9fcafccf037ed807a7d9383d0b635c0ccdcd6f700d85805",
+      "after": "8652e0a0b4108ece0213732f0f1e2a182c4ae975a941dd409d2fa35fdb82315d",
+      "changed": true
+    },
+    "src/schemas.py": {
+      "before": "742f096f9857dd02c686b57b93781db038b902cb23ef11394ec14f39e4c33452",
+      "after": "d5d61e4c2db18f5c0787a6ab536e6c1670ed41e117efffd60f5ba35fd281871f",
+      "changed": true
+    }
+  },
+  "immutable_artifacts_checked": 88,
+  "immutable_artifacts_match": true,
+  "frozen_case_sha256": "a7abb8e51471e4e292fdde3e0a6edb8088bb7b8ec1b95119e82ec1b2ce28482f",
+  "live_openrouter_calls": 0,
+  "live_sec_calls": 0
+}

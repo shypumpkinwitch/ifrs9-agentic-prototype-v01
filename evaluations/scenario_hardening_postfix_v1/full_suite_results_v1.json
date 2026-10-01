@@ -1,0 +1,32 @@
+{
+  "classification": "Full, unfiltered regression suite; tests with mocked providers do not represent live calls",
+  "tests_run": 126,
+  "passed": 122,
+  "failed": 0,
+  "errors": 4,
+  "skipped": 0,
+  "failure_details": [],
+  "error_details": [
+    {
+      "test": "tests.test_auditor_scenario_evaluation_v1.AuditorScenarioEvaluationV1Tests.test_all_cases_execute_offline_with_safe_evidence_and_no_mutation",
+      "error": "ValueError: Integrity mismatch: app.py"
+    },
+    {
+      "test": "tests.test_auditor_scenario_evaluation_v1.AuditorScenarioEvaluationV1Tests.test_manifest_and_historical_files_match",
+      "error": "ValueError: Integrity mismatch: app.py"
+    },
+    {
+      "test": "tests.test_auditor_scenario_evaluation_v1_1.AuditorScenarioEvaluationV11Tests.test_deterministic_replay_zero_live_calls_cost_and_ungraded_template",
+      "error": "ValueError: Integrity mismatch: app.py"
+    },
+    {
+      "test": "tests.test_auditor_scenario_evaluation_v1_1.AuditorScenarioEvaluationV11Tests.test_freeze_and_protected_v1_application_historical_integrity",
+      "error": "ValueError: Integrity mismatch: app.py"
+    }
+  ],
+  "skipped_details": [],
+  "real_network_access_allowed": false,
+  "live_openrouter_calls": 0,
+  "live_sec_calls": 0,
+  "frozen_validator_explanation": "The original v1/v1.1 manifests include mutable application source hashes. Their four unmodified verifier tests reject the authorised app.py change. Frozen evaluation evidence remains unchanged; no tests or manifests were patched to suppress these errors."
+}

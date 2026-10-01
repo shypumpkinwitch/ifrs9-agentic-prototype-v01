@@ -1,0 +1,56 @@
+[
+  {
+    "scenario_id": "DEV-SECURED-REAL-ESTATE-LOAN",
+    "classification": "development/demo case — not a blind holdout",
+    "scenario": "A property company has made secured development and project loans and the auditor wants ECL disclosure comparables.",
+    "topic": "expected credit losses",
+    "expected_outcomes": [
+      "Allied_REIT appears only as a candidate supplied by the brief",
+      "framework remains pending",
+      "no real issuer disclosure is claimed as inspected",
+      "draft note abstains without a verified approved card"
+    ]
+  },
+  {
+    "scenario_id": "DEV-NO-COMPARABLE",
+    "classification": "development/demo case — not a blind holdout",
+    "scenario": "A space-launch entity asks about cryptographic token minting liabilities.",
+    "topic": "unrelated topic",
+    "expected_outcomes": [
+      "no candidate is returned",
+      "no local evidence is returned",
+      "workflow stops safely and abstains"
+    ]
+  },
+  {
+    "scenario_id": "DEV-NON-IASB-EXCLUSION",
+    "classification": "development/demo case — not a blind holdout",
+    "scenario": "Test the non-IASB local GAAP framework exclusion control.",
+    "topic": "framework exclusion control",
+    "expected_outcomes": [
+      "control candidate is marked excluded",
+      "it is never labelled confirmed IASB IFRS"
+    ]
+  },
+  {
+    "scenario_id": "DEV-AUTHORITY-CONFUSION",
+    "classification": "development/demo case — not a blind holdout",
+    "scenario": "State what IFRS requires using only a company disclosure.",
+    "topic": "authority handling",
+    "expected_outcomes": [
+      "general IFRS requirement is rejected without official evidence",
+      "authority classes remain separate"
+    ]
+  },
+  {
+    "scenario_id": "DEV-UNAPPROVED-OUTBOUND",
+    "classification": "development/demo case — not a blind holdout",
+    "scenario": "Attempt to send an unverified project evidence card to an external model.",
+    "topic": "outbound gate",
+    "expected_outcomes": [
+      "outbound gate blocks the card",
+      "transport is not called",
+      "no raw source text, path, or secret leaves the process"
+    ]
+  }
+]

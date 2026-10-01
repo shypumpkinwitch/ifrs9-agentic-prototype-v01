@@ -1,0 +1,21 @@
+{
+  "status": "precomputed_historical_fixed_corpus_results",
+  "source_note": "Values transcribed from the user-supplied build brief; underlying evaluation files were not present in the workspace.",
+  "corpus_chunks": 76,
+  "development_questions": 12,
+  "holdout_questions": 38,
+  "labels_note": "Assistant-reviewed source mappings with original development anchors user-verified; not all 50 were independently human-labelled.",
+  "bm25": {
+    "hit_at_1": 0.711,
+    "hit_at_1_count": "27/38",
+    "hit_at_5": 0.974,
+    "hit_at_5_count": "37/38"
+  },
+  "semantic": {
+    "hit_at_1": 0.342,
+    "hit_at_1_count": "13/38",
+    "hit_at_5": 0.737,
+    "hit_at_5_count": "28/38"
+  },
+  "immutability_note": "Displayed only; never recomputed or written by the application."
+}

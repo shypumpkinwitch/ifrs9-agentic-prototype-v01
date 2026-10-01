@@ -1,0 +1,126 @@
+{
+  "classification": "Gate 4.6 first live re-validation attempt; preserved intermediate hardening evidence",
+  "recorded_at": "2026-09-30T17:04:21+08:00",
+  "planner_model": "openai/gpt-4o-mini",
+  "counted_live_cases": 3,
+  "all_cases_completed_intended_workflow": false,
+  "frozen_holdout_used_or_tuned": false,
+  "external_web_discovery_performed": false,
+  "api_key_saved": false,
+  "raw_annual_report_text_sent": false,
+  "aggregate_usage": {
+    "input_tokens": 10477,
+    "output_tokens": 1158,
+    "provider_reported_cost_usd": 0.00226635
+  },
+  "cases": [
+    {
+      "case_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+      "intended_workflow_completed": false,
+      "state_transition_sequence": [
+        "START",
+        "SCENARIO_ANALYSED",
+        "EVIDENCE_SEARCHED",
+        "CANDIDATES_INSPECTED",
+        "STOPPED"
+      ],
+      "tool_call_sequence": [
+        "analyse_audit_scenario",
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "stop_and_summarise"
+      ],
+      "candidates": [
+        "Allied_REIT",
+        "Barrick"
+      ],
+      "comparability_results": [],
+      "authority_result": {},
+      "guardrails_triggered": [
+        "Comparability assessment must cover every inspected serious candidate."
+      ],
+      "usage": {
+        "input_tokens": 3228,
+        "output_tokens": 332,
+        "provider_reported_cost_usd": 0.0006834
+      }
+    },
+    {
+      "case_id": "G46-LIVE-GENERAL-BANKING-ECL",
+      "intended_workflow_completed": true,
+      "state_transition_sequence": [
+        "START",
+        "SCENARIO_ANALYSED",
+        "EVIDENCE_SEARCHED",
+        "CANDIDATES_INSPECTED",
+        "COMPARABILITY_ASSESSED",
+        "AUTHORITY_CHECKED",
+        "READY_TO_STOP",
+        "STOPPED"
+      ],
+      "tool_call_sequence": [
+        "analyse_audit_scenario",
+        "search_private_corpus",
+        "inspect_candidate_metadata",
+        "assess_comparability",
+        "check_authority",
+        "stop_and_summarise"
+      ],
+      "comparability_results": [
+        {
+          "company": "Royal Bank of Canada",
+          "rating": "strong",
+          "weighted_score": 0.88
+        },
+        {
+          "company": "Allied_REIT",
+          "rating": "weak",
+          "weighted_score": 0.74
+        }
+      ],
+      "authority_present": [
+        "COMPANY_DISCLOSURE"
+      ],
+      "guardrails_triggered": [],
+      "usage": {
+        "input_tokens": 4536,
+        "output_tokens": 434,
+        "provider_reported_cost_usd": 0.0009408
+      }
+    },
+    {
+      "case_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+      "intended_workflow_completed": true,
+      "state_transition_sequence": [
+        "START",
+        "SCENARIO_ANALYSED",
+        "EVIDENCE_SEARCHED",
+        "AUTHORITY_CHECKED",
+        "EVIDENCE_GAP_IDENTIFIED",
+        "READY_TO_STOP",
+        "STOPPED"
+      ],
+      "tool_call_sequence": [
+        "analyse_audit_scenario",
+        "search_private_corpus",
+        "check_authority",
+        "request_more_evidence",
+        "stop_and_summarise"
+      ],
+      "authority_present": [
+        "COMPANY_DISCLOSURE"
+      ],
+      "authority_missing": [
+        "IFRS_FOUNDATION_OFFICIAL",
+        "PROFESSIONAL_COMMENTARY"
+      ],
+      "guardrails_triggered": [],
+      "usage": {
+        "input_tokens": 2713,
+        "output_tokens": 392,
+        "provider_reported_cost_usd": 0.00064215
+      }
+    }
+  ],
+  "follow_up_hardening": "Controller-owned candidate arguments were bound after this attempt so legal inspection and comparability actions cannot omit required serious candidates."
+}

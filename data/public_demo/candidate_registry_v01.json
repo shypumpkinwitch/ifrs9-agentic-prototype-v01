@@ -1,0 +1,67 @@
+[
+  {
+    "candidate_id": "CAND-ALLIED-REIT-2025",
+    "company_name": "Allied_REIT",
+    "industry": "Property / REIT — characterization supplied by the build brief and not independently verified here",
+    "business_relevance": "Candidate named in the build brief for investigating development/project loans. Economic comparability and source content remain unverified.",
+    "issuer_report_year": 2025,
+    "report_title": "2025 report — exact title and file not supplied",
+    "framework_status": "pending",
+    "framework_evidence_url": null,
+    "framework_evidence_page": null,
+    "source_url": null,
+    "evidence_status": "candidate_only",
+    "tags": [
+      "property",
+      "reit",
+      "development loans",
+      "project loans",
+      "expected credit losses",
+      "ecl"
+    ],
+    "corpus_company_names": ["Allied_REIT"],
+    "fixture_notice": "The public registry contains metadata only. Private mode marks this candidate indexed and inspected only when actual local chunks are retrieved."
+  },
+  {
+    "candidate_id": "CAND-RBC-BANK-POLICY",
+    "company_name": "RBC",
+    "industry": "Banking — candidate label supplied by the build brief",
+    "business_relevance": "Bank-policy comparator named in the brief. It must be differentiated from a property-company loan scenario and is not presumed economically comparable.",
+    "issuer_report_year": null,
+    "report_title": null,
+    "framework_status": "pending",
+    "framework_evidence_url": null,
+    "framework_evidence_page": null,
+    "source_url": null,
+    "evidence_status": "candidate_only",
+    "tags": [
+      "bank",
+      "banking",
+      "portfolio policy",
+      "expected credit losses",
+      "ecl"
+    ],
+    "corpus_company_names": ["Royal Bank of Canada"],
+    "fixture_notice": "The public registry contains metadata only. Private mode marks this candidate indexed and inspected only when actual local chunks are retrieved."
+  },
+  {
+    "candidate_id": "CONTROL-NON-IASB-FRAMEWORK",
+    "company_name": "Framework exclusion control (not an issuer)",
+    "industry": "Synthetic metadata control",
+    "business_relevance": "Exercises exclusion handling without making a claim about a real company.",
+    "issuer_report_year": null,
+    "report_title": "Self-authored test fixture",
+    "framework_status": "excluded",
+    "framework_evidence_url": "data/public_demo/candidate_registry_v01.json",
+    "framework_evidence_page": "CONTROL-NON-IASB-FRAMEWORK row",
+    "source_url": "data/public_demo/candidate_registry_v01.json",
+    "evidence_status": "candidate_only",
+    "tags": [
+      "non iasb",
+      "local gaap",
+      "framework exclusion control"
+    ],
+    "corpus_company_names": [],
+    "fixture_notice": "Self-authored control record; it is deliberately not a real issuer."
+  }
+]

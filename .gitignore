@@ -1,0 +1,32 @@
+.env
+.env*
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.streamlit/secrets.toml
+
+private_data/*
+!private_data/.gitkeep
+
+external_runtime/*
+!external_runtime/.gitkeep
+
+outputs/*
+!outputs/.gitkeep
+
+research_trace_*.json
+
+# Protected historical audit contains personal local paths; publish the
+# path-sanitized docs/current_release/GATE1_AUDIT_PUBLIC.md derivative instead.
+docs/GATE1_AUDIT.md

@@ -1,0 +1,102 @@
+{
+  "classification": "Gate 4 development acceptance trace — not a frozen holdout result",
+  "recorded_on": "2026-09-30",
+  "mode": "deterministic fallback workflow",
+  "model_call_made": false,
+  "step_count": 6,
+  "step_limit": 6,
+  "trace": [
+    {
+      "step": 1,
+      "action": "analyse_audit_scenario",
+      "result_summary": "Identified 1 accounting topic and 6 evidence needs."
+    },
+    {
+      "step": 2,
+      "action": "search_private_corpus",
+      "result_summary": "Returned 10 metadata-only hits across 3 companies; no source body was returned to the planner."
+    },
+    {
+      "step": 3,
+      "action": "inspect_candidate_metadata",
+      "result_summary": "Inspected permitted metadata for Allied_REIT, Barrick, and Royal Bank of Canada."
+    },
+    {
+      "step": 4,
+      "action": "assess_comparability",
+      "result_summary": "Ratings: Allied_REIT=strong, Royal Bank of Canada=partial, Barrick=weak."
+    },
+    {
+      "step": 5,
+      "action": "check_authority",
+      "result_summary": "Present: COMPANY_DISCLOSURE. Missing: IFRS_FOUNDATION_OFFICIAL and PROFESSIONAL_COMMENTARY."
+    },
+    {
+      "step": 6,
+      "action": "stop_and_summarise",
+      "result_summary": "Stopped with a research handoff and mandatory human review."
+    }
+  ],
+  "comparability": [
+    {
+      "company": "Allied_REIT",
+      "rating": "strong",
+      "weighted_score": 1.0
+    },
+    {
+      "company": "Royal Bank of Canada",
+      "rating": "partial",
+      "weighted_score": 0.525
+    },
+    {
+      "company": "Barrick",
+      "rating": "weak",
+      "weighted_score": 0.25
+    }
+  ],
+  "selected_evidence": [
+    {
+      "chunk_id": "ALLIED_REIT2025_P150_C03",
+      "company": "Allied_REIT",
+      "year": 2025,
+      "pdf_page": 150,
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "chunk_id": "ALLIED_REIT2025_P41_C01",
+      "company": "Allied_REIT",
+      "year": 2025,
+      "pdf_page": 41,
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "chunk_id": "ALLIED_REIT2025_P150_C04",
+      "company": "Allied_REIT",
+      "year": 2025,
+      "pdf_page": 150,
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "chunk_id": "ALLIED_REIT2025_P132_C01",
+      "company": "Allied_REIT",
+      "year": 2025,
+      "pdf_page": 132,
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "chunk_id": "ALLIED_REIT2025_P132_C02",
+      "company": "Allied_REIT",
+      "year": 2025,
+      "pdf_page": 132,
+      "authority_class": "COMPANY_DISCLOSURE"
+    }
+  ],
+  "reporting_framework_status": "pending",
+  "authority_boundary": "Retrieved evidence is company disclosure, not authoritative IFRS guidance.",
+  "human_review_required": true,
+  "final_audit_judgment_provided": false,
+  "planner_input_tokens": 0,
+  "planner_output_tokens": 0,
+  "provider_cost_usd": 0.0,
+  "private_source_text_in_trace": false
+}

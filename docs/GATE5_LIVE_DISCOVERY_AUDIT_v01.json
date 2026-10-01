@@ -1,0 +1,305 @@
+{
+  "classification": "Gate 5 bounded live external comparable-company discovery; separate from the frozen 38-question holdout and all Gate 4 evaluations",
+  "recorded_at": "2026-09-30T19:34:09+08:00",
+  "scenario_named_comparable_company": false,
+  "planner_model": "openai/gpt-4o-mini",
+  "planner_mode": "model-planned bounded agent",
+  "live_model_completed_without_fallback": true,
+  "single_counted_live_run": true,
+  "preflight": {
+    "sandbox_denied_attempt_counted_as_live_run": false,
+    "outbound_request_completed": false,
+    "model_tokens": 0,
+    "sec_results_promoted": 0,
+    "outcome": "The controller stopped safely after local scenario analysis when sandbox networking denied both transports. The same workflow was then run once with network permission."
+  },
+  "limits": {
+    "maximum_external_candidates": 3,
+    "candidates_discovered": 3,
+    "candidates_with_filing_content_inspected": 2,
+    "annual_filings_downloaded": 2,
+    "maximum_agent_tool_steps": 10,
+    "agent_tool_steps_used": 10,
+    "duplicate_external_requests_blocked_by_policy": true,
+    "broad_crawling_performed": false
+  },
+  "external_source_policy": {
+    "primary_source": "SEC EDGAR",
+    "allowed_hosts": [
+      "efts.sec.gov",
+      "data.sec.gov",
+      "www.sec.gov"
+    ],
+    "user_agent_present": true,
+    "user_agent_value_saved": false,
+    "minimum_request_interval_seconds": 0.25
+  },
+  "candidate_discovery": {
+    "success": true,
+    "source": "SEC EDGAR Full-Text Search",
+    "queries": [
+      "development loan",
+      "loans to joint ventures property"
+    ],
+    "candidates": [
+      {
+        "company": "TIPTREE INC.",
+        "cik": "0001393726",
+        "discovery_form": "10-K",
+        "discovery_accession": "0001393726-22-000020",
+        "discovery_filed_date": "2022-03-14",
+        "sec_relevance_score": 19.213442,
+        "inspection_outcome": "rejected after filing inspection"
+      },
+      {
+        "company": "Toll Brothers, Inc.",
+        "cik": "0000794170",
+        "discovery_form": "10-K",
+        "discovery_accession": "0000794170-23-000066",
+        "discovery_filed_date": "2023-12-21",
+        "sec_relevance_score": 18.9869,
+        "inspection_outcome": "useful with limitations"
+      },
+      {
+        "company": "TIAA REAL ESTATE ACCOUNT",
+        "cik": "0000946155",
+        "discovery_form": "10-K",
+        "discovery_accession": "0001628280-22-005665",
+        "discovery_filed_date": "2022-03-10",
+        "sec_relevance_score": 18.959469,
+        "inspection_outcome": "rejected uninspected after the bounded two-download live-run limit"
+      }
+    ]
+  },
+  "filing_sources": [
+    {
+      "company": "TIPTREE INC.",
+      "cik": "0001393726",
+      "form": "10-K",
+      "accession_number": "0001393726-26-000009",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/1393726/000139372626000009/tipt-20251231.htm",
+      "source_metadata_url": "https://data.sec.gov/submissions/CIK0001393726.json",
+      "local_file_sha256": "267eab51802181df21e9f27a9143a3075860cbc858336a61e2645ad305d99e04",
+      "local_file_bytes": 4888909,
+      "stored_under": "external_runtime/gate5_live_v01/raw (gitignored)",
+      "authority_class": "COMPANY_DISCLOSURE"
+    },
+    {
+      "company": "Toll Brothers, Inc.",
+      "cik": "0000794170",
+      "form": "10-K",
+      "accession_number": "0000794170-25-000112",
+      "filing_url": "https://www.sec.gov/Archives/edgar/data/794170/000079417025000112/tol-20251031.htm",
+      "source_metadata_url": "https://data.sec.gov/submissions/CIK0000794170.json",
+      "local_file_sha256": "617443823d67d96041add4299e8104554be84d6d1f73181af6cb469088ccb720",
+      "local_file_bytes": 3109676,
+      "stored_under": "external_runtime/gate5_live_v01/raw (gitignored)",
+      "authority_class": "COMPANY_DISCLOSURE"
+    }
+  ],
+  "reporting_framework_verification": [
+    {
+      "company": "TIPTREE INC.",
+      "status": "US_GAAP",
+      "verified": true,
+      "basis": "issuer-specific filing phrase pattern",
+      "pattern_id": "us_gaap_exact",
+      "text_offset": 43654,
+      "evidence_window_sha256": "a5132fd2a0c561401cd2557fbb83e622ebd2a69531c32dca84409e2a74de8d2f",
+      "form_was_not_used_as_framework_evidence": true,
+      "raw_evidence_text_saved_or_sent": false
+    },
+    {
+      "company": "Toll Brothers, Inc.",
+      "status": "US_GAAP",
+      "verified": true,
+      "basis": "issuer-specific filing phrase pattern",
+      "pattern_id": "us_gaap_exact",
+      "text_offset": 178110,
+      "evidence_window_sha256": "4bfd35f0bec075e5328c46de7bbb3e5a47f7db47d80d54182431532805b7f7f0",
+      "form_was_not_used_as_framework_evidence": true,
+      "raw_evidence_text_saved_or_sent": false
+    },
+    {
+      "company": "TIAA REAL ESTATE ACCOUNT",
+      "status": "PENDING_INSUFFICIENT_EVIDENCE",
+      "verified": false,
+      "basis": "filing body not downloaded or inspected within the live-run bound"
+    }
+  ],
+  "retrieved_disclosure_evidence": [
+    {
+      "company": "TIPTREE INC.",
+      "accession_number": "0001393726-26-000009",
+      "locally_derived_feature_counts": {
+        "property_development_business": 0,
+        "development_partner_financing": 0,
+        "loan_or_note_receivable": 10,
+        "collateral_or_security": 14,
+        "borrower_or_counterparty_condition": 11,
+        "construction_or_leasing_status": 1,
+        "ecl_or_sicr": 3
+      },
+      "representative_nonverbatim_locators": [
+        {
+          "feature": "loan_or_note_receivable",
+          "text_offset": 169630,
+          "evidence_window_sha256": "0a113b927cbfd4ef32dc4ca23dce1fd037ee74bd1cb6bb778ca31177a53d3e7f"
+        },
+        {
+          "feature": "ecl_or_sicr",
+          "text_offset": 304661,
+          "evidence_window_sha256": "d6acc8fdf445b9016b53b10071c8bc4e0ffd2196e2adc183bfb9f563b560267d"
+        }
+      ]
+    },
+    {
+      "company": "Toll Brothers, Inc.",
+      "accession_number": "0000794170-25-000112",
+      "locally_derived_feature_counts": {
+        "property_development_business": 1,
+        "development_partner_financing": 0,
+        "loan_or_note_receivable": 59,
+        "collateral_or_security": 10,
+        "borrower_or_counterparty_condition": 17,
+        "construction_or_leasing_status": 103,
+        "ecl_or_sicr": 0
+      },
+      "representative_nonverbatim_locators": [
+        {
+          "feature": "property_development_business",
+          "text_offset": 379604,
+          "evidence_window_sha256": "624e5ad2f50949556e5da4176eb1e23596aaf4b6e02ada5b44b5de1872530666"
+        },
+        {
+          "feature": "loan_or_note_receivable",
+          "text_offset": 81013,
+          "evidence_window_sha256": "a1a57f0e0395bb0c8f9f09e3ea5905091d5b13d9cb169f28aff22db1ce5d9e6d"
+        }
+      ]
+    }
+  ],
+  "comparability_assessments": [
+    {
+      "company": "Toll Brothers, Inc.",
+      "status": "useful_with_limitations",
+      "rating": "partial",
+      "weighted_score": 0.69,
+      "dimension_scores": {
+        "business_model": 1.0,
+        "instrument_type": 0.5,
+        "borrower_or_counterparty": 1.0,
+        "collateral": 1.0,
+        "construction_and_leasing": 1.0,
+        "ecl_treatment": 0.0,
+        "reporting_framework_status": 0.0
+      },
+      "rationale": "The filing provides property-development, generic loan/receivable, borrower, collateral, and construction/leasing features. It did not yield development-partner financing or ECL/SICR features and was verified as US GAAP, so it is not an IASB-IFRS accounting comparator."
+    },
+    {
+      "company": "TIPTREE INC.",
+      "status": "rejected",
+      "rating": "weak",
+      "weighted_score": 0.59,
+      "dimension_scores": {
+        "business_model": 0.0,
+        "instrument_type": 0.5,
+        "borrower_or_counterparty": 1.0,
+        "collateral": 1.0,
+        "construction_and_leasing": 1.0,
+        "ecl_treatment": 1.0,
+        "reporting_framework_status": 0.0
+      },
+      "rejection_reasons": [
+        "Property-development business evidence was insufficient.",
+        "The issuer-specific reporting framework was verified as US GAAP, not IASB IFRS."
+      ]
+    },
+    {
+      "company": "TIAA REAL ESTATE ACCOUNT",
+      "status": "rejected_uninspected",
+      "rating": "insufficient",
+      "weighted_score": 0.0,
+      "rejection_reasons": [
+        "The bounded live-run download limit was reached before filing content inspection; no comparability claim was made."
+      ]
+    }
+  ],
+  "existing_local_comparator": {
+    "company": "Allied_REIT",
+    "source_lane": "private frozen corpus",
+    "rating": "strong",
+    "weighted_score": 0.96,
+    "reporting_framework_status": "pending",
+    "distinguished_from_external_candidates": true,
+    "external_documents_added_to_local_corpus": false
+  },
+  "authority_boundary": {
+    "present": ["COMPANY_DISCLOSURE"],
+    "missing": [
+      "IFRS_FOUNDATION_OFFICIAL",
+      "PROFESSIONAL_COMMENTARY"
+    ],
+    "company_disclosure_can_establish_general_ifrs_requirements": false,
+    "jurisdiction_metadata_can_replace_issuer_evidence": false,
+    "message": "Official IFRS 9 guidance not available in this prototype"
+  },
+  "tool_trace": [
+    {"step": 1, "state": "START", "action": "analyse_audit_scenario", "next_state": "SCENARIO_ANALYSED", "external_request_numbers": []},
+    {"step": 2, "state": "SCENARIO_ANALYSED", "action": "discover_external_candidates", "next_state": "CANDIDATES_DISCOVERED", "external_request_numbers": [1, 2]},
+    {"step": 3, "state": "CANDIDATES_DISCOVERED", "action": "locate_public_filing", "next_state": "FILINGS_LOCATED", "external_request_numbers": [3, 4, 5]},
+    {"step": 4, "state": "FILINGS_LOCATED", "action": "download_filing_local", "next_state": "FILINGS_DOWNLOADED", "external_request_numbers": [6, 7]},
+    {"step": 5, "state": "FILINGS_DOWNLOADED", "action": "verify_reporting_framework", "next_state": "FRAMEWORKS_VERIFIED", "external_request_numbers": []},
+    {"step": 6, "state": "FRAMEWORKS_VERIFIED", "action": "search_external_filing_local", "next_state": "EXTERNAL_EVIDENCE_SEARCHED", "external_request_numbers": []},
+    {"step": 7, "state": "EXTERNAL_EVIDENCE_SEARCHED", "action": "assess_external_comparability", "next_state": "EXTERNAL_COMPARABILITY_ASSESSED", "external_request_numbers": []},
+    {"step": 8, "state": "EXTERNAL_COMPARABILITY_ASSESSED", "action": "compare_existing_local_corpus", "next_state": "LOCAL_COMPARATOR_ASSESSED", "external_request_numbers": []},
+    {"step": 9, "state": "LOCAL_COMPARATOR_ASSESSED", "action": "check_authority", "next_state": "AUTHORITY_CHECKED", "external_request_numbers": []},
+    {"step": 10, "state": "AUTHORITY_CHECKED", "action": "stop_and_summarise", "next_state": "STOPPED", "external_request_numbers": []}
+  ],
+  "external_requests": [
+    {"request_number": 1, "purpose": "candidate discovery: development-loan", "host": "efts.sec.gov", "status": "success", "byte_count": 59225, "sha256": "4e8075fce2e4794ae11a2fb0bc9f0c7eec035bb9223076ed5bf432cf3b5e9efb"},
+    {"request_number": 2, "purpose": "candidate discovery: joint-venture-property-loans", "host": "efts.sec.gov", "status": "success", "byte_count": 61464, "sha256": "f962e5e8d8c2df18c64cc9751c39f9c303709d9a7aacf6ab22d1b71ac5b25efd"},
+    {"request_number": 3, "purpose": "filing metadata for CIK 0001393726", "url": "https://data.sec.gov/submissions/CIK0001393726.json", "status": "success", "byte_count": 161853, "sha256": "57bf67c4a6f8f3f65d45249794e5915b5f0f8cb4202e8943bcd5abdb90d8f7b1"},
+    {"request_number": 4, "purpose": "filing metadata for CIK 0000794170", "url": "https://data.sec.gov/submissions/CIK0000794170.json", "status": "success", "byte_count": 159023, "sha256": "e3e748c298b62a77858295252568f4a36acb6a70f8a2485844718ea1fdd48734"},
+    {"request_number": 5, "purpose": "filing metadata for CIK 0000946155", "url": "https://data.sec.gov/submissions/CIK0000946155.json", "status": "success", "byte_count": 100919, "sha256": "be679bc75e899fb1b8f770093d085586a879fab3bec67470bf42636c4c9128ae"},
+    {"request_number": 6, "purpose": "annual filing 0001393726-26-000009", "url": "https://www.sec.gov/Archives/edgar/data/1393726/000139372626000009/tipt-20251231.htm", "status": "success", "byte_count": 4888909, "sha256": "267eab51802181df21e9f27a9143a3075860cbc858336a61e2645ad305d99e04"},
+    {"request_number": 7, "purpose": "annual filing 0000794170-25-000112", "url": "https://www.sec.gov/Archives/edgar/data/794170/000079417025000112/tol-20251031.htm", "status": "success", "byte_count": 3109676, "sha256": "617443823d67d96041add4299e8104554be84d6d1f73181af6cb469088ccb720"}
+  ],
+  "network_failures_in_counted_live_run": [],
+  "guardrails_triggered": [
+    "Controller bound filing-location scope to all three discovered candidates.",
+    "Controller bound the download scope to the live-run filing limit.",
+    "Controller bound local filing search to the downloaded document identifiers and analysed features.",
+    "Controller bound comparability to every discovered candidate, including the uninspected rejection.",
+    "Controller bound the local comparison to the submitted scenario and existing read-only corpus.",
+    "Controller bound the final stop action to a human-review handoff."
+  ],
+  "handoff": {
+    "status": "external_research_handoff",
+    "external_candidates_for_review": [
+      {"company": "Toll Brothers, Inc.", "rating": "partial", "score": 0.69}
+    ],
+    "rejected_candidates": ["TIPTREE INC.", "TIAA REAL ESTATE ACCOUNT"],
+    "auditor_review_required": true,
+    "final_audit_judgment_provided": false
+  },
+  "planner_usage": {
+    "input_tokens": 39538,
+    "output_tokens": 1284,
+    "provider_reported_cost_usd": 0.0067011
+  },
+  "privacy_assertions": {
+    "raw_private_corpus_text_sent_to_planner": false,
+    "raw_external_filing_text_sent_to_planner": false,
+    "api_key_or_authorization_saved": false,
+    "sec_user_agent_value_saved": false,
+    "full_filing_text_saved_in_audit": false
+  },
+  "evaluation_boundaries": {
+    "frozen_holdout_used_or_tuned": false,
+    "frozen_metrics_recomputed": false,
+    "external_documents_added_to_frozen_corpus": false,
+    "gate45_or_gate46_artifacts_changed": false,
+    "gate6_started": false
+  }
+}

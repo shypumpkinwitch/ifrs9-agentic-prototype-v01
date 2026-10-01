@@ -1,0 +1,296 @@
+{
+  "evaluation_id": "auditor_scenario_evaluation_v1",
+  "classification": "Unscored manual-review template; null is pending, not N/A",
+  "reviewer": null,
+  "reviewed_at_utc": null,
+  "cases": [
+    {
+      "case_id": "S01",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    },
+    {
+      "case_id": "S02",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    },
+    {
+      "case_id": "S03",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    },
+    {
+      "case_id": "S04",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    },
+    {
+      "case_id": "S05",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    },
+    {
+      "case_id": "S06",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    },
+    {
+      "case_id": "S07",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    },
+    {
+      "case_id": "S08",
+      "dimensions": {
+        "scope_topic_routing": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "official_authority": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "authority_separation": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "comparator_behaviour": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "framework_and_comparability": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        },
+        "safe_handoff": {
+          "status": null,
+          "reason": "",
+          "evidence_references": []
+        }
+      },
+      "failures_or_abstentions": []
+    }
+  ]
+}

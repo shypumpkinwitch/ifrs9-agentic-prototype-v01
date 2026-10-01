@@ -1,0 +1,29 @@
+{
+  "classification": "Auditor Scenario Evaluation v1 readiness artifact byte hashes",
+  "algorithm": "SHA-256 over raw file bytes",
+  "files": {
+    "evaluations/auditor_scenario_v1/cases.schema.json": "c0a7b9ae2cd0931bfc305b4e7cbd372bbd4f5ffbac85a829b27f08d7bd199175",
+    "evaluations/auditor_scenario_v1/cases_frozen_v1.json": "33087678fadd578e70e3b6c65327bbf2e2d9dc5ceb2462c2b1d7a8cd844cf31c",
+    "evaluations/auditor_scenario_v1/deterministic_observations_v1.json": "961fd03255fc4a45db643f786fa42e3e43b587f9051357baed754f18d6e52195",
+    "evaluations/auditor_scenario_v1/freeze_manifest_v1.json": "3659838e252bd968e6124d78d3238e9ec375262a8887c4590861e38c539ba90a",
+    "evaluations/auditor_scenario_v1/manual_review_template_v1.json": "d11ffc6f6708ba6c137aff37f41b57288f50316fac993a006225d886302f40a1",
+    "evaluations/auditor_scenario_v1/protocol_v1.json": "a22f3d06d4d0843c4c46b08535d0c69cf81ef9cb3662844d58ba5d9c18104f65",
+    "evaluations/auditor_scenario_v1/README.md": "7708bc8a4270b2d98a6e724c9913761a3709cb6954d1be58023d9ee907c4e6b6",
+    "evaluations/auditor_scenario_v1/run_deterministic.py": "73e1de89e9bc3031a49d01c212799e362d05628bc4326b5ed29bd99241fae40a",
+    "evaluations/auditor_scenario_v1/validation.py": "85a723d4aaf12db1ecba27406f59d7c232ad35d08dbd4a4503ad42f7da7fd237",
+    "tests/test_auditor_scenario_evaluation_v1.py": "cf7bca96a4c13f5244b7b171820a8ba19cad465d2fb7de4a3c4fb4306b5de810"
+  },
+  "validation_tests": {
+    "passed": 8,
+    "failed": 0
+  },
+  "protected_existing_file_count": 71,
+  "protected_existing_files_unchanged": true,
+  "historical_artifacts_checked": 11,
+  "historical_hashes_match": true,
+  "private_canonical_hash_matches_manifest": true,
+  "frozen_file_mismatches": [],
+  "live_model_runs": 0,
+  "live_sec_calls": 0,
+  "manual_review": "pending"
+}
