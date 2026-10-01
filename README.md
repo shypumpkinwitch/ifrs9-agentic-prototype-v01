@@ -1,4 +1,4 @@
-# IFRS 9 Auditor Research Assistant — post-hardening release
+# IFRS 9 Auditor Research Assistant — Evidence-grounded RAG prototype
 
 An auditor starting with an unfamiliar client transaction needs to find possible comparable disclosures without confusing company reporting practice with authoritative IFRS requirements.
 
