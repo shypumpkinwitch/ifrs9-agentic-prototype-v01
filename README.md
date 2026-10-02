@@ -1,75 +1,86 @@
 # IFRS 9 Auditor Research Assistant — Evidence-grounded RAG prototype
 
-An auditor starting with an unfamiliar client transaction needs to find possible comparable disclosures without confusing company reporting practice with authoritative IFRS requirements.
+## Project overview
 
-This is a small offline-first Streamlit research workflow with an optional model planner. It is not an accounting decision system and does not approve audit work. The private annual-report corpus remains gitignored and local; it is not redistributed or sent to a model. Without an OpenRouter key, the application truthfully labels and runs a deterministic fallback workflow rather than simulating model activity.
+The primary user is an auditor or accounting researcher who has a client fact pattern but may not know a relevant comparable issuer. The problem is not simply finding documents: the user must distinguish authoritative IFRS material from company reporting practice, identify economically relevant comparators, preserve provenance, and surface evidence gaps before exercising professional judgement.
 
-The primary persona is an auditor or accounting researcher who knows the client fact pattern but may not know a comparable issuer in advance. The input is a narrative audit scenario plus optional local/private data. The output is a scope-aware, authority-first research handoff with source provenance, explicit comparator dimensions, evidence gaps and a mandatory human-review boundary.
+This Streamlit prototype uses an authority-first, evidence-grounded workflow. It routes a narrative audit scenario by accounting scope and instrument, retrieves structured official-source authority cards, searches a local corpus with BM25, and assesses comparable-company disclosures across explicit business and exposure dimensions. A bounded controller governs every research action. An optional model planner may choose from the controller's permitted tools, but raw annual-report, filing, and IFRS source text stays local.
 
-Current submission documentation:
+The output is a structured research handoff—not an accounting conclusion—with separate sections for official IFRS sources, comparable-company practice, evidence gaps, provenance, and required auditor review.
 
-- [Product documentation](docs/current_release/PRODUCT.md) — Persona, Input, Output, Architecture, Target Metrics and Achieved Metrics.
-- [Architecture and module map](docs/current_release/ARCHITECTURE_AND_MODULES.md) — file-level/module-level responsibilities and evidence boundaries.
-- [Data and evaluation guide](docs/current_release/DATA_AND_EVALUATIONS.md) — frozen retrieval bank, source mappings, QA, scenario evaluation and reproduction.
-- [Submission readiness](docs/current_release/SUBMISSION_READINESS.md) — instructor requirements, public-safe inventory and remaining deliverables.
+## Workflow overview
 
-## What the prototype demonstrates
+```text
+User audit scenario
+→ Scope routing
+→ Authority and evidence filtering
+→ Retrieval and comparator discovery
+→ Structured research handoff
+```
 
-- A scenario form fixed to IFRS Accounting Standards as issued by IASB for the initial filter.
-- Visually separate official IFRS authority cards, IFRS Foundation supporting/educational material, professional-interpretation gaps, company disclosures, and limitations.
-- Candidate status (`candidate only` versus `indexed and inspected`) and framework status (`confirmed`, `pending`, or `excluded`).
-- Dependency-free local BM25 retrieval.
-- Conservative scenario routing that distinguishes development loans, banking loans, trade receivables, debt investments, lease receivables, guarantees/commitments and unsupported accounting scopes.
-- Explicit read-only research tools with controller-enforced legal transitions, six-step local and ten-step external caps, duplicate-call blocking, bounded result counts, safe errors, early stopping, and actual traces.
-- Optional OpenRouter model planning over structured scenario state and metadata only; local BM25 and source-body processing stay in-process.
-- Explicit comparability ratings (`strong`, `partial`, `weak`, or `insufficient`) across business model, instrument, borrower/counterparty, collateral, construction/leasing, and ECL treatment.
-- An outbound-content gate that accepts only project-authored cards that are both source-verified and approved for external API use.
-- Local abstention when approved generation context is unavailable.
-- Display-only historical metrics and five separate development/demo scenarios.
+## Product at a glance
 
-## Current architecture
+| Requirement | Current implementation |
+| --- | --- |
+| **Persona** | External auditor or accounting researcher starting from a client fact pattern rather than a known comparator. |
+| **Input** | Narrative audit scenario, IASB-IFRS framework preference, and optional gitignored 76-chunk local corpus. Separately authorised experiments may use runtime OpenRouter or SEC credentials. |
+| **Output** | Scope-aware research topics, official authority cards, retrieved evidence with provenance, explicit comparator dimensions, framework status, evidence gaps, safe abstentions, and a human-review handoff. |
+| **Architecture** | Offline-first Streamlit UI, scenario router, authority registry, local BM25 retrieval, bounded controller, optional sanitized model planner, and a separate bounded SEC discovery lane. |
+| **Target metrics** | Track Hit@1/Hit@5 on the frozen holdout; preserve corpus integrity; enforce authority separation, privacy, bounded agency, scenario safety, and passing current-release regression tests. No undocumented numerical target was added retrospectively. |
+| **Achieved metrics** | Historical holdout: BM25 Hit@1 71.1%, Hit@5 97.4%; semantic Hit@1 34.2%, Hit@5 73.7%. Current release: 127/127 tests passed and 88/88 protected artifacts matched. These measure different evaluation layers and are not combined into one score. |
+
+Detailed Persona, Input, Output, Architecture, Target Metrics, and Achieved Metrics are in [Product documentation](docs/current_release/PRODUCT.md).
+
+## High-level architecture
 
 ```mermaid
 flowchart LR
-    U[Auditor scenario] --> UI[Streamlit UI\napp.py]
-    UI --> R[Scope and instrument routing\nscenario_routing.py]
-    R --> A[Official authority registry\nauthority_registry.py]
-    R --> C[Bounded controller\nagent_loop_hardened.py]
-    P[(Private local corpus\ngitignored)] --> L[Local BM25 and features\nretrieval.py + agent_tools.py]
-    L --> C
+    U[Auditor scenario] --> R[Scope and instrument routing]
+    R --> A[IFRS Authority Registry]
+    R --> C[Bounded controller]
+    P[(Private local corpus\ngitignored)] --> B[Local BM25 retrieval\nand feature extraction]
+    B --> C
     A --> C
-    C --> X[Explicit comparability assessment]
-    X --> H[Separated auditor research handoff]
+    C --> Q[Explicit comparability assessment]
+    Q --> H[Structured research handoff]
     A --> H
-    H --> UI
-    C -. sanitized state only .-> M[Optional model planner\nagent_planner.py]
-    R --> E[Separate bounded SEC lane\nexternal_discovery.py]
-    E --> I[IFRS-targeted filtering\nexternal_discovery_ifrs.py]
-    I -. metadata and non-verbatim features .-> C
-    F[(Local filing bodies\ngitignored)] --> E
+    C -. sanitized state only .-> M[Optional model planner]
+    R --> E[Bounded SEC discovery lane]
+    E --> F[Framework verification\nand IFRS-targeted filtering]
+    F -. metadata and non-verbatim features .-> C
+    X[(Downloaded filing bodies\ngitignored)] --> E
 ```
 
-Raw annual-report chunks, downloaded filing bodies and IFRS source text remain local. The optional planner receives only the scenario, tool contracts, structured state, metadata, ranks/scores, authority labels and locally derived non-verbatim features.
+The controller enforces legal state transitions, controller-owned candidate scope, duplicate-call blocking, bounded result counts, safe stopping, a six-step local cap, and a ten-step external cap. SEC discovery targets explicit filing and metadata endpoints; it is not unrestricted browsing. The optional planner receives only the scenario, tool contracts, structured state, provenance metadata, ranks/scores, authority labels, and locally derived non-verbatim features.
 
-## Data status
+See [Architecture and module map](docs/current_release/ARCHITECTURE_AND_MODULES.md) for source-file responsibilities, state transitions, and test ownership.
 
-Gate 1 found the workspace empty. Gate 3 subsequently integrated the supplied private runtime bundle beneath the gitignored `private_data/` tree. Gate 4 adds bounded planning without altering the corpus or frozen evaluation artifacts. See [the public-safe Gate 1 audit](docs/current_release/GATE1_AUDIT_PUBLIC.md), [the Gate 3 integration audit](docs/GATE3_PRIVATE_INTEGRATION_v01.md), and [the Gate 4 architecture note](docs/GATE4_ARCHITECTURE_v01.md).
+## Evidence and authority boundaries
 
-Gate 4.5 ran three live `openai/gpt-4o-mini` planner cases through OpenRouter. Privacy and controller guardrails held, but the two comparator cases did not reach the comparability tool; that validation remains preserved as a partial failure. Gate 4.6 then hardened the workflow as an explicit state machine with state-specific tool menus, controller-owned candidate scope, mandatory comparability and authority checks, and one-time structured evidence gaps. Its three fresh live cases completed the intended workflows without fallback.
+The UI keeps official IFRS authority, IFRS Foundation supporting or educational material, professional interpretation, company disclosure, and project-authored educational material distinct. A company disclosure may establish what an issuer reported; it cannot establish what IFRS requires. Supporting or educational material is not labelled as IFRS Standard text, and missing paragraph references are not invented.
 
-Gate 5 adds a separate, bounded SEC EDGAR discovery lane so the scenario does not have to name a comparator. Official full-text search and submissions metadata lead to at most three candidates; filing bodies are downloaded only to gitignored `external_runtime/`, verified and searched locally, and represented to the planner only by structured metadata, hashes, feature counts, and locators. The first live flagship run discovered three external candidates and retained Toll Brothers as a limited economic comparator while preserving Allied_REIT as the stronger separate local comparator.
+The deliberately small IFRS Authority Registry contains seven structured, non-verbatim official-source cards for the flagship ECL workflow. Verified references include IFRS 9 paragraphs 5.5.1, 5.5.3, 5.5.5, 5.5.9, 5.5.17, and B5.5.55. It is not a complete IFRS library and does not redistribute IFRS Standard text. See [Gate 6.1 authority-layer documentation](docs/GATE61_AUTHORITY_LAYER_v01.md).
 
-Gate 5.1 adds `required_reporting_framework = IFRS` discovery. It searches Form 20-F filings but requires issuer-specific basis/auditor evidence before classifying a candidate as IFRS, then applies business classification before deep property comparability. Its single live run verified three IASB-IFRS issuers and retained Logistic Properties of the Americas as a partial comparator. Allied_REIT remains pending because its available frozen extracts do not establish the exact reporting basis.
+## Evaluation methodology and verified results
 
-Gate 6 integrates the local workflow and sanitized recorded Gate 5.1 evidence into one auditor-facing Streamlit journey. Displaying the recorded external result does not rerun SEC discovery. The UI preserves the post-live Shinhan integrity finding: SIC-based hardening was regression-tested offline, the original live checkpoint was not overwritten, and no second live external-discovery run occurred.
+The original retrieval bank contains 50 reviewed questions: 12 development questions and a frozen 38-question holdout. Accepted evidence mappings may contain more than one relevant chunk. Final retrieval results are reported only on the holdout, and that holdout was not used to tune the later agent workflow.
 
-Gate 6.1 adds a deliberately small `IFRS Authority Registry` for the flagship ECL scenario. It stores only official-source metadata, verified paragraph references where available, and concise non-verbatim summaries. The authority lookup precedes comparable-company research in the UI. No IFRS source body is stored, redistributed, or sent to OpenRouter, and no new SEC discovery was performed.
+| Retriever | Hit@1 | Hit@5 |
+| --- | ---: | ---: |
+| BM25 | 71.1% (27/38) | 97.4% (37/38) |
+| Semantic baseline | 34.2% (13/38) | 73.7% (28/38) |
 
-The post-Gate-6.1 hardening adds scope-aware routing and scenario-specific comparability controls after the frozen eight-scenario evaluation exposed over-broad routing, generic-ECL matching and cross-scenario presentation leakage. Unsupported scopes now stop cleanly; instrument-specific authority gaps cause abstention; and a historical flagship snapshot is no longer attached to unrelated current handoffs. The original v1/v1.1 observations remain frozen, while S01–S08 post-fix observations are stored separately as regression diagnostics rather than unseen-holdout performance.
+These are frozen historical fixed-corpus results, not post-hardening agent metrics. The [public-safe benchmark export](evaluations/public_retrieval_benchmark_v1/README.md) contains all 50 question texts and all 58 accepted evidence mappings, including split and source provenance where available, without annual-report passages. Exact metric reproduction still requires the private 76-chunk corpus.
 
-The public fixture remains self-authored test material labelled `PROJECT_EDUCATIONAL_NOTE`. When private mode is enabled, the app uses the actual 76 local annual-report chunks instead of the synthetic retrieval fixture. Those private chunks remain gitignored and are never included in trace downloads or model payloads.
+Retrieval, grounding, agent workflow, and discovery results remain separate:
 
-The raw transferred-file SHA-256 is `105eef…`, while the historical freeze manifest records the canonical parsed-JSON content hash `551060…`. The audit now computes and labels both methods; the canonical hash reproduces the manifest exactly. All five manifest-referenced frozen files, including the separately supplied label-audit CSV, are installed locally and match their recorded byte hashes.
+- **Grounding pilot:** the historical 4/4 result used self-authored educational material, not private annual-report text. It reported 311 input and 149 output tokens and provider cost of USD 0.00013605. The source prompts and outputs were unavailable, so the result was not reproduced or re-signed.
+- **Planner/controller validation:** an initial three-case live run preserved a genuine partial failure; a subsequent three-case run completed the hardened controller workflow. These are small workflow experiments, not retrieval benchmarks.
+- **External discovery validation:** one bounded SEC/model run and one IFRS-targeted run tested candidate discovery, issuer-specific framework verification, rejection, and partial comparison without changing the frozen corpus. Subsequent discovery hardening was regression-tested offline without a second live run.
+- **Eight-scenario evaluation:** original v1/v1.1 observations remain frozen. Separate S01–S08 post-fix observations are regression diagnostics over known cases, not independent unseen-holdout performance or a manual accounting-quality score.
+- **Current release:** 127/127 current-version functional and integrity tests passed; 88/88 protected immutable artifacts matched. The focused routing/UI regression suite passed 20/20 tests.
+
+Four unchanged historical snapshot tests retain the expected `Integrity mismatch: app.py` result because they validate the pre-hardening application snapshot. They remain visible and separate; they were not deleted, skipped, or weakened. See [Data and evaluations](docs/current_release/DATA_AND_EVALUATIONS.md) for question creation, label review, freezing, Hit@K calculation, scenario evaluation, and reproduction limitations.
 
 ## Run the public demo
 
@@ -83,17 +94,11 @@ python -m venv .venv
 
 No API key and no private corpus are needed. With no key, the public demo uses the labelled deterministic fallback and makes no network or model call.
 
-To enable the optional model planner, set `OPENROUTER_API_KEY` at runtime. `OPENROUTER_MODEL` and `OPENROUTER_BASE_URL` are optional. The key must not be committed. Model calls receive the scenario, tool contracts, structured state, source identifiers, provenance metadata, ranks, scores, and locally derived non-verbatim feature counts; they do not receive annual-report chunk text.
+To enable the optional model planner, set `OPENROUTER_API_KEY` at runtime. `OPENROUTER_MODEL` and `OPENROUTER_BASE_URL` are optional. Credentials must not be committed. Planner calls receive structured state and non-verbatim metadata only.
 
-## Optional private corpus (local only)
+For local/private use, select `working_corpus_v01.json` in the sidebar. The loader requires 76 unique chunk IDs, reads the corpus without modifying it, and never places raw chunks in planner payloads or trace downloads. The 48 records without `source_id` remain unchanged; runtime provenance uses `chunk_id`, company, year, and PDF page instead of reconstructed identifiers.
 
-Supply an absolute local path in the sidebar. The JSON must be a list of records containing:
-
-`chunk_id`, `source_type`, `authority_level`, `company`, `year`, `pdf_page`, `topic`, and `text`. `source_id` is retained when supplied but is not invented when absent.
-
-The loader requires 76 unique chunk IDs, opens the file read-only, and compares its SHA-256 before and after loading. Raw chunks are used only for local retrieval and preview; they never enter the outbound-card payload or downloadable trace. The supplied corpus omits `source_id` on 48 records, so the app preserves that absence and uses `chunk_id` plus page metadata instead of fabricating IDs.
-
-## Run tests
+## Test and reproduce
 
 Use the version-aware offline release runner:
 
@@ -101,94 +106,34 @@ Use the version-aware offline release runner:
 & '.\.venv\Scripts\python.exe' evaluations/post_hardening_release_v1/run_release_verification.py
 ```
 
-Latest verification: 127 current-version tests passed with zero failures, errors or skips; all 88 protected immutable artifacts matched. The runner also executes four unchanged historical-snapshot tests separately. Those four retain the expected `Integrity mismatch: app.py` errors because the original v1/v1.1 manifests validate the pre-hardening application source. They are not deleted, skipped or weakened.
-
-The transparent raw suite therefore reports 127 passed and four historical-snapshot errors:
+Run the public-release privacy and integrity audit:
 
 ```powershell
-& '.\.venv\Scripts\python.exe' evaluations/scenario_hardening_postfix_v1/run_all_tests_offline.py
-```
-
-Run the focused routing/UI regression and the public-release audit:
-
-```powershell
-& '.\.venv\Scripts\python.exe' -m unittest tests.test_scenario_hardening_postfix tests.test_streamlit_app -v
 & '.\.venv\Scripts\python.exe' -m src.release_audit
 ```
 
-The focused suite currently has 20 passing tests. All commands above are offline; the release runner clears provider credentials and blocks sockets and URL opening.
+Both commands are offline. The release verifier clears provider credentials and blocks sockets and URL opening. Detailed commands and historical-snapshot interpretation are in [Data and evaluations](docs/current_release/DATA_AND_EVALUATIONS.md) and [Submission readiness](docs/current_release/SUBMISSION_READINESS.md).
 
-## Historical results and generation pilot
+## Privacy and public-release boundary
 
-With private mode enabled, the app reads the supplied `holdout_summary_v02.csv` without recomputation: 76 chunks; 12 development questions; 38 holdout questions; BM25 Hit@1 71.1% (27/38), Hit@5 97.4% (37/38); Semantic Hit@1 34.2% (13/38), Hit@5 73.7% (28/38). These are historical fixed-corpus baseline results, not new workflow or agent results. Public-fixture mode displays the same values from the separately labelled project metadata file.
+The public-safe release excludes private annual-report chunks, copyrighted source-body text, downloaded SEC filing bodies, raw IFRS source text, API keys, environment files, the identifying SEC User-Agent value, local filesystem paths, virtual environments, caches, runtime outputs, and the original path-bearing Gate 1 audit.
 
-The [public-safe benchmark export](evaluations/public_retrieval_benchmark_v1/README.md) provides all 50 frozen question texts and all 58 accepted evidence mappings without annual-report passages. Exact metric reproduction still requires the private 76-chunk corpus because the export contains identifiers and provenance, not retrievable source bodies.
+The private corpus remains read-only and gitignored. Its raw transferred-file hash and canonical parsed-JSON hash are computed separately; the canonical hash matches the historical freeze manifest. Public-safe code, tests, schemas, hashes, synthetic fixtures, sanitized traces, and non-verbatim derived metadata are included. The release audit checks configured secret values when available and verifies protected historical artifacts; platform secret scanning should remain enabled after publication.
 
-The earlier educational-note pilot reportedly used `openai/gpt-4o-mini` via OpenRouter (311 input tokens, 149 output tokens, US$0.00013605 for one call) and recorded 4/4 grounding against project-authored notes. Its prompts, sentences, evidence cards, and review artifacts were not present, so this project does not reproduce or re-sign that result. The grounding review CSV remains empty pending actual source material and independent human review.
+## Documentation and submission evidence
 
-## Authority and generation policy
+- **Product and architecture:** [Product documentation](docs/current_release/PRODUCT.md) and [Architecture and module map](docs/current_release/ARCHITECTURE_AND_MODULES.md).
+- **Data and evaluation:** [Evaluation guide](docs/current_release/DATA_AND_EVALUATIONS.md) and the [public 50-question/58-mapping benchmark](evaluations/public_retrieval_benchmark_v1/README.md).
+- **Release and regression:** [Version-aware release verification](evaluations/post_hardening_release_v1/README.md) and [scenario-hardening results](evaluations/scenario_hardening_postfix_v1/RESULTS.md).
+- **Submission and historical evidence:** [Submission readiness](docs/current_release/SUBMISSION_READINESS.md), [historical workflow evidence](docs/GATE4_ARCHITECTURE_v01.md), and [rubric/evidence mapping](docs/final_submission/REPORT_OUTLINE_RUBRIC_MAPPING.md).
 
-Gate 6.1 distinguishes `IFRS_STANDARD_OFFICIAL_AUTHORITY`, `IFRS_FOUNDATION_SUPPORTING_OR_EDUCATIONAL`, `PROFESSIONAL_COMMENTARY`, `COMPANY_DISCLOSURE`, and non-authoritative `PROJECT_EDUCATIONAL_NOTE`. Seven structured cards cover the official IFRS 9 page, ECL recognition scope, 12-month versus lifetime ECL, significant increases in credit risk, ECL measurement and forward-looking information, IASB educational material, and collateral/credit enhancements. Exact references were verified for paragraphs 5.5.1, 5.5.3, 5.5.5, 5.5.9, 5.5.17, and B5.5.55; other references remain explicitly `pending`.
-
-The registry does not contain IFRS Standard text. Supporting or educational material is never labelled as Standard text, professional interpretation remains unavailable, and planner-safe authority payloads contain only the structured non-verbatim fields in the registry.
-
-A company disclosure can support a statement about what that issuer reported. It cannot, by itself, support a general claim about what IFRS requires. Every factual generated sentence must cite a retrieved chunk ID. No card in this build passes the generation gate, so the draft correctly abstains.
-
-## Fixed RAG versus bounded agentic workflow
-
-The historical fixed RAG offers fast, repeatable retrieval over a known 76-chunk collection. Gate 4 adds a planner-controller loop for scenario intake, candidate inspection, explicit comparability, authority separation, evidence requests, and safe stopping. When an OpenRouter key is available, a model chooses among the same controller-governed tools. When it is absent, the deterministic fallback follows a fixed policy and reports zero model tokens and zero provider cost. This build makes no claim of numerical superiority over the frozen baseline.
-
-## Project artifacts
-
-- `docs/current_release/PRODUCT.md` — current Persona/Input/Output/Architecture/metrics documentation.
-- `docs/current_release/ARCHITECTURE_AND_MODULES.md` — Mermaid flow, module map, boundaries and test ownership.
-- `docs/current_release/DATA_AND_EVALUATIONS.md` — 50-question bank structure, source mappings, QA, metrics and scenario evaluation.
-- `docs/current_release/SUBMISSION_READINESS.md` — instructor-requirement checklist, safe-publication boundary and missing deliverables.
-- `evaluations/post_hardening_release_v1/` — version-aware release manifest, verifier and historical-snapshot explanation.
-- `evaluations/scenario_hardening_postfix_v1/` — separate S01–S08 post-fix observations and regression evidence.
-- `evaluations/public_retrieval_benchmark_v1/` — public-safe 50-question export, flat accepted-mapping table, schema, integrity report and derivative manifest.
-- `docs/current_release/GATE1_AUDIT_PUBLIC.md` — path-sanitized Gate 1 workspace/file matrix; the protected path-bearing original is excluded from the public repository.
-- `docs/GATE3_PRIVATE_INTEGRATION_v01.md` — private corpus, manifest, and retrieval audit.
-- `docs/GATE4_ARCHITECTURE_v01.md` — Gate 4 planner/controller and data-boundary design.
-- `docs/GATE4_FLAGSHIP_TRACE_v01.json` — metadata-only acceptance trace from the local fallback run.
-- `docs/TEST_RESULTS_GATE4_v01.md` — Gate 4 and full-suite verification evidence.
-- `docs/GATE45_LIVE_PLANNER_AUDIT_v01.json` — sanitized live planner request/response metadata and outcomes.
-- `docs/GATE45_LIVE_PLANNER_RESULTS_v01.md` — Gate 4.5 acceptance assessment and provider-reported usage.
-- `docs/GATE46_LIVE_REVALIDATION_ATTEMPT1_v01.json` — preserved first Gate 4.6 attempt that exposed incomplete candidate scope.
-- `docs/GATE46_LIVE_PLANNER_AUDIT_v01.json` — sanitized successful Gate 4.6 live request/response metadata and outcomes.
-- `docs/GATE46_HARDENING_RESULTS_v01.md` — Gate 4.6 controller design, live results, usage, and verification.
-- `docs/GATE5_LIVE_DISCOVERY_AUDIT_v01.json` — sanitized ten-step SEC discovery trace, sources, framework checks, evidence locators, and usage.
-- `docs/GATE5_RESULTS_v01.md` — Gate 5 architecture, live evaluation, privacy boundary, and limitations.
-- `docs/GATE51_LIVE_DISCOVERY_AUDIT_v01.json` — sanitized Gate 5.1 trace, candidate decisions, framework evidence metadata, efficiency, and preserved live-integrity finding.
-- `docs/GATE51_RESULTS_v01.md` — Gate 5.1 IFRS-targeted outcome, post-live hardening, tests, and limitations.
-- `data/public_demo/gate4_scenario_eval_v01.json` — five separate Gate 4 development/control cases, not a frozen holdout.
-- `docs/GENERATION_GROUNDING_REVIEW_v01.csv` — source-to-sentence review template with independent human review pending.
-- `docs/DEMO_SCRIPT_v01.md` — successful and abstention walkthrough.
-- `docs/QUALITATIVE_COMPARISON_GATE4_v01.md` — fixed RAG versus Gate 4 bounded-workflow comparison.
-- `docs/REPORT_SKELETON_v01.md` — report outline and required caveats.
-- `docs/TEST_RESULTS_v01.md` — preserved pre-Gate-3 public-prototype test evidence.
-- `docs/TEST_RESULTS_GATE3_v01.md` — full private-path Gate 3 verification evidence.
-- `data/public_demo/final_submission_snapshot_v01.json` — public-safe recorded flagship synthesis and actual cost metadata.
-- `docs/final_submission/` — final report, architecture, trade-off, evaluation, responsible-AI, demo, cost, and self-appraisal drafts.
-- `docs/final_submission/HISTORICAL_ARTIFACT_HASHES_v01.json` — Gate 6 preservation ledger for Gate 4 through Gate 5.1 evidence.
-- `data/public_demo/ifrs_authority_registry_v01.json` — seven structured, non-verbatim official-source authority cards.
-- `docs/GATE61_AUTHORITY_LAYER_v01.md` — sources, verified references, privacy boundary, tests, and remaining questions.
-
-## Final public-repository boundary
-
-The public package must exclude API keys, the identifying SEC User-Agent value, private corpus files, full downloaded filings, `.env` files, runtime caches, and copyrighted annual-report text. Public-safe schemas, source code, tests, hashes, synthetic fixtures, sanitized traces, and small non-verbatim derived metadata may remain. The release audit evaluates the release-eligible filesystem tree after excluding ignored runtime roots and checks exact configured secret values when available.
-
-This workspace has no Git metadata, so the current release cannot claim to have inspected a Git index or remote. Before publication, initialise or inspect the intended repository, verify the staged file list, and enable the hosting platform's secret scanner.
-
-The final approximately 1,200-word report and approximately five-minute face-and-screen demo video are not included yet. The video must remain within the announced eight-minute maximum. This documentation task does not create, commit, push or publish a repository.
-
-## Final known limitations
+## Known limitations
 
 - Gate 6.1 provides narrow official IFRS 9 authority-card coverage only; it is not a complete IFRS library and professional interpretation remains absent.
-- Allied_REIT's exact reporting framework remains pending.
-- Logistic Properties is a partial comparator and does not establish development-partner financing.
+- Some local-source reporting frameworks remain pending where issuer-specific evidence is insufficient.
+- Reporting-framework compatibility does not establish economic comparability; exposure-specific evidence may remain incomplete.
 - Bounded SEC discovery and phrase-pattern framework verification may miss relevant issuers or uncommon formulations.
-- Gate 5.1 post-live SIC hardening was not subjected to a second live external-discovery run.
+- Post-live discovery hardening did not receive a second live external-discovery run.
 - Provider-reported API cost is not total cost-to-serve and excludes engineering, infrastructure, governance, source licensing, and human review.
 - Every output requires independent auditor review.
 
