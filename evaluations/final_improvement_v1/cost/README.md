@@ -19,4 +19,6 @@ Regenerate offline:
 
 Provider API cost is not total cost-to-serve; local compute, engineering, storage, governance, source licensing and human review remain outside the ledger.
 
+See the [hypothetical monthly cost scenario](../../../docs/final_submission/MONTHLY_COST_SCENARIO.md) for a reproducible 100-task illustration using the recorded Gate 5.1 usage and explicitly assumed labour times. It is not a new experiment, a production-average estimate or demonstrated time saving; USD API cost and SGD labour amounts remain separate.
+
 The preserved v1 ledger predates the single-case qualification retest and is not rewritten to include it. That additional call is recorded separately in [grounding v2.1](../grounding/live_results_v2_1.json): 306 input / 47 output tokens, US$0.00007410 provider-reported cost. Do not treat the ledger's 36 call-level records as an exhaustive count including the retest, or the grounding calls as completed auditor research scenarios.
