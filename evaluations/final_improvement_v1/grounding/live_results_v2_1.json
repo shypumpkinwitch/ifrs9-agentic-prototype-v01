@@ -1,0 +1,73 @@
+{
+  "evaluation_id": "generation_grounding_v2_1",
+  "recorded_at_utc": "2026-10-03T07:23:54.178108+00:00",
+  "model": "openai/gpt-4o-mini",
+  "live_calls": 1,
+  "retries": 0,
+  "case_id": "GRD-03-FORWARD-LOOKING",
+  "question": "How should historical experience and forward-looking information interact in an ECL estimate?",
+  "prompt_version": "grounding-v2.1-critical-qualification-retention",
+  "system_instruction": "This is a controlled grounding evaluation. Use only the supplied self-authored educational notes. Do not use external knowledge and do not state that the notes are authoritative IFRS requirements. If the notes are sufficient, answer in one or two concise lines and place one or more source citations such as [EDU-ECL-001] on every line. If they are insufficient, output exactly: Insufficient evidence in the approved educational materials. Preserve all material qualifications, conditions, exceptions and limitations explicitly stated in the supplied evidence that constrain your answer. Do not strengthen conditional statements into unconditional claims or replace 'may' with 'must'. Brevity must not remove a material qualification. Include the applicable conditions in the cited answer, and check the answer against the supplied evidence before returning it. Return only the answer, without internal reasoning.",
+  "request_audit": {
+    "payload_sha256": "65ac5f012ef4e43801de26ee32cc4b20487057efaa393313d3ccfa62c8af17a7",
+    "source_ids": [
+      "EDU-FWD-003"
+    ],
+    "source_count": 1,
+    "outbound_material": "approved self-authored educational notes only",
+    "raw_annual_report_text_included": false,
+    "raw_ifrs_source_text_included": false,
+    "authorization_header_saved": false,
+    "prompt_version": "grounding-v2.1-critical-qualification-retention"
+  },
+  "original_response": "Historical experience should be supplemented with reasonable and supportable forward-looking information in an ECL estimate, especially when historical data alone does not reflect expected future conditions [EDU-FWD-003].",
+  "revised_response": "An ECL estimate should incorporate reasonable and supportable forward-looking information when available without undue cost or effort, and a documented adjustment may be needed when historical experience alone does not represent expected future conditions. [EDU-FWD-003]",
+  "source_citations": [
+    "EDU-FWD-003"
+  ],
+  "structural_checks": {
+    "expected_behavior": "answer_with_citations",
+    "citations": [
+      "EDU-FWD-003"
+    ],
+    "unknown_citations": [],
+    "citations_outside_supplied_context": [],
+    "exact_abstention": false,
+    "every_answer_line_has_citation": true,
+    "structural_pass": true,
+    "scope_note": "Automated syntax and source-ID checks only; not a factual-grounding judgement."
+  },
+  "qualification_comparison": {
+    "validation_type": "automated phrase retention; independent human factual review pending",
+    "qualification_stated_in_source": true,
+    "original_retains_qualification": false,
+    "revised_retains_qualification": true,
+    "independent_human_review_status": "pending",
+    "fully_supported_by_source": null
+  },
+  "outcome": "qualification_retained; manual factual review pending",
+  "usage": {
+    "input_tokens": 306,
+    "output_tokens": 47,
+    "provider_reported_cost_available": true,
+    "provider_reported_cost_usd": 7.41e-05
+  },
+  "provider_response_metadata": {
+    "response_id": "gen-1791012233-L4hjrGZHlOrKQ3MffJPt",
+    "provider_model": "openai/gpt-4o-mini",
+    "finish_reason": "stop"
+  },
+  "original_artifact_hashes_before": {
+    "cases_v1.json": "53d2e46701ded61309f94e5984c38ad091ef32d952de97a92cf9de6f43569bae",
+    "educational_sources_v1.json": "957bcc0b8515afc74dbc047d86ad5efcb4841fb42aa496bd44c457663c5ebf28",
+    "live_results_v1.json": "a0cd3400483ab05059aebd4b37e80b5dcf581f335837a82d728980d60899e383",
+    "manual_review_checklist_v1.json": "7196ee757d7ec889abd8ff2af53b7023f8529f9c84554dc13e3b8e511e78f2f0"
+  },
+  "original_artifact_hashes_after": {
+    "cases_v1.json": "53d2e46701ded61309f94e5984c38ad091ef32d952de97a92cf9de6f43569bae",
+    "educational_sources_v1.json": "957bcc0b8515afc74dbc047d86ad5efcb4841fb42aa496bd44c457663c5ebf28",
+    "live_results_v1.json": "a0cd3400483ab05059aebd4b37e80b5dcf581f335837a82d728980d60899e383",
+    "manual_review_checklist_v1.json": "7196ee757d7ec889abd8ff2af53b7023f8529f9c84554dc13e3b8e511e78f2f0"
+  },
+  "original_artifacts_unchanged": true
+}

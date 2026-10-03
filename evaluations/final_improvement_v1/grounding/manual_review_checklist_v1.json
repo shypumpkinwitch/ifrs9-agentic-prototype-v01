@@ -1,0 +1,74 @@
+[
+  {
+    "case_id": "GRD-01-ECL-HORIZON",
+    "automated_structural_pass": true,
+    "manual_review_status": "pending_human_review",
+    "factual_claims_supported_by_cited_material": null,
+    "citations_entail_claims": null,
+    "abstention_appropriate": null,
+    "material_omission_present": null,
+    "reviewer_name": null,
+    "reviewed_at": null,
+    "review_notes": ""
+  },
+  {
+    "case_id": "GRD-02-SICR",
+    "automated_structural_pass": true,
+    "manual_review_status": "pending_human_review",
+    "factual_claims_supported_by_cited_material": null,
+    "citations_entail_claims": null,
+    "abstention_appropriate": null,
+    "material_omission_present": null,
+    "reviewer_name": null,
+    "reviewed_at": null,
+    "review_notes": ""
+  },
+  {
+    "case_id": "GRD-03-FORWARD-LOOKING",
+    "automated_structural_pass": true,
+    "manual_review_status": "pending_human_review",
+    "factual_claims_supported_by_cited_material": null,
+    "citations_entail_claims": null,
+    "abstention_appropriate": null,
+    "material_omission_present": null,
+    "reviewer_name": null,
+    "reviewed_at": null,
+    "review_notes": ""
+  },
+  {
+    "case_id": "GRD-04-COLLATERAL",
+    "automated_structural_pass": true,
+    "manual_review_status": "pending_human_review",
+    "factual_claims_supported_by_cited_material": null,
+    "citations_entail_claims": null,
+    "abstention_appropriate": null,
+    "material_omission_present": null,
+    "reviewer_name": null,
+    "reviewed_at": null,
+    "review_notes": ""
+  },
+  {
+    "case_id": "GRD-05-NUMERIC-THRESHOLD",
+    "automated_structural_pass": true,
+    "manual_review_status": "pending_human_review",
+    "factual_claims_supported_by_cited_material": null,
+    "citations_entail_claims": null,
+    "abstention_appropriate": null,
+    "material_omission_present": null,
+    "reviewer_name": null,
+    "reviewed_at": null,
+    "review_notes": ""
+  },
+  {
+    "case_id": "GRD-06-DERECOGNITION",
+    "automated_structural_pass": true,
+    "manual_review_status": "pending_human_review",
+    "factual_claims_supported_by_cited_material": null,
+    "citations_entail_claims": null,
+    "abstention_appropriate": null,
+    "material_omission_present": null,
+    "reviewer_name": null,
+    "reviewed_at": null,
+    "review_notes": ""
+  }
+]

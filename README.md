@@ -27,7 +27,7 @@ User audit scenario
 | **Output** | Scope-aware research topics, official authority cards, retrieved evidence with provenance, explicit comparator dimensions, framework status, evidence gaps, safe abstentions, and a human-review handoff. |
 | **Architecture** | Offline-first Streamlit UI, scenario router, authority registry, local BM25 retrieval, bounded controller, optional sanitized model planner, and a separate bounded SEC discovery lane. |
 | **Target metrics** | Track Hit@1/Hit@5 on the frozen holdout; preserve corpus integrity; enforce authority separation, privacy, bounded agency, scenario safety, and passing current-release regression tests. No undocumented numerical target was added retrospectively. |
-| **Achieved metrics** | Historical holdout: BM25 Hit@1 71.1%, Hit@5 97.4%; semantic Hit@1 34.2%, Hit@5 73.7%. Current release: 127/127 tests passed and 88/88 protected artifacts matched. These measure different evaluation layers and are not combined into one score. |
+| **Achieved metrics** | Historical holdout: BM25 Hit@1 71.1%, Hit@5 97.4%; semantic Hit@1 34.2%, Hit@5 73.7%. Final-evidence release regression: 137/137 tests passed and 88/88 protected artifacts matched; the prior published release recorded 127/127. These measure different evaluation layers and are not combined into one score. |
 
 Detailed Persona, Input, Output, Architecture, Target Metrics, and Achieved Metrics are in [Product documentation](docs/current_release/PRODUCT.md).
 
@@ -75,10 +75,13 @@ These are frozen historical fixed-corpus results, not post-hardening agent metri
 Retrieval, grounding, agent workflow, and discovery results remain separate:
 
 - **Grounding pilot:** the historical 4/4 result used self-authored educational material, not private annual-report text. It reported 311 input and 149 output tokens and provider cost of USD 0.00013605. The source prompts and outputs were unavailable, so the result was not reproduced or re-signed.
+- **Grounding v2:** a separate reproducible six-case live evaluation saved actual responses, citations and per-call usage. Four supported and two insufficient-evidence cases passed 6/6 automated structural checks using 1,317 input tokens, 185 output tokens and provider-reported cost of USD 0.00030855. Manual factual grounding review remains pending.
+- **Qualification-retention v2.1:** original GRD-03 had a valid citation but omitted the source's “without undue cost or effort” condition. One separately recorded revised-prompt retest retained it, using 306 input / 47 output tokens and USD 0.00007410 provider-reported cost. This is a known-case retest, not independent general grounding improvement or completed independent human review.
+- **Development-only retrieval and cost:** equal BM25/LSA rank fusion reached 9/12 Hit@1 and 12/12 Hit@5, versus BM25's 9/12 and 11/12. The holdout was not accessed; BM25 remains the production default. A separate ledger consolidates 36 preserved call-level usage records, scenario aggregates and zero-cost fallback rows; the v2.1 call remains separately recorded.
 - **Planner/controller validation:** an initial three-case live run preserved a genuine partial failure; a subsequent three-case run completed the hardened controller workflow. These are small workflow experiments, not retrieval benchmarks.
 - **External discovery validation:** one bounded SEC/model run and one IFRS-targeted run tested candidate discovery, issuer-specific framework verification, rejection, and partial comparison without changing the frozen corpus. Subsequent discovery hardening was regression-tested offline without a second live run.
 - **Eight-scenario evaluation:** original v1/v1.1 observations remain frozen. Separate S01–S08 post-fix observations are regression diagnostics over known cases, not independent unseen-holdout performance or a manual accounting-quality score.
-- **Current release:** 127/127 current-version functional and integrity tests passed; 88/88 protected immutable artifacts matched. The focused routing/UI regression suite passed 20/20 tests.
+- **Current regression:** 137/137 current-version functional and integrity tests passed; 88/88 protected immutable artifacts matched. The prior published release recorded 127/127, and the focused routing/UI regression suite remains 20/20.
 
 Four unchanged historical snapshot tests retain the expected `Integrity mismatch: app.py` result because they validate the pre-hardening application snapshot. They remain visible and separate; they were not deleted, skipped, or weakened. See [Data and evaluations](docs/current_release/DATA_AND_EVALUATIONS.md) for question creation, label review, freezing, Hit@K calculation, scenario evaluation, and reproduction limitations.
 
@@ -125,6 +128,7 @@ The private corpus remains read-only and gitignored. Its raw transferred-file ha
 - **Product and architecture:** [Product documentation](docs/current_release/PRODUCT.md) and [Architecture and module map](docs/current_release/ARCHITECTURE_AND_MODULES.md).
 - **Data and evaluation:** [Evaluation guide](docs/current_release/DATA_AND_EVALUATIONS.md) and the [public 50-question/58-mapping benchmark](evaluations/public_retrieval_benchmark_v1/README.md).
 - **Release and regression:** [Version-aware release verification](evaluations/post_hardening_release_v1/README.md) and [scenario-hardening results](evaluations/scenario_hardening_postfix_v1/RESULTS.md).
+- **Focused final improvement:** [development-only hybrid retrieval, six-case grounding, single-case v2.1 retest and consolidated cost evidence](evaluations/final_improvement_v1/README.md).
 - **Submission and historical evidence:** [Submission readiness](docs/current_release/SUBMISSION_READINESS.md), [historical workflow evidence](docs/GATE4_ARCHITECTURE_v01.md), and [rubric/evidence mapping](docs/final_submission/REPORT_OUTLINE_RUBRIC_MAPPING.md).
 
 ## Known limitations

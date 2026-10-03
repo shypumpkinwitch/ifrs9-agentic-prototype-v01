@@ -1,0 +1,277 @@
+{
+  "evaluation_id": "generation_grounding_v2",
+  "evaluation_status": "live structural evaluation complete; manual factual review pending",
+  "recorded_at_utc": "2026-10-03T06:47:22.820669+00:00",
+  "model": "openai/gpt-4o-mini",
+  "cases": 6,
+  "sufficient_evidence_cases": 4,
+  "insufficient_evidence_cases": 2,
+  "automated_structural_pass_count": 6,
+  "manual_factual_grounding_pass_count": null,
+  "manual_review_status": "pending_human_review",
+  "aggregate_usage": {
+    "input_tokens": 1317,
+    "output_tokens": 185,
+    "provider_reported_cost_usd": 0.00030855,
+    "provider_reported_cost_available_for_every_call": true,
+    "model_calls": 6
+  },
+  "privacy": {
+    "source_authority_level": "PROJECT_EDUCATIONAL_NOTE",
+    "self_authored_sources_only": true,
+    "raw_annual_report_text_sent": false,
+    "raw_ifrs_source_text_sent": false,
+    "api_key_saved": false
+  },
+  "structural_vs_manual_boundary": "Automated checks validate citation syntax, source-ID membership and exact abstention only. They do not establish factual support; the checklist requires independent human review.",
+  "records": [
+    {
+      "case_id": "GRD-01-ECL-HORIZON",
+      "question": "When can the educational materials support using a shorter ECL horizon rather than a lifetime horizon?",
+      "expected_behavior": "answer_with_citations",
+      "request_audit": {
+        "payload_sha256": "3a2fd6d0bc3ee0414a2b34b3a05236f4c75c066c1806027bc0255a9384052c37",
+        "source_ids": [
+          "EDU-ECL-001"
+        ],
+        "source_count": 1,
+        "outbound_material": "approved self-authored educational notes only",
+        "raw_annual_report_text_included": false,
+        "raw_ifrs_source_text_included": false,
+        "authorization_header_saved": false
+      },
+      "model_response": "The educational materials support using a shorter ECL horizon when credit risk has not increased significantly. [EDU-ECL-001]",
+      "source_citations": [
+        "EDU-ECL-001"
+      ],
+      "structural_checks": {
+        "expected_behavior": "answer_with_citations",
+        "citations": [
+          "EDU-ECL-001"
+        ],
+        "unknown_citations": [],
+        "citations_outside_supplied_context": [],
+        "exact_abstention": false,
+        "every_answer_line_has_citation": true,
+        "structural_pass": true,
+        "scope_note": "Automated syntax and source-ID checks only; not a factual-grounding judgement."
+      },
+      "usage": {
+        "input_tokens": 234,
+        "output_tokens": 26,
+        "provider_reported_cost_available": true,
+        "provider_reported_cost_usd": 5.07e-05
+      },
+      "provider_response_metadata": {
+        "response_id": "gen-1791010035-eXlmg8qmtVr5p3wt2PAC",
+        "provider_model": "openai/gpt-4o-mini",
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "case_id": "GRD-02-SICR",
+      "question": "What comparison and indicators are relevant to assessing a significant increase in credit risk?",
+      "expected_behavior": "answer_with_citations",
+      "request_audit": {
+        "payload_sha256": "4a6850c1e8c0438a6130e01890aacbf7a5093d63a184b16ad82e3bfd7bc91a09",
+        "source_ids": [
+          "EDU-SICR-002"
+        ],
+        "source_count": 1,
+        "outbound_material": "approved self-authored educational notes only",
+        "raw_annual_report_text_included": false,
+        "raw_ifrs_source_text_included": false,
+        "authorization_header_saved": false
+      },
+      "model_response": "To assess a significant increase in credit risk, one should compare credit risk at the reporting date with credit risk at initial recognition. Relevant indicators include delinquency, internal or external risk indicators, and borrower-specific deterioration, with no single indicator being decisive in every situation [EDU-SICR-002].",
+      "source_citations": [
+        "EDU-SICR-002"
+      ],
+      "structural_checks": {
+        "expected_behavior": "answer_with_citations",
+        "citations": [
+          "EDU-SICR-002"
+        ],
+        "unknown_citations": [],
+        "citations_outside_supplied_context": [],
+        "exact_abstention": false,
+        "every_answer_line_has_citation": true,
+        "structural_pass": true,
+        "scope_note": "Automated syntax and source-ID checks only; not a factual-grounding judgement."
+      },
+      "usage": {
+        "input_tokens": 237,
+        "output_tokens": 60,
+        "provider_reported_cost_available": true,
+        "provider_reported_cost_usd": 7.155e-05
+      },
+      "provider_response_metadata": {
+        "response_id": "gen-1791010036-CCVrzNOyTTHMshjvur9y",
+        "provider_model": "openai/gpt-4o-mini",
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "case_id": "GRD-03-FORWARD-LOOKING",
+      "question": "How should historical experience and forward-looking information interact in an ECL estimate?",
+      "expected_behavior": "answer_with_citations",
+      "request_audit": {
+        "payload_sha256": "4bbc15af6fb37f0217e52b91991744ecc821749838f9d27a307be3dd557cd90a",
+        "source_ids": [
+          "EDU-FWD-003"
+        ],
+        "source_count": 1,
+        "outbound_material": "approved self-authored educational notes only",
+        "raw_annual_report_text_included": false,
+        "raw_ifrs_source_text_included": false,
+        "authorization_header_saved": false
+      },
+      "model_response": "Historical experience should be supplemented with reasonable and supportable forward-looking information in an ECL estimate, especially when historical data alone does not reflect expected future conditions [EDU-FWD-003].",
+      "source_citations": [
+        "EDU-FWD-003"
+      ],
+      "structural_checks": {
+        "expected_behavior": "answer_with_citations",
+        "citations": [
+          "EDU-FWD-003"
+        ],
+        "unknown_citations": [],
+        "citations_outside_supplied_context": [],
+        "exact_abstention": false,
+        "every_answer_line_has_citation": true,
+        "structural_pass": true,
+        "scope_note": "Automated syntax and source-ID checks only; not a factual-grounding judgement."
+      },
+      "usage": {
+        "input_tokens": 228,
+        "output_tokens": 38,
+        "provider_reported_cost_available": true,
+        "provider_reported_cost_usd": 5.7e-05
+      },
+      "provider_response_metadata": {
+        "response_id": "gen-1791010038-rtVoJwbH6mcyqJsin9qG",
+        "provider_model": "openai/gpt-4o-mini",
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "case_id": "GRD-04-COLLATERAL",
+      "question": "How can collateral affect an ECL analysis, and what does it not replace?",
+      "expected_behavior": "answer_with_citations",
+      "request_audit": {
+        "payload_sha256": "558648cfc24055e3f23136dd926228feee94df92700ecb859ce7af12ff1e6ad7",
+        "source_ids": [
+          "EDU-COLL-004"
+        ],
+        "source_count": 1,
+        "outbound_material": "approved self-authored educational notes only",
+        "raw_annual_report_text_included": false,
+        "raw_ifrs_source_text_included": false,
+        "authorization_header_saved": false
+      },
+      "model_response": "Collateral can affect expected recoveries and the timing of cash shortfalls in an ECL analysis, but it does not replace the need to assess the obligor's credit risk. [EDU-COLL-004]",
+      "source_citations": [
+        "EDU-COLL-004"
+      ],
+      "structural_checks": {
+        "expected_behavior": "answer_with_citations",
+        "citations": [
+          "EDU-COLL-004"
+        ],
+        "unknown_citations": [],
+        "citations_outside_supplied_context": [],
+        "exact_abstention": false,
+        "every_answer_line_has_citation": true,
+        "structural_pass": true,
+        "scope_note": "Automated syntax and source-ID checks only; not a factual-grounding judgement."
+      },
+      "usage": {
+        "input_tokens": 240,
+        "output_tokens": 43,
+        "provider_reported_cost_available": true,
+        "provider_reported_cost_usd": 6.18e-05
+      },
+      "provider_response_metadata": {
+        "response_id": "gen-1791010040-xMF10wksOzwL75ckIOEE",
+        "provider_model": "openai/gpt-4o-mini",
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "case_id": "GRD-05-NUMERIC-THRESHOLD",
+      "question": "What exact probability-of-default percentage requires transfer to lifetime ECL?",
+      "expected_behavior": "abstain_insufficient_evidence",
+      "request_audit": {
+        "payload_sha256": "dccb341e92fc81e5d45c4a63661718a5f5c3996c904f533d71a90896dc8f95d8",
+        "source_ids": [
+          "EDU-SICR-002"
+        ],
+        "source_count": 1,
+        "outbound_material": "approved self-authored educational notes only",
+        "raw_annual_report_text_included": false,
+        "raw_ifrs_source_text_included": false,
+        "authorization_header_saved": false
+      },
+      "model_response": "Insufficient evidence in the approved educational materials.",
+      "source_citations": [],
+      "structural_checks": {
+        "expected_behavior": "abstain_insufficient_evidence",
+        "citations": [],
+        "unknown_citations": [],
+        "citations_outside_supplied_context": [],
+        "exact_abstention": true,
+        "every_answer_line_has_citation": null,
+        "structural_pass": true,
+        "scope_note": "Automated syntax and source-ID checks only; not a factual-grounding judgement."
+      },
+      "usage": {
+        "input_tokens": 239,
+        "output_tokens": 9,
+        "provider_reported_cost_available": true,
+        "provider_reported_cost_usd": 4.125e-05
+      },
+      "provider_response_metadata": {
+        "response_id": "gen-1791010041-d6bWgqlT7OfkzidLDoGi",
+        "provider_model": "openai/gpt-4o-mini",
+        "finish_reason": "stop"
+      }
+    },
+    {
+      "case_id": "GRD-06-DERECOGNITION",
+      "question": "What are the detailed derecognition criteria for a transferred financial asset?",
+      "expected_behavior": "abstain_insufficient_evidence",
+      "request_audit": {
+        "payload_sha256": "8513427304202e49504226daad62bc4cb6cfc1aeba91a79e2854100fd7a72639",
+        "source_ids": [],
+        "source_count": 0,
+        "outbound_material": "approved self-authored educational notes only",
+        "raw_annual_report_text_included": false,
+        "raw_ifrs_source_text_included": false,
+        "authorization_header_saved": false
+      },
+      "model_response": "Insufficient evidence in the approved educational materials.",
+      "source_citations": [],
+      "structural_checks": {
+        "expected_behavior": "abstain_insufficient_evidence",
+        "citations": [],
+        "unknown_citations": [],
+        "citations_outside_supplied_context": [],
+        "exact_abstention": true,
+        "every_answer_line_has_citation": null,
+        "structural_pass": true,
+        "scope_note": "Automated syntax and source-ID checks only; not a factual-grounding judgement."
+      },
+      "usage": {
+        "input_tokens": 139,
+        "output_tokens": 9,
+        "provider_reported_cost_available": true,
+        "provider_reported_cost_usd": 2.625e-05
+      },
+      "provider_response_metadata": {
+        "response_id": "gen-1791010042-4uji5TUAM9cmLDxUu65g",
+        "provider_model": "openai/gpt-4o-mini",
+        "finish_reason": "stop"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "source_id": "EDU-ECL-001",
+    "title": "Educational note: ECL loss horizons",
+    "authority_level": "PROJECT_EDUCATIONAL_NOTE",
+    "authored_by": "PE6201 project",
+    "self_authored": true,
+    "approved_for_external_api": true,
+    "text": "An expected-credit-loss assessment can use a shorter loss horizon when credit risk has not increased significantly and a lifetime horizon when the applicable criteria for increased credit risk are met. The horizon choice and the amount measured are separate questions."
+  },
+  {
+    "source_id": "EDU-SICR-002",
+    "title": "Educational note: changes in credit risk",
+    "authority_level": "PROJECT_EDUCATIONAL_NOTE",
+    "authored_by": "PE6201 project",
+    "self_authored": true,
+    "approved_for_external_api": true,
+    "text": "A significant-increase-in-credit-risk assessment compares credit risk at the reporting date with credit risk at initial recognition. Relevant information may include delinquency, internal or external risk indicators, and borrower-specific deterioration. No single indicator is automatically decisive in every fact pattern."
+  },
+  {
+    "source_id": "EDU-FWD-003",
+    "title": "Educational note: forward-looking information",
+    "authority_level": "PROJECT_EDUCATIONAL_NOTE",
+    "authored_by": "PE6201 project",
+    "self_authored": true,
+    "approved_for_external_api": true,
+    "text": "An ECL estimate should incorporate reasonable and supportable forward-looking information when that information is available without undue cost or effort. A documented adjustment may be needed when historical experience alone does not represent expected future conditions."
+  },
+  {
+    "source_id": "EDU-COLL-004",
+    "title": "Educational note: collateral in cash-shortfall analysis",
+    "authority_level": "PROJECT_EDUCATIONAL_NOTE",
+    "authored_by": "PE6201 project",
+    "self_authored": true,
+    "approved_for_external_api": true,
+    "text": "Collateral can affect expected recoveries and the timing of cash shortfalls when it is relevant to the exposure. It does not remove the need to assess the obligor's credit risk, and its relevance depends on enforceability, expected recovery amounts, and timing."
+  }
+]

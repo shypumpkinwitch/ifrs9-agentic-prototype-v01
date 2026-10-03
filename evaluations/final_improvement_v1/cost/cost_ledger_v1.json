@@ -1,0 +1,606 @@
+{
+  "evaluation_id": "cost_consolidation_v1",
+  "status": "retrospective consolidation of actual provider-reported records",
+  "pricing_assumptions_used": false,
+  "estimated_savings_reported": false,
+  "source_artifacts": {
+    "submission_snapshot": {
+      "path": "data/public_demo/final_submission_snapshot_v01.json",
+      "sha256": "6697143157468ca24fb2c4b2130cfd6698f60da2b83f99206f6fb179ec4c65aa"
+    },
+    "gate45": {
+      "path": "docs/GATE45_LIVE_PLANNER_AUDIT_v01.json",
+      "sha256": "b598918f9bcf50ad091356d60ab6c91ab9fe82ce61c6e1a8c0bafddbcb8dad35"
+    },
+    "gate46": {
+      "path": "docs/GATE46_LIVE_PLANNER_AUDIT_v01.json",
+      "sha256": "5e6a234defb98ca215240f84c6d3c04577fd7ca3cbed5f0bcf291be36effae3f"
+    },
+    "gate5": {
+      "path": "docs/GATE5_LIVE_DISCOVERY_AUDIT_v01.json",
+      "sha256": "f376976186fbece43eb05c37e7057a28c50f74662e3feb224db3170f743bc356"
+    },
+    "gate51": {
+      "path": "docs/GATE51_LIVE_DISCOVERY_AUDIT_v01.json",
+      "sha256": "d71fa2ff7ec414797c39927e8dcb27846f081cc270d9d8b6f3a9b6ba340fd915"
+    },
+    "gate4_fallback": {
+      "path": "docs/GATE4_FLAGSHIP_TRACE_v01.json",
+      "sha256": "e56f7c94c412d379ee84346ef1c221584359814e8208bff215e1227b2f81c919"
+    },
+    "grounding_v2": {
+      "path": "evaluations/final_improvement_v1/grounding/live_results_v1.json",
+      "sha256": "a0cd3400483ab05059aebd4b37e80b5dcf581f335837a82d728980d60899e383"
+    }
+  },
+  "per_model_call": {
+    "records": [
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 1,
+        "input_tokens": 605,
+        "output_tokens": 79,
+        "provider_reported_cost_usd": 0.00013815,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 2,
+        "input_tokens": 1351,
+        "output_tokens": 69,
+        "provider_reported_cost_usd": 0.00024405,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 3,
+        "input_tokens": 1802,
+        "output_tokens": 102,
+        "provider_reported_cost_usd": 0.0003315,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 4,
+        "input_tokens": 1873,
+        "output_tokens": 47,
+        "provider_reported_cost_usd": 0.00030915,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 5,
+        "input_tokens": 1960,
+        "output_tokens": 107,
+        "provider_reported_cost_usd": 0.0003582,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 1,
+        "input_tokens": 572,
+        "output_tokens": 114,
+        "provider_reported_cost_usd": 0.0001542,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 2,
+        "input_tokens": 1406,
+        "output_tokens": 79,
+        "provider_reported_cost_usd": 0.0002583,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 3,
+        "input_tokens": 1885,
+        "output_tokens": 74,
+        "provider_reported_cost_usd": 0.00032715,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 4,
+        "input_tokens": 1958,
+        "output_tokens": 58,
+        "provider_reported_cost_usd": 0.0003285,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 5,
+        "input_tokens": 2045,
+        "output_tokens": 108,
+        "provider_reported_cost_usd": 0.00037155,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 1,
+        "input_tokens": 596,
+        "output_tokens": 82,
+        "provider_reported_cost_usd": 0.0001386,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 2,
+        "input_tokens": 1274,
+        "output_tokens": 64,
+        "provider_reported_cost_usd": 0.0002295,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 3,
+        "input_tokens": 1337,
+        "output_tokens": 96,
+        "provider_reported_cost_usd": 0.00025815,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 1,
+        "input_tokens": 400,
+        "output_tokens": 102,
+        "provider_reported_cost_usd": 0.0001212,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 2,
+        "input_tokens": 571,
+        "output_tokens": 100,
+        "provider_reported_cost_usd": 0.00014565,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 3,
+        "input_tokens": 1229,
+        "output_tokens": 89,
+        "provider_reported_cost_usd": 0.00023775,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 4,
+        "input_tokens": 1044,
+        "output_tokens": 81,
+        "provider_reported_cost_usd": 0.0002052,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 5,
+        "input_tokens": 706,
+        "output_tokens": 47,
+        "provider_reported_cost_usd": 0.0001341,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "call_number": 6,
+        "input_tokens": 769,
+        "output_tokens": 59,
+        "provider_reported_cost_usd": 0.00015075,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 1,
+        "input_tokens": 367,
+        "output_tokens": 87,
+        "provider_reported_cost_usd": 0.00010725,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 2,
+        "input_tokens": 517,
+        "output_tokens": 109,
+        "provider_reported_cost_usd": 0.00014295,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 3,
+        "input_tokens": 1237,
+        "output_tokens": 75,
+        "provider_reported_cost_usd": 0.00014415,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 4,
+        "input_tokens": 1020,
+        "output_tokens": 92,
+        "provider_reported_cost_usd": 0.0002082,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 5,
+        "input_tokens": 677,
+        "output_tokens": 49,
+        "provider_reported_cost_usd": 0.00013095,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-GENERAL-BANKING-ECL",
+        "call_number": 6,
+        "input_tokens": 738,
+        "output_tokens": 56,
+        "provider_reported_cost_usd": 0.0001443,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 1,
+        "input_tokens": 392,
+        "output_tokens": 102,
+        "provider_reported_cost_usd": 0.00012,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 2,
+        "input_tokens": 516,
+        "output_tokens": 77,
+        "provider_reported_cost_usd": 0.0001236,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 3,
+        "input_tokens": 458,
+        "output_tokens": 46,
+        "provider_reported_cost_usd": 9.63e-05,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 4,
+        "input_tokens": 707,
+        "output_tokens": 118,
+        "provider_reported_cost_usd": 0.00017685,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "call_number": 5,
+        "input_tokens": 639,
+        "output_tokens": 53,
+        "provider_reported_cost_usd": 0.00012765,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-01-ECL-HORIZON",
+        "call_number": 1,
+        "input_tokens": 234,
+        "output_tokens": 26,
+        "provider_reported_cost_usd": 5.07e-05,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-02-SICR",
+        "call_number": 2,
+        "input_tokens": 237,
+        "output_tokens": 60,
+        "provider_reported_cost_usd": 7.155e-05,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-03-FORWARD-LOOKING",
+        "call_number": 3,
+        "input_tokens": 228,
+        "output_tokens": 38,
+        "provider_reported_cost_usd": 5.7e-05,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-04-COLLATERAL",
+        "call_number": 4,
+        "input_tokens": 240,
+        "output_tokens": 43,
+        "provider_reported_cost_usd": 6.18e-05,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-05-NUMERIC-THRESHOLD",
+        "call_number": 5,
+        "input_tokens": 239,
+        "output_tokens": 9,
+        "provider_reported_cost_usd": 4.125e-05,
+        "source": "recorded call-level provider usage"
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-06-DERECOGNITION",
+        "call_number": 6,
+        "input_tokens": 139,
+        "output_tokens": 9,
+        "provider_reported_cost_usd": 2.625e-05,
+        "source": "recorded call-level provider usage"
+      }
+    ],
+    "record_count": 36,
+    "coverage_note": "Call-level records are available for Gate 4.5, Gate 4.6 and grounding v2. Gate 5 and Gate 5.1 remain scenario aggregates; no per-call values were invented."
+  },
+  "per_research_scenario": {
+    "records": [
+      {
+        "stage": "Historical generation pilot",
+        "scenario_id": "historical-single-call-pilot",
+        "completed": true,
+        "input_tokens": 311,
+        "output_tokens": 149,
+        "provider_reported_cost_usd": 0.00013605,
+        "model_call_count": 1,
+        "qualification": "Historical reported result; source prompts and outputs unavailable."
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "completed": false,
+        "input_tokens": 7591,
+        "output_tokens": 404,
+        "provider_reported_cost_usd": 0.00138105,
+        "model_call_count": 5,
+        "qualification": "failed_expected_research_direction"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-GENERAL-BANKING-ECL",
+        "completed": false,
+        "input_tokens": 7866,
+        "output_tokens": 433,
+        "provider_reported_cost_usd": 0.0014397,
+        "model_call_count": 5,
+        "qualification": "failed_expected_research_direction"
+      },
+      {
+        "stage": "Gate 4.5 live planner",
+        "scenario_id": "G45-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "completed": true,
+        "input_tokens": 3207,
+        "output_tokens": 242,
+        "provider_reported_cost_usd": 0.00062625,
+        "model_call_count": 3,
+        "qualification": "passed_core_authority_behavior_with_guardrail_intervention"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-PROPERTY-DEVELOPMENT-LOAN",
+        "completed": true,
+        "input_tokens": 4719,
+        "output_tokens": 478,
+        "provider_reported_cost_usd": 0.00099465,
+        "model_call_count": 6,
+        "qualification": "controller-governed workflow completed"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-GENERAL-BANKING-ECL",
+        "completed": true,
+        "input_tokens": 4556,
+        "output_tokens": 468,
+        "provider_reported_cost_usd": 0.0008778,
+        "model_call_count": 6,
+        "qualification": "controller-governed workflow completed"
+      },
+      {
+        "stage": "Gate 4.6 live planner",
+        "scenario_id": "G46-LIVE-UNSUPPORTED-AUTHORITATIVE-GUIDANCE",
+        "completed": true,
+        "input_tokens": 2712,
+        "output_tokens": 396,
+        "provider_reported_cost_usd": 0.0006444,
+        "model_call_count": 5,
+        "qualification": "controller-governed workflow completed"
+      },
+      {
+        "stage": "Gate 5 live discovery",
+        "scenario_id": "single-flagship-run",
+        "completed": true,
+        "input_tokens": 39538,
+        "output_tokens": 1284,
+        "provider_reported_cost_usd": 0.0067011,
+        "model_call_count": null,
+        "qualification": "Scenario aggregate only; call-level token and cost records were not preserved."
+      },
+      {
+        "stage": "Gate 5.1 live discovery",
+        "scenario_id": "single-ifrs-targeted-run",
+        "completed": true,
+        "input_tokens": 13345,
+        "output_tokens": 491,
+        "provider_reported_cost_usd": 0.00229635,
+        "model_call_count": null,
+        "qualification": "Scenario aggregate only; call-level token and cost records were not preserved."
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-01-ECL-HORIZON",
+        "completed": true,
+        "input_tokens": 234,
+        "output_tokens": 26,
+        "provider_reported_cost_usd": 5.07e-05,
+        "model_call_count": 1,
+        "qualification": "Structural run complete; manual factual grounding review pending."
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-02-SICR",
+        "completed": true,
+        "input_tokens": 237,
+        "output_tokens": 60,
+        "provider_reported_cost_usd": 7.155e-05,
+        "model_call_count": 1,
+        "qualification": "Structural run complete; manual factual grounding review pending."
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-03-FORWARD-LOOKING",
+        "completed": true,
+        "input_tokens": 228,
+        "output_tokens": 38,
+        "provider_reported_cost_usd": 5.7e-05,
+        "model_call_count": 1,
+        "qualification": "Structural run complete; manual factual grounding review pending."
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-04-COLLATERAL",
+        "completed": true,
+        "input_tokens": 240,
+        "output_tokens": 43,
+        "provider_reported_cost_usd": 6.18e-05,
+        "model_call_count": 1,
+        "qualification": "Structural run complete; manual factual grounding review pending."
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-05-NUMERIC-THRESHOLD",
+        "completed": true,
+        "input_tokens": 239,
+        "output_tokens": 9,
+        "provider_reported_cost_usd": 4.125e-05,
+        "model_call_count": 1,
+        "qualification": "Structural run complete; manual factual grounding review pending."
+      },
+      {
+        "stage": "Generation grounding v2",
+        "scenario_id": "GRD-06-DERECOGNITION",
+        "completed": true,
+        "input_tokens": 139,
+        "output_tokens": 9,
+        "provider_reported_cost_usd": 2.625e-05,
+        "model_call_count": 1,
+        "qualification": "Structural run complete; manual factual grounding review pending."
+      }
+    ],
+    "completed_scenario_count": 13,
+    "failed_or_partial_scenario_count": 2
+  },
+  "call_to_scenario_reconciliation": [
+    {
+      "stage": "Gate 4.5 live planner",
+      "call_totals": {
+        "input_tokens": 18664,
+        "output_tokens": 1079,
+        "provider_reported_cost_usd": 0.003447
+      },
+      "scenario_totals": {
+        "input_tokens": 18664,
+        "output_tokens": 1079,
+        "provider_reported_cost_usd": 0.003447
+      },
+      "matches": true
+    },
+    {
+      "stage": "Gate 4.6 live planner",
+      "call_totals": {
+        "input_tokens": 11987,
+        "output_tokens": 1342,
+        "provider_reported_cost_usd": 0.00251685
+      },
+      "scenario_totals": {
+        "input_tokens": 11987,
+        "output_tokens": 1342,
+        "provider_reported_cost_usd": 0.00251685
+      },
+      "matches": true
+    },
+    {
+      "stage": "Generation grounding v2",
+      "call_totals": {
+        "input_tokens": 1317,
+        "output_tokens": 185,
+        "provider_reported_cost_usd": 0.00030855
+      },
+      "scenario_totals": {
+        "input_tokens": 1317,
+        "output_tokens": 185,
+        "provider_reported_cost_usd": 0.00030855
+      },
+      "matches": true
+    }
+  ],
+  "deterministic_fallback": [
+    {
+      "stage": "Gate 4 flagship deterministic fallback",
+      "scenario_count": 1,
+      "model_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "provider_reported_cost_usd": 0.0
+    },
+    {
+      "stage": "Post-hardening eight-scenario offline regression",
+      "scenario_count": 8,
+      "model_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "provider_reported_cost_usd": 0.0
+    }
+  ],
+  "observed_overhead_and_optimisation": [
+    {
+      "comparison": "Gate 4.5 to Gate 4.6",
+      "input_token_reduction": 6677,
+      "input_token_reduction_percent": 35.77,
+      "qualification": "Recorded aggregate comparison; Gate 4.6 also changed controller behavior."
+    },
+    {
+      "comparison": "Gate 5 to Gate 5.1",
+      "input_token_reduction": 26193,
+      "input_token_reduction_percent": 66.25,
+      "provider_cost_reduction_usd": 0.00440475,
+      "qualification": "Recorded aggregate comparison; not a pricing estimate and not a controlled performance experiment."
+    },
+    {
+      "comparison": "Grounding v2 bounded request design",
+      "model_calls": 6,
+      "retries": 0,
+      "qualification": "One call per case, only case-relevant approved notes, temperature zero and a 220-token output cap. No counterfactual savings are claimed."
+    }
+  ],
+  "cost_boundary": "Provider-reported API cost excludes local compute, engineering, storage, governance, source licensing and human review."
+}

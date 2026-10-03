@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "GRD-01-ECL-HORIZON",
+    "question": "When can the educational materials support using a shorter ECL horizon rather than a lifetime horizon?",
+    "source_ids": ["EDU-ECL-001"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "case_id": "GRD-02-SICR",
+    "question": "What comparison and indicators are relevant to assessing a significant increase in credit risk?",
+    "source_ids": ["EDU-SICR-002"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "case_id": "GRD-03-FORWARD-LOOKING",
+    "question": "How should historical experience and forward-looking information interact in an ECL estimate?",
+    "source_ids": ["EDU-FWD-003"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "case_id": "GRD-04-COLLATERAL",
+    "question": "How can collateral affect an ECL analysis, and what does it not replace?",
+    "source_ids": ["EDU-COLL-004"],
+    "expected_behavior": "answer_with_citations"
+  },
+  {
+    "case_id": "GRD-05-NUMERIC-THRESHOLD",
+    "question": "What exact probability-of-default percentage requires transfer to lifetime ECL?",
+    "source_ids": ["EDU-SICR-002"],
+    "expected_behavior": "abstain_insufficient_evidence"
+  },
+  {
+    "case_id": "GRD-06-DERECOGNITION",
+    "question": "What are the detailed derecognition criteria for a transferred financial asset?",
+    "source_ids": [],
+    "expected_behavior": "abstain_insufficient_evidence"
+  }
+]

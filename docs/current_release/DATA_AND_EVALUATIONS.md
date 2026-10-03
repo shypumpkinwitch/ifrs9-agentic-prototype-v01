@@ -12,6 +12,17 @@
 
 No metric from one layer is pooled with another.
 
+## Final improvement evidence release
+
+The separate [final-improvement evaluation directory](../../evaluations/final_improvement_v1/README.md) publishes methods, preserved results and offline tests without changing any frozen benchmark or historical experiment.
+
+- **Retrieval diagnostic:** on the 12 development questions only, BM25 achieved Hit@1 9/12 and Hit@5 11/12; local LSA achieved 8/12 and 12/12; equal RRF achieved 9/12 and 12/12. The historical semantic implementation is unavailable, so LSA is not a reproduction of that baseline. No holdout was accessed or tuned, and production remains BM25.
+- **Original grounding v2:** six actual calls (four supported, two insufficient-evidence) passed 6/6 automated citation/abstention structural checks. Usage was 1,317 input / 185 output tokens; provider-reported cost US$0.00030855. All sources are approved self-authored educational notes, not private annual reports or IFRS Standard text. Independent human factual review remains pending.
+- **Separate grounding v2.1:** the original GRD-03 valid citation masked an omitted cost/effort qualification. One revised general-prompt call retained “without undue cost or effort,” with unchanged question/source; usage was 306 input / 47 output tokens and cost US$0.00007410. Automated structural/phrase checks and assistant comparison are not independent human review. A retest of one known case is not general grounding performance; original six results and checklist remain unchanged.
+- **Cost evidence:** the preserved ledger consolidates 36 call-level records, separately qualified scenario aggregates and zero-cost fallback rows. It predates v2.1; the retest's usage is separately preserved, not silently added to historical totals. Provider cost excludes local compute, engineering, governance, licensing and human review.
+
+The final-evidence release verifies 137 current-version tests (137 passed, zero failures/errors/skips) and 88 protected immutable artifacts. Four unchanged historical-snapshot tests still error on pre-hardening `app.py` hashes; these remain separately reported, not weakened or hidden. Ordinary verification uses the offline release runner and privacy audit below, not any live model or SEC script. Exact retrieval diagnostic reproduction requires the excluded private corpus; grounding prompts, approved educational notes and actual responses are public-safe. No new live calls are part of publication.
+
 ## Frozen 50-question retrieval bank
 
 The locally supplied frozen bundle contains:

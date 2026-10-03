@@ -1,0 +1,555 @@
+{
+  "evaluation_id": "retrieval_hybrid_dev_v1",
+  "status": "development-only diagnostic; not independent holdout performance",
+  "frozen_holdout_accessed": false,
+  "frozen_holdout_tuned": false,
+  "production_retriever_changed": false,
+  "inputs": {
+    "corpus_records": 76,
+    "development_questions": 12,
+    "corpus_sha256": "105eefbdff84fdca8f7b0ad82f8f3756352b6c4394f73eded983cf0e578be76d",
+    "development_labels_sha256": "852578da74b1d91f1ef29874ab3a8e91b54f35ff9ed171280d26d51935c933e6"
+  },
+  "methods": {
+    "bm25": "Existing production BM25 with unchanged parameters.",
+    "local_lsa": "Local TF-IDF latent semantic analysis with 16 dimensions; diagnostic only and not the historical semantic system.",
+    "rrf_hybrid": "Predeclared equal reciprocal-rank fusion of BM25 and local LSA top-10 rankings with k=60; no weight search."
+  },
+  "summary": {
+    "bm25": {
+      "questions": 12,
+      "hit_at_1_count": 9,
+      "hit_at_1": 0.75,
+      "hit_at_5_count": 11,
+      "hit_at_5": 0.916667
+    },
+    "local_lsa": {
+      "questions": 12,
+      "hit_at_1_count": 8,
+      "hit_at_1": 0.666667,
+      "hit_at_5_count": 12,
+      "hit_at_5": 1.0
+    },
+    "rrf_hybrid": {
+      "questions": 12,
+      "hit_at_1_count": 9,
+      "hit_at_1": 0.75,
+      "hit_at_5_count": 12,
+      "hit_at_5": 1.0
+    }
+  },
+  "mean_accepted_lexical_coverage": 0.565985,
+  "hybrid_has_development_benefit": true,
+  "decision_rule": "Retain BM25 unless the predeclared hybrid improves development Hit@1 or Hit@5; any development gain remains exploratory and cannot establish holdout improvement.",
+  "observations": [
+    {
+      "question_id": "RBC001",
+      "accepted_chunk_ids": [
+        "RBC2025_CLASS_P152_C03"
+      ],
+      "accepted_lexical_coverage": 0.4,
+      "methods": {
+        "bm25": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_CLASS_P152_C02",
+            "RBC2025_CLASS_P152_C01",
+            "RBC2025_CLASS_P152_C03",
+            "GLENCORE2025_P160_C04",
+            "RBC2025_CLASS_P152_C04"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_CLASS_P152_C02",
+            "RBC2025_CLASS_P152_C03",
+            "RBC2025_CLASS_P152_C04",
+            "RBC2025_CLASS_P152_C01",
+            "RBC2025_CLASS_P152_C05"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_CLASS_P152_C02",
+            "RBC2025_CLASS_P152_C03",
+            "RBC2025_CLASS_P152_C01",
+            "RBC2025_CLASS_P152_C04",
+            "GLENCORE2025_P160_C04"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "RBC002",
+      "accepted_chunk_ids": [
+        "RBC2025_ECL_P156_C04"
+      ],
+      "accepted_lexical_coverage": 0.473684,
+      "methods": {
+        "bm25": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_ECL_P158_C01",
+            "RBC2025_ECL_P158_C02",
+            "RBC2025_ECL_P157_C01",
+            "RBC2025_ECL_P156_C03",
+            "RBC2025_ECL_P156_C04"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_ECL_P158_C02",
+            "RBC2025_ECL_P158_C01",
+            "RBC2025_ECL_P156_C04",
+            "RBC2025_ECL_P157_C01",
+            "RBC2025_ECL_P156_C08"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_ECL_P158_C01",
+            "RBC2025_ECL_P158_C02",
+            "RBC2025_ECL_P157_C01",
+            "RBC2025_ECL_P156_C04",
+            "RBC2025_ECL_P156_C08"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "RBC003",
+      "accepted_chunk_ids": [
+        "RBC2025_ECL_P156_C02",
+        "RBC2025_ECL_P156_C03",
+        "RBC2025_ECL_P156_C07"
+      ],
+      "accepted_lexical_coverage": 0.615385,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_ECL_P156_C03",
+            "RBC2025_ECL_P156_C02",
+            "RBC2025_ECL_P156_C04",
+            "RBC2025_ECL_P158_C01",
+            "RBC2025_ECL_P155_C02"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_ECL_P156_C03",
+            "RBC2025_ECL_P156_C02",
+            "RBC2025_ECL_P156_C04",
+            "RBC2025_ECL_P156_C01",
+            "RBC2025_ECL_P155_C02"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "RBC2025_ECL_P156_C03",
+            "RBC2025_ECL_P156_C02",
+            "RBC2025_ECL_P156_C04",
+            "RBC2025_ECL_P155_C02",
+            "RBC2025_ECL_P158_C01"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "GLEN001",
+      "accepted_chunk_ids": [
+        "GLENCORE2025_P160_C03"
+      ],
+      "accepted_lexical_coverage": 0.666667,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P160_C03",
+            "GLENCORE2025_P186_C01",
+            "GLENCORE2025_P161_C05",
+            "GLENCORE2025_P160_C02",
+            "GLENCORE2025_P160_C04"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P160_C03",
+            "GLENCORE2025_P186_C01",
+            "GLENCORE2025_P160_C02",
+            "GLENCORE2025_P161_C05",
+            "GLENCORE2025_P161_C06"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P160_C03",
+            "GLENCORE2025_P186_C01",
+            "GLENCORE2025_P160_C02",
+            "GLENCORE2025_P161_C05",
+            "GLENCORE2025_P161_C06"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "GLEN002",
+      "accepted_chunk_ids": [
+        "GLENCORE2025_P161_C03"
+      ],
+      "accepted_lexical_coverage": 0.571429,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P161_C03",
+            "GLENCORE2025_P160_C06",
+            "ALLIED_REIT2025_P132_C01",
+            "GLENCORE2025_P161_C02",
+            "ALLIED_REIT2025_P132_C04"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P161_C03",
+            "GLENCORE2025_P160_C06",
+            "GLENCORE2025_P160_C05",
+            "GLENCORE2025_P161_C02",
+            "ALLIED_REIT2025_P132_C04"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P161_C03",
+            "GLENCORE2025_P160_C06",
+            "GLENCORE2025_P161_C02",
+            "ALLIED_REIT2025_P132_C01",
+            "ALLIED_REIT2025_P132_C04"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "GLEN003",
+      "accepted_chunk_ids": [
+        "GLENCORE2025_P160_C02",
+        "GLENCORE2025_P186_C01"
+      ],
+      "accepted_lexical_coverage": 0.733333,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P186_C01",
+            "GLENCORE2025_P160_C03",
+            "GLENCORE2025_P160_C02",
+            "GLENCORE2025_P161_C05",
+            "GLENCORE2025_P161_C06"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P186_C01",
+            "GLENCORE2025_P160_C03",
+            "GLENCORE2025_P160_C02",
+            "GLENCORE2025_P161_C05",
+            "GLENCORE2025_P161_C06"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "GLENCORE2025_P186_C01",
+            "GLENCORE2025_P160_C03",
+            "GLENCORE2025_P160_C02",
+            "GLENCORE2025_P161_C05",
+            "GLENCORE2025_P161_C06"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "BAR001",
+      "accepted_chunk_ids": [
+        "BARRICK2025_P94_C06"
+      ],
+      "accepted_lexical_coverage": 0.538462,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P94_C06",
+            "RBC2025_CLASS_P152_C02",
+            "GLENCORE2025_P161_C04",
+            "RBC2025_ECL_P155_C01",
+            "RBC2025_ECL_P156_C07"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P94_C06",
+            "BARRICK2025_P94_C02",
+            "BARRICK2025_P94_C05",
+            "BARRICK2025_P94_C03",
+            "BARRICK2025_P94_C04"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P94_C06",
+            "RBC2025_CLASS_P152_C02",
+            "BARRICK2025_P94_C03",
+            "BARRICK2025_P94_C04",
+            "RBC2025_ECL_P155_C01"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "BAR002",
+      "accepted_chunk_ids": [
+        "BARRICK2025_P119_C04",
+        "BARRICK2025_P97_C01"
+      ],
+      "accepted_lexical_coverage": 0.583333,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P97_C01",
+            "BARRICK2025_P119_C04",
+            "BARRICK2025_P97_C02",
+            "BARRICK2025_P97_C03",
+            "BARRICK2025_P119_C05"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P97_C01",
+            "BARRICK2025_P119_C04",
+            "BARRICK2025_P119_C05",
+            "BARRICK2025_P97_C02",
+            "BARRICK2025_P97_C03"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P97_C01",
+            "BARRICK2025_P119_C04",
+            "BARRICK2025_P97_C02",
+            "BARRICK2025_P119_C05",
+            "BARRICK2025_P97_C03"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "BAR003",
+      "accepted_chunk_ids": [
+        "BARRICK2025_P119_C05"
+      ],
+      "accepted_lexical_coverage": 0.533333,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P119_C05",
+            "BARRICK2025_P97_C01",
+            "BARRICK2025_P97_C02",
+            "BARRICK2025_P119_C04",
+            "RBC2025_ECL_P158_C01"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P97_C01",
+            "BARRICK2025_P119_C05",
+            "BARRICK2025_P119_C04",
+            "BARRICK2025_P97_C02",
+            "BARRICK2025_P97_C03"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "BARRICK2025_P119_C05",
+            "BARRICK2025_P97_C01",
+            "BARRICK2025_P119_C04",
+            "BARRICK2025_P97_C02",
+            "BARRICK2025_P97_C03"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "ALL001",
+      "accepted_chunk_ids": [
+        "ALLIED_REIT2025_P150_C03",
+        "ALLIED_REIT2025_P41_C01"
+      ],
+      "accepted_lexical_coverage": 0.533333,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P41_C01",
+            "ALLIED_REIT2025_P150_C03",
+            "ALLIED_REIT2025_P132_C01",
+            "ALLIED_REIT2025_P132_C03",
+            "RBC2025_ECL_P157_C06"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P132_C02",
+            "ALLIED_REIT2025_P41_C01",
+            "ALLIED_REIT2025_P132_C03",
+            "ALLIED_REIT2025_P150_C03",
+            "ALLIED_REIT2025_P132_C01"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P41_C01",
+            "ALLIED_REIT2025_P150_C03",
+            "ALLIED_REIT2025_P132_C03",
+            "ALLIED_REIT2025_P132_C01",
+            "ALLIED_REIT2025_P132_C02"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "ALL002",
+      "accepted_chunk_ids": [
+        "ALLIED_REIT2025_P132_C02"
+      ],
+      "accepted_lexical_coverage": 0.5,
+      "methods": {
+        "bm25": {
+          "hit_at_1": false,
+          "hit_at_5": false,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P41_C01",
+            "ALLIED_REIT2025_P150_C03",
+            "ALLIED_REIT2025_P132_C01",
+            "GLENCORE2025_P161_C01",
+            "ALLIED_REIT2025_P132_C03"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P132_C02",
+            "ALLIED_REIT2025_P132_C01",
+            "ALLIED_REIT2025_P41_C01",
+            "ALLIED_REIT2025_P150_C03",
+            "RBC2025_ECL_P155_C02"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": false,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P41_C01",
+            "ALLIED_REIT2025_P132_C01",
+            "ALLIED_REIT2025_P150_C03",
+            "ALLIED_REIT2025_P132_C02",
+            "ALLIED_REIT2025_P132_C03"
+          ]
+        }
+      }
+    },
+    {
+      "question_id": "ALL003",
+      "accepted_chunk_ids": [
+        "ALLIED_REIT2025_P132_C01"
+      ],
+      "accepted_lexical_coverage": 0.642857,
+      "methods": {
+        "bm25": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P132_C01",
+            "GLENCORE2025_P160_C06",
+            "ALLIED_REIT2025_P132_C03",
+            "GLENCORE2025_P161_C03",
+            "ALLIED_REIT2025_P132_C04"
+          ]
+        },
+        "local_lsa": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P132_C01",
+            "ALLIED_REIT2025_P132_C02",
+            "GLENCORE2025_P160_C06",
+            "RBC2025_ECL_P155_C02",
+            "ALLIED_REIT2025_P41_C01"
+          ]
+        },
+        "rrf_hybrid": {
+          "hit_at_1": true,
+          "hit_at_5": true,
+          "top_5_chunk_ids": [
+            "ALLIED_REIT2025_P132_C01",
+            "GLENCORE2025_P160_C06",
+            "ALLIED_REIT2025_P132_C03",
+            "ALLIED_REIT2025_P41_C01",
+            "ALLIED_REIT2025_P132_C04"
+          ]
+        }
+      }
+    }
+  ]
+}
